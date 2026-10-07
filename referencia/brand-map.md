@@ -2,7 +2,7 @@
 
 Fonte de verdade: `UKERIA - BRANDBOOK.pdf` (Estúdio Artemísia). Catálogo dos arquivos de `LOGOTIPO/`, `ELEMENTOS/` e `TIPOGRAFIA/` cruzado com o brandbook. Versão machine-readable: [brand-map.json](brand-map.json).
 
-> **Aviso:** a skill `ukeria-brand-compliance` não está instalada neste ambiente. O checklist abaixo foi derivado só do PDF e dos arquivos. Se a skill existir em outro lugar, conferir este mapa contra ela.
+> **Checklist de compliance:** a skill `ukeria-brand-compliance` não está instalada; o checklist operacional é [UKERIA - BRANDBOOK.md](UKERIA%20-%20BRANDBOOK.md) (Brandbook V2). Este mapa foi reconciliado com ele, com o PDF e com os arquivos. Onde divergem, está sinalizado.
 
 ---
 
@@ -18,6 +18,12 @@ São 3 variações, escolhidas pelo espaço e pelo suporte:
 | **Tipográfico** (só "ukêria") | Espaços horizontais menores. | `logo-tipografico.svg`, `logo-tipografico-{bege-01,bege-02,bege-03,preto-ukeria,branco,preto-000}.png` (2533×568) |
 | **Símbolo** (o "a" com olho) | Marcas d'água e imagem de perfil. | `logo-simbolo.svg`, `logo-simbolo-{bege-01,bege-02,bege-03,preto-ukeria,branco,preto-000}.png` (608×411) |
 | Amostra | Referência de aplicação (fundos Bege 01, Laranja, Amarelo, Verde). **Não é asset de produção.** | `logo-amostra.png` (6509×2930) |
+
+### Regras adicionais do checklist
+- Unbounded Bold é **exclusiva do wordmark**: nunca em título ou corpo.
+- Laranja/Amarelo/Verde proibidos no logo **em qualquer estado** (hover, dark mode etc.).
+- Símbolo: só marca d'água e avatar/foto de perfil. **Nunca** como logo principal de uma página.
+- O checklist lista as variações como (1) principal, (2) logo em chapa de cor, (3) símbolo abstrato. Mapeamento com os arquivos (**interpretação, confirmar com a designer**): (1) = completo (tipográfico é o wordmark sem "produções"); (2) = `logo-amostra.png`, sem PNG por chapa; (3) = simbolo.
 
 ### Cores permitidas do logotipo
 - **Oficiais:** Preto Ukêria (#141414), Bege 01, Bege 02, Bege 03.
@@ -54,8 +60,10 @@ Arquivos PNG: todos RGBA (fundo transparente). SVGs: vetoriais, cor única.
 
 **Conceito:** cor é luz. Monocromia, luz e sombra, com cores brilhantes (laranja, amarelo) e terrosas (beges, verdes) que remetem ao território e aos povos originários.
 
+**5 cores principais** (uso geral): Preto Ukêria, Branco/Bege claro (Bege 01), Amarelo 03, Laranja 03, Verde 05.
+
 **Utilização (sugestões, não restrições):**
-- Fundos (sempre cor chapada): Bege 01, Bege 03, Verde 05, Amarelo 03.
+- Fundos (sempre cor chapada; nunca degradê direto no fundo da página): Bege 01, Bege 03, Verde 05, Amarelo 03.
 - Formas geométricas em degradê sobre o fundo: Bege 03, Verde 03, Laranja 03, Amarelo 03.
 - Novas combinações são permitidas, mantendo a lógica de contraste das combinações sugeridas.
 
@@ -75,6 +83,8 @@ Arquivos PNG: todos RGBA (fundo transparente). SVGs: vetoriais, cor única.
 - **Texto corrido:** sempre Raleway.
 - **Conceito:** Quatera é o lado direto e ambicioso, Raleway é o lado mediador e carismático.
 
+**Regras do checklist:** Unbounded Bold só no logo. Quatera sempre itálico, só em palavras/frases de destaque, misturada com Raleway. Texto corrido é sempre Raleway, sem exceção. Qualquer outra fonte (Anton, Playfair Display, Inter etc.) deve ser sinalizada e trocada. Se a Quatera não estiver disponível, o checklist admite serifada itálica próxima, sinalizando a substituição. Aqui não é necessário, pois o `.otf` está em `TIPOGRAFIA`.
+
 **Licença:** Quatera Italic é item Envato Elements, **Single Use para um projeto registrado** (`license_certificate_XAPL7F648T.txt`). Verificar se o uso web e o self-host do site estão cobertos. Unbounded e Raleway são OFL (livres).
 
 ---
@@ -83,7 +93,10 @@ Arquivos PNG: todos RGBA (fundo transparente). SVGs: vetoriais, cor única.
 
 Três motivos oficiais. Todos os PNGs são 5760×3240, RGBA, raster.
 
+**Regra do checklist:** só estes 3 motivos; não inventar outros. **Micro-detalhe:** cruz/mira "+" pequena no canto de posts e cartões, como marca d'água discreta; nunca grande nem solta no centro (as miras aparecem nos arquivos `linhas-*.png`).
+
 ### 4.1 Vidro desfocado
+> No checklist, vidro desfocado são **fotos com máscara de desfoque radial/circular** (não elíptica em olho). Não há asset de máscara. As molduras e retângulos abaixo são a interpretação mais próxima nos arquivos (**confirmar**).
 O vidro é a matéria-prima da lente. O desfoque funciona como foco de câmera, direcionador de olhar e expectativa de revelação.
 
 | Arquivo | Conteúdo |
@@ -98,6 +111,8 @@ O vidro é a matéria-prima da lente. O desfoque funciona como foco de câmera, 
 | `retangular-verde.png` | Retângulo desfocado, Verde 03 |
 
 ### 4.2 Degradê focado
+Glow radial desfocado atrás de logotipo ou frases de efeito, em laranja, amarelo-esverdeado e verde oliva. É o recurso mais usado nos templates de redes.
+
 A cor aparece e some como sombra. As formas geométricas marcadas remetem ao foco da câmera e aos periféricos (flash, softbox).
 
 | Arquivo | Conteúdo |
@@ -108,17 +123,26 @@ A cor aparece e some como sombra. As formas geométricas marcadas remetem ao foc
 | `bola-grande-verde.png` | Esfera grande, Verde 03 |
 | `bola-pequena-amarelo.png` / `bola-pequena-laranja.png` / `bola-pequena-bege.png` / `bola-pequena-verde.png` | Esferas pequenas nas 4 cores |
 | `circulos.png` | Ícones de círculo com listras (preto, verde-escuro, bege, amarelo; versões cheia e esmaecida) |
-| `mola.png`, `mola-2.png`, `mola-curta.png` | Elipses sobrepostas em "mola" com brilho (laranja, amarelo, bege, verde; contorno bege/branco) |
 
 ### 4.3 Linhas e perspectiva
+Três variações: (a) linhas retas irradiando de um ponto, sem contorno de olho (`perspectiva*`); (b) anéis concêntricos em line-art fina, sem preenchimento sólido (`mola*`); (c) espiral áurea com linhas de construção visíveis (`linhas*`).
+
 Linhas que guiam o olhar, sensação de movimento, construção de perspectiva e proporção áurea.
 
 | Arquivo | Conteúdo |
 |---|---|
 | `linhas-preto.png`, `linhas-bege.png`, `linhas-verde.png` | Espiral áurea e retângulos, mais miras/cruzes (preto, bege, verde) |
+| `mola.png`, `mola-2.png`, `mola-curta.png` | Variação (b): elipses/anéis concêntricos em "mola" (carretel/íris). Os de contorno são line-art; os preenchidos têm glow |
 | `perspectiva.png` | Leque de linhas pretas a partir de um ponto, com esfera laranja e amarela |
 | `perspectiva-2.png` | Mesmo leque, com esfera verde e marrom |
 | `elementos-ukeria.psd` | Fonte editável de todos os elementos (66 MB). **Não usar no site, só para extrair novas variações.** |
+
+---
+
+## 4A. Padrão de aplicações (checklist)
+- **Avatar:** símbolo (letra "a") sobre glow radial, dentro de círculo.
+- **Posts e capas de Reels:** card de cor chapada ou com glow radial, frase com Quatera Italic + Raleway, logo pequeno no rodapé, mira no canto.
+- **Impressos:** papel bege/cru, nome em Quatera Italic, contato em Raleway, ícone de linhas irradiando. Verso com logo completo sobre glow radial.
 
 ---
 
@@ -131,7 +155,8 @@ Linhas que guiam o olhar, sensação de movimento, construção de perspectiva e
   2. "Um ambiente leve de confiança mútua, cocriação e escuta ativa."
   3. "Inimiga do machismo, racismo e de outras opressões e defensora do empreendedorismo feminino."
 - **Propósito:** "Utilizamos o nosso olhar e a força do audiovisual de guerrilha para criar narrativas estratégicas que potencializam marcas dentro e fora dos canais digitais."
-- **O que a marca NÃO é:** bolsominion, preguiçosa, fofoqueira, egocêntrica, "boazinha / bela, recatada e do lar".
+- **Personalidade dual:** direta/combativa + acolhedora/diplomática, espelhada em Quatera (direto) + Raleway (diplomático).
+- **O que a marca NÃO é:** alinhada à direita política ("bolsominion" no PDF), preguiçosa, fofoqueira, egocêntrica, "boazinha / bela, recatada e do lar".
 - **Posicionamento:** produtora 100% composta por mulheres de diferentes etnias. Vai além da técnica, com estratégia e criatividade a favor da voz do cliente. Contra "vídeos de dancinha".
 - **Origem do nome:** neologismo de *Uke* (olho, em Terena) + sufixo *-ria* (lugar, ramo, coletivo, ação). "Coletivo de olhares". Etnia Terena escolhida pela origem da avó materna da fundadora, Letícia Palhão. "Produções" é o complemento e pode aparecer ou não no logo.
 - **Público:** empresários de pequeno e médio porte (B2B2E: dono contrata, funcionários aparecem), empreendedores disruptivos, feiras e eventos, making off e still.
@@ -141,6 +166,7 @@ Linhas que guiam o olhar, sensação de movimento, construção de perspectiva e
 ## 6. Cruzamento brandbook × arquivos
 
 ### Gaps (regra do brandbook sem asset)
+0. **Vidro desfocado como máscara radial de foto** — sem asset em `ELEMENTOS`. Os arquivos de moldura/retângulo são interpretação.
 1. **Assinatura "produtora audiovisual & canais digitais"** — o brandbook diz que o nome pode levar essa assinatura, mas o logo completo só traz "produções". Não há arquivo com a assinatura.
 2. **Raleway** — só há Regular, SemiBold e Bold. O README descreve a família completa, mas só esses 3 pesos foram entregues. Sem itálico nem variável.
 3. **Conteúdo do brandbook que é imagem** — pelo texto, não dá para ler os mockups de Instagram, apresentação, cartão e caneca.
