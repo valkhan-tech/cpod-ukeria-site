@@ -23,6 +23,8 @@ assets/img/web/             imagens em WebP usadas em Projetos
 assets/images, assets/videos   material original (não é servido pelo site)
 referencia/                 brandbook, considerações do site, logotipos, elementos, fontes, brand-map
 tools/check-brand.mjs       checagem automática de compliance de marca
+tools/check-seo.mjs         checagem de SEO, Open Graph, FAQ/JSON-LD, robots, sitemap e llms.txt
+robots.txt, sitemap.xml, llms.txt   rastreamento por buscadores e por assistentes de IA
 ```
 
 ## Compliance de marca
@@ -32,6 +34,20 @@ node tools/check-brand.mjs
 ```
 
 Confere: todo hex pertence à paleta oficial, só Raleway e Quatera nos textos, sem Google Fonts, logotipo só em Preto Ukêria ou Bege, contraste mínimo (WCAG AA) dos pares texto/fundo usados e itens de conteúdo (WhatsApp, `utm`).
+
+## SEO, Open Graph, AEO e GEO
+
+```bash
+node tools/check-seo.mjs
+```
+
+- **Domínio:** tudo usa `https://ukeria.com.br` (canonical, og:url, sitemap, JSON-LD, llms.txt). Se o domínio final for outro, troque em `index.html`, `privacidade.html`, `termos.html`, `robots.txt`, `sitemap.xml` e `llms.txt`.
+- **Open Graph e Twitter:** imagem 1200×630 em `assets/img/og/og-ukeria.jpg`, com texto alternativo. Depois de publicar, force a releitura no Facebook Sharing Debugger e no LinkedIn Post Inspector.
+- **Dados estruturados (`index.html`, JSON-LD):** Organization (com serviços, contato e perfis oficiais), duas Person (liderança), WebSite, WebPage e FAQPage.
+- **AEO:** a seção `#perguntas` tem 6 perguntas e respostas curtas, e o texto é **idêntico** ao do FAQPage (o check-seo confere). Se editar uma, edite a outra.
+- **GEO:** `llms.txt` resume a marca e lista as páginas e os perfis oficiais. O `robots.txt` libera buscadores e bots de IA (de busca/resposta e de treinamento). Para bloquear só o treinamento, troque o `Allow` por `Disallow` nesses bots.
+- **Páginas legais** ficam `noindex` e fora do sitemap enquanto forem minuta.
+- **Importante:** `Disallow` no robots.txt não protege arquivos. Não publique as pastas `referencia/`, `tools/`, `assets/images/` e `assets/videos/` no servidor.
 
 ## Como editar
 

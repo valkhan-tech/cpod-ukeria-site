@@ -61,6 +61,8 @@ Fontes: `UKERIA - BRANDBOOK.pdf`, `brand-map.json/md`, `UKERIA - BRANDBOOK.md` (
 
 ---
 
+> **Correção posterior à entrega:** os SVGs `logo-completo-*.svg` tinham a palavra "produções" sem cor definida (renderizava preta, invisível sobre o rodapé escuro). Corrigido com `fill` no `<svg>` raiz, e o `check-brand` agora detecta esse caso.
+
 ## 3. Decisões suas aplicadas
 
 | # | Decisão | Aplicado |

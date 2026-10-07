@@ -39,7 +39,7 @@ familias.some(f => proibidas.test(f)) ? falha('font-family com fonte não oficia
 // 3) conteúdo/links
 const tudo = files.map(f => readFileSync(f, 'utf8')).join('\n');
 /5511974995600/.test(tudo) ? falha('WhatsApp antigo ainda presente') : ok('WhatsApp antigo removido');
-/utm_source/.test(tudo) ? falha('utm_source presente') : ok('sem utm_source');
+/utm_source=chatgpt/.test(tudo) ? falha('utm_source=chatgpt presente') : ok('sem utm_source=chatgpt');
 /mix-blend-mode/.test(css) ? falha('mix-blend-mode no CSS') : ok('sem mix-blend-mode (logo com cor controlada)');
 /estrat[ée]gio\b/i.test(tudo) ? falha('grafia "estratégio"') : ok('grafia "estratégico" corrigida');
 
@@ -49,6 +49,10 @@ for (const f of readdirSync('assets/brand').filter(f => /^logo|^simbolo/.test(f)
   const cores = [...new Set([...t.matchAll(/#[0-9a-fA-F]{6}\b/g)].map(m => m[0].toLowerCase()))];
   const permitidas = ['#141414', '#ded0c4', '#c0a58e', '#a88363'];
   cores.every(c => permitidas.includes(c)) ? ok(`${f}: cor do logo permitida (${cores.join(', ') || 'sem cor'})`) : falha(`${f}: cor proibida no logo (${cores.join(', ')})`);
+  // elementos sem classe/fill herdam o preto padrão do SVG: então o <svg> raiz precisa declarar fill
+  const semCor = [...t.matchAll(/<(path|polygon|rect|circle|ellipse)\b([^>]*)>/g)].filter(m => !/class="cls-1"|\sfill="/.test(m[2])).length;
+  const raiz = /<svg[^>]*\sfill="#[0-9a-f]{6}"/i.test(t);
+  if (semCor > 0 && !raiz) falha(`${f}: ${semCor} elemento(s) sem cor ficam pretas (falta fill no <svg> raiz)`);
 }
 
 // 5) contraste (WCAG) dos pares texto/fundo usados

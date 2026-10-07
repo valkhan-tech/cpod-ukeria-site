@@ -1,0 +1,42 @@
+# robots.txt — https://ukeria.com.br
+# Política: o site é público e quer ser citado por buscadores e assistentes de IA (SEO/AEO/GEO).
+# Para bloquear só o treinamento de modelos, troque "Allow: /" por "Disallow: /" nos bots de treinamento (GPTBot, ClaudeBot, Google-Extended, CCBot, Applebot-Extended).
+
+User-agent: *
+Allow: /
+Disallow: /referencia/
+Disallow: /tools/
+Disallow: /assets/images/
+Disallow: /assets/videos/
+
+# Busca e respostas de IA (citam o site com link)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# Treinamento de modelos
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://ukeria.com.br/sitemap.xml
