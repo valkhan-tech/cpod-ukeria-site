@@ -20,7 +20,7 @@ assets/fonts/               Raleway (400/600/700) e Quatera Italic, self-hosted
 assets/brand/               logotipo e símbolo em SVG, só nas cores permitidas, e favicon
 assets/video/web/           vídeos comprimidos (trechos de 12 s) e posters
 assets/img/web/             imagens em WebP usadas em Projetos
-assets/images, assets/videos   material original (não é servido pelo site)
+old/                        material sem uso (47 imagens e 7 vídeos originais da versão anterior); não publicar
 referencia/                 brandbook, considerações do site, logotipos, elementos, fontes, brand-map
 tools/check-brand.mjs       checagem automática de compliance de marca
 tools/check-seo.mjs         checagem de SEO, Open Graph, FAQ/JSON-LD, robots, sitemap e llms.txt
@@ -47,7 +47,7 @@ node tools/check-seo.mjs
 - **AEO:** a seção `#perguntas` tem 6 perguntas e respostas curtas, e o texto é **idêntico** ao do FAQPage (o check-seo confere). Se editar uma, edite a outra.
 - **GEO:** `llms.txt` resume a marca e lista as páginas e os perfis oficiais. O `robots.txt` libera buscadores e bots de IA (de busca/resposta e de treinamento). Para bloquear só o treinamento, troque o `Allow` por `Disallow` nesses bots.
 - **Páginas legais** ficam `noindex` e fora do sitemap enquanto forem minuta.
-- **Importante:** `Disallow` no robots.txt não protege arquivos. Não publique as pastas `referencia/`, `tools/`, `assets/images/` e `assets/videos/` no servidor.
+- **Importante:** `Disallow` no robots.txt não protege arquivos. Não publique as pastas `referencia/`, `tools/` e `old/` no servidor.
 
 ## Como editar
 

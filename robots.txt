@@ -6,8 +6,7 @@ User-agent: *
 Allow: /
 Disallow: /referencia/
 Disallow: /tools/
-Disallow: /assets/images/
-Disallow: /assets/videos/
+Disallow: /old/
 
 # Busca e respostas de IA (citam o site com link)
 User-agent: OAI-SearchBot
