@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "brand": "Ukêria Produções",
+    "source": "referencia/UKERIA - BRANDBOOK.pdf",
+    "phase": 1,
+    "skillAvailable": false,
+    "note": "Skill ukeria-brand-compliance não encontrada; mapa derivado do PDF e dos arquivos."
+  },
+  "colors": [
+    { "name": "Branco", "hex": "#ffffff", "rgb": [255,255,255], "cmyk": [0,0,0,0], "use": "Apenas logotipo técnico a pedido de fornecedor; texto sobre fundos escuros" },
+    { "name": "Bege 01", "hex": "#ded0c4", "rgb": [222,208,196], "cmyk": [15,20,25,1], "use": "Fundo sugerido; cor oficial do logotipo" },
+    { "name": "Bege 02", "hex": "#c0a58e", "rgb": [192,165,142], "cmyk": [26,30,40,9], "use": "Cor oficial do logotipo" },
+    { "name": "Bege 03", "hex": "#a88363", "rgb": [168,131,99], "cmyk": [30,40,60,20], "use": "Fundo sugerido; forma em degradê; cor oficial do logotipo" },
+    { "name": "Preto Ukêria", "hex": "#141414", "rgb": [20,20,20], "cmyk": null, "cmykNote": "PDF mostra '100 100 100' (truncado)", "use": "Cor principal do logotipo; texto" },
+    { "name": "Verde 01", "hex": "#b3b48e", "rgb": [179,180,142], "cmyk": [35,20,50,4], "use": "Apoio" },
+    { "name": "Verde 02", "hex": "#999a67", "rgb": [153,154,103], "cmyk": [39,23,65,12], "use": "Apoio" },
+    { "name": "Verde 03", "hex": "#7b7b52", "rgb": [123,123,82], "cmyk": [50,35,70,20], "use": "Forma em degradê" },
+    { "name": "Verde 04", "hex": "#626242", "rgb": [98,98,66], "cmyk": [60,44,74,40], "use": "Apoio" },
+    { "name": "Verde 05", "hex": "#3e3e2a", "rgb": [62,62,42], "cmyk": [64,53,76,61], "use": "Fundo sugerido" },
+    { "name": "Laranja 01", "hex": "#ffb387", "rgb": [255,179,135], "cmyk": [0,40,50,0], "use": "Apoio" },
+    { "name": "Laranja 02", "hex": "#ff8139", "rgb": [255,129,57], "cmyk": [0,60,79,0], "use": "Apoio" },
+    { "name": "Laranja 03", "hex": "#fa5b00", "rgb": [250,91,0], "cmyk": [1,75,100,0], "use": "Forma em degradê" },
+    { "name": "Laranja 04", "hex": "#c84900", "rgb": [200,73,0], "cmyk": [16,80,100,5], "use": "Apoio" },
+    { "name": "Amarelo 01", "hex": "#f4f7c1", "rgb": [244,247,193], "cmyk": [10,0,30,0], "use": "Apoio" },
+    { "name": "Amarelo 02", "hex": "#e7ec74", "rgb": [231,236,116], "cmyk": [15,0,65,0], "use": "Apoio" },
+    { "name": "Amarelo 03", "hex": "#dce436", "rgb": [220,228,54], "cmyk": [20,0,80,0], "use": "Fundo sugerido; forma em degradê" },
+    { "name": "Amarelo 04", "hex": "#bfc71b", "rgb": [191,199,27], "cmyk": [35,5,100,0], "use": "Apoio" }
+  ],
+  "colorRules": {
+    "backgroundSuggestions": ["Bege 01", "Bege 03", "Verde 05", "Amarelo 03"],
+    "gradientShapeSuggestions": ["Bege 03", "Verde 03", "Laranja 03", "Amarelo 03"],
+    "backgroundsMustBeFlat": true,
+    "suggestionsAreRestrictive": false
+  },
+  "typography": [
+    { "role": "logotipo", "family": "Unbounded", "weight": "Bold", "file": "referencia/TIPOGRAFIA/Logotipo/Unbounded-Bold.ttf", "extra": ["referencia/TIPOGRAFIA/Logotipo/Unbounded-Black.ttf"], "license": "OFL" },
+    { "role": "destaque de título / subtítulo", "family": "Quatera", "weight": "Italic", "file": "referencia/TIPOGRAFIA/Quatera-Italic.otf", "license": "Envato Elements, Single Use por projeto registrado (verificar uso web)" },
+    { "role": "subtítulo / texto corrido", "family": "Raleway", "weight": "SemiBold (brandbook); Regular e Bold também entregues", "files": ["referencia/TIPOGRAFIA/Raleway-Regular.ttf", "referencia/TIPOGRAFIA/Raleway-SemiBold.ttf", "referencia/TIPOGRAFIA/Raleway-Bold.ttf"], "license": "OFL" }
+  ],
+  "typographyRules": {
+    "titles": "Mesclar Quatera Italic e Raleway; Quatera nas palavras/frases em destaque",
+    "subtitles": "Alternar entre uma das duas fontes",
+    "body": "Sempre Raleway"
+  },
+  "logo": {
+    "officialColors": ["Preto Ukêria", "Bege 01", "Bege 02", "Bege 03"],
+    "technicalColors": { "colors": ["Branco", "Preto #000000"], "condition": "apenas quando fornecedores pedirem por questões técnicas" },
+    "forbiddenColors": ["Laranja", "Amarelo", "Verde"],
+    "forbiddenCombinations": "tom sobre tom, exceto entre tons de Bege",
+    "variations": [
+      { "name": "completo", "use": "Principal, maioria dos suportes; pode levar assinatura 'produtora audiovisual & canais digitais'", "files": {
+        "svg": "referencia/LOGOTIPO/logo-completo.svg",
+        "bege-01": "referencia/LOGOTIPO/logo-completo-bege-01.png",
+        "bege-02": "referencia/LOGOTIPO/logo-completo-bege-02.png",
+        "bege-03": "referencia/LOGOTIPO/logo-completo-bege-03.png",
+        "pretoUkeria": "referencia/LOGOTIPO/logo-completo-preto-ukeria.png",
+        "branco": "referencia/LOGOTIPO/logo-completo-branco.png",
+        "preto000": "referencia/LOGOTIPO/logo-completo-preto-000.png" } },
+      { "name": "tipografico", "use": "Espaços horizontais reduzidos, sem 'produções'", "files": {
+        "svg": "referencia/LOGOTIPO/logo-tipografico.svg",
+        "bege-01": "referencia/LOGOTIPO/logo-tipografico-bege-01.png",
+        "bege-02": "referencia/LOGOTIPO/logo-tipografico-bege-02.png",
+        "bege-03": "referencia/LOGOTIPO/logo-tipografico-bege-03.png",
+        "pretoUkeria": "referencia/LOGOTIPO/logo-tipografico-preto-ukeria.png",
+        "branco": "referencia/LOGOTIPO/logo-tipografico-branco.png",
+        "preto000": "referencia/LOGOTIPO/logo-tipografico-preto-000.png" } },
+      { "name": "simbolo", "use": "Marcas d'água e imagem de perfil", "files": {
+        "svg": "referencia/LOGOTIPO/logo-simbolo.svg",
+        "bege-01": "referencia/LOGOTIPO/logo-simbolo-bege-01.png",
+        "bege-02": "referencia/LOGOTIPO/logo-simbolo-bege-02.png",
+        "bege-03": "referencia/LOGOTIPO/logo-simbolo-bege-03.png",
+        "pretoUkeria": "referencia/LOGOTIPO/logo-simbolo-preto-ukeria.png",
+        "branco": "referencia/LOGOTIPO/logo-simbolo-branco.png",
+        "preto000": "referencia/LOGOTIPO/logo-simbolo-preto-000.png" } }
+    ],
+    "sample": { "file": "referencia/LOGOTIPO/logo-amostra.png", "note": "Referência de aplicação sobre Bege 01, Laranja, Amarelo e Verde; não usar como asset" },
+    "issues": [
+      "Arquivos renomeados (sem acento, kebab-case, cor no sufixo); duplicata logo-símbolo-preto.png removida (idêntica a preto-000)",
+      "SVGs completo e tipografico usam #070c0a em vez de #141414",
+      "logo-*-preto-000.png é #000000 (preto técnico), não o oficial"
+    ]
+  },
+  "graphicElements": {
+    "root": "referencia/ELEMENTOS",
+    "imageSpec": "PNG RGBA 5760x3240",
+    "editableSource": "referencia/ELEMENTOS/elementos-ukeria.psd",
+    "motifs": [
+      {
+        "name": "Vidro desfocado",
+        "concept": "Lente da câmera; desfoque como foco, direcionador de olhar e expectativa de revelação",
+        "application": "Molduras e retângulos desfocados como fundo/enquadramento de conteúdo",
+        "files": [
+          { "file": "moldura-amarelo.png", "color": "Amarelo 03" },
+          { "file": "moldura-laranja.png", "color": "Laranja 03" },
+          { "file": "moldura-bege.png", "color": "Bege 03" },
+          { "file": "moldura-verde.png", "color": "Verde 03" },
+          { "file": "retangular-amarelo.png", "color": "Amarelo 03" },
+          { "file": "retangular-laranja.png", "color": "Laranja 03" },
+          { "file": "retangular-bege.png", "color": "Bege 03" },
+          { "file": "retangular-verde.png", "color": "Verde 03" }
+        ]
+      },
+      {
+        "name": "Degradê focado",
+        "concept": "Cor como luz que aparece e some como sombra; formas geométricas remetem a foco, flash e softbox",
+        "application": "Formas sobre fundo chapado (esferas, molas, círculos)",
+        "files": [
+          { "file": "bola-grande-amarelo.png", "color": "Amarelo 03" },
+          { "file": "bola-grande-laranja.png", "color": "Laranja 03" },
+          { "file": "bola-grande-bege.png", "color": "Bege 03" },
+          { "file": "bola-grande-verde.png", "color": "Verde 03" },
+          { "file": "bola-pequena-amarelo.png", "color": "Amarelo 03" },
+          { "file": "bola-pequena-laranja.png", "color": "Laranja 03" },
+          { "file": "bola-pequena-bege.png", "color": "Bege 03" },
+          { "file": "bola-pequena-verde.png", "color": "Verde 03" },
+          { "file": "circulos.png", "color": "preto/verde/bege/amarelo", "note": "ícones de círculo com listras, cheios e esmaecidos" },
+          { "file": "mola.png", "color": "amarelo e laranja" },
+          { "file": "mola-2.png", "color": "bege e verde" },
+          { "file": "mola-curta.png", "color": "laranja, bege, amarelo e verde; contornos" }
+        ]
+      },
+      {
+        "name": "Linhas e perspectiva",
+        "concept": "Linhas que guiam o olhar, sensação de movimento, perspectiva e proporção áurea",
+        "application": "Linhas finas sobre o fundo; espiral áurea e leques de perspectiva",
+        "files": [
+          { "file": "linhas-preto.png", "color": "preto" },
+          { "file": "linhas-bege.png", "color": "bege" },
+          { "file": "linhas-verde.png", "color": "verde" },
+          { "file": "perspectiva.png", "color": "preto + laranja/amarelo" },
+          { "file": "perspectiva-2.png", "color": "preto + verde/bege" }
+        ]
+      }
+    ]
+  },
+  "voice": {
+    "personality": "Vigilante sagaz do audiovisual; mulher de negócios brasileira, crítica, empreendedora; força com alegria e companheirismo",
+    "coreValues": ["Humana", "Inquieta", "Chocante", "Inconformada", "Visionária", "Ativista"],
+    "toneLayers": [
+      "A vigilante sagaz do audiovisual.",
+      "Um ambiente leve de confiança mútua, cocriação e escuta ativa.",
+      "Inimiga do machismo, racismo e de outras opressões e defensora do empreendedorismo feminino."
+    ],
+    "purpose": "Utilizamos o nosso olhar e a força do audiovisual de guerrilha para criar narrativas estratégicas que potencializam marcas dentro e fora dos canais digitais.",
+    "isNot": ["bolsominion", "preguiçosa", "fofoqueira", "egocêntrica", "boazinha / bela, recatada e do lar"],
+    "nameOrigin": "Uke (olho, Terena) + -ria (lugar, ramo, coletivo, ação); coletivo de olhares"
+  },
+  "gaps": [
+    "Sem arquivo do logotipo com a assinatura 'produtora audiovisual & canais digitais'",
+    "Raleway: apenas Regular, SemiBold e Bold entregues; sem itálico/variável",
+    "Mockups de aplicação do brandbook (Instagram, apresentação, cartão, caneca) são imagens e não foram lidos como texto",
+    "Quatera: licença Single Use; confirmar cobertura para web/self-host"
+  ],
+  "counts": { "logotipo": 23, "elementos": 26, "tipografia": 9, "total": 58 }
+}
