@@ -3,1111 +3,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ukêria — Produtora Audiovisual</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --brown-950:#211a11;
-  --brown-900:#2b2216;
-  --brown-800:#3a2e1e;
-  --brown-700:#4a3b26;
-  --orange-600:#d94a1a;
-  --orange-500:#f0642c;
-  --yellow-400:#d9e000;
-  --yellow-300:#e6ec5c;
-  --cream-50:#f8f4e9;
-  --cream-100:#efe8d4;
-  --cream-200:#e3d9bd;
-  --ink:#1a140c;
-
-  --display: 'Anton', sans-serif;
-  --editorial: 'Playfair Display', serif;
-  --body: 'Inter', sans-serif;
-}
-
-*{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:var(--body);
-  background:var(--cream-50);
-  color:var(--ink);
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%; display:block;}
-a{color:inherit; text-decoration:none;}
-.container{width:min(1180px, 92%); margin-inline:auto;}
-.eyebrow{
-  font-family:var(--body);
-  font-size:.72rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  font-weight:600;
-  opacity:.65;
-}
-section{position:relative;}
-
-/* ---------- reduced motion ---------- */
-@media (prefers-reduced-motion: reduce){
-  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
-}
-
-/* ---------- focus ---------- */
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline:3px solid var(--yellow-400);
-  outline-offset:3px;
-}
-
-/* ================= NAV ================= */
-.nav{
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:22px clamp(20px,4vw,56px);
-  mix-blend-mode:difference;
-  color:#fff;
-}
-.nav-logo{
-  font-family:var(--display);
-  font-size:1.15rem;
-  letter-spacing:.02em;
-  display:flex; align-items:center; gap:10px;
-}
-.nav-logo svg{width:26px; height:26px;}
-.nav-links{display:flex; gap:clamp(16px,2.4vw,34px); font-size:.82rem; letter-spacing:.03em;}
-.nav-links a{opacity:.85; transition:opacity .2s;}
-.nav-links a:hover{opacity:1;}
-.nav-cta{
-  border:1px solid currentColor; padding:9px 18px; border-radius:999px; font-size:.78rem;
-  letter-spacing:.03em; white-space:nowrap;
-}
-.nav-burger{display:none;}
-@media (max-width:820px){
-  .nav-links{display:none;}
-}
-
-/* ================= HERO ================= */
-.hero{
-  min-height:100svh;
-  background:var(--brown-950);
-  color:var(--cream-50);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  overflow:hidden;
-  padding-top:110px;
-}
-.hero-parallax{
-  position:absolute; inset:0;
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(88px, 128px));
-  justify-content:space-between;
-  gap:10px;
-  padding:0 clamp(16px,3vw,40px);
-  opacity:.9;
-}
-.hero-tile{
-  position:relative;
-  will-change:transform;
-}
-.hero-tile-inner{
-  position:relative;
-  width:100%; height:100%;
-  border-radius:6px;
-  overflow:hidden;
-  background:linear-gradient(160deg, var(--brown-800), var(--brown-700));
-  animation:heroFloat 6s ease-in-out infinite;
-  will-change:transform;
-}
-.hero-tile-inner::after{
-  content:attr(data-tag);
-  position:absolute; left:10px; bottom:10px;
-  font-family:var(--body); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase;
-  color:rgba(248,244,233,.55);
-}
-@keyframes heroFloat{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-16px);}
-}
-.hero-tile.t1{margin-top:14vh; aspect-ratio:3/4;}
-.hero-tile.t1 .hero-tile-inner{background:linear-gradient(150deg,#5a4326,#7a5730); animation-duration:6.5s; animation-delay:-1s;}
-.hero-tile.t2{margin-top:-4vh; aspect-ratio:3/4;}
-.hero-tile.t2 .hero-tile-inner{background:linear-gradient(150deg,var(--orange-600),#a83913); animation-duration:5.5s; animation-delay:-3s;}
-.hero-tile.t3{margin-top:6vh; aspect-ratio:4/5;}
-.hero-tile.t3 .hero-tile-inner{background:linear-gradient(150deg,#443722,#2c2314); animation-duration:7s; animation-delay:-.5s;}
-.hero-tile.t4{margin-top:-8vh; aspect-ratio:3/4;}
-.hero-tile.t4 .hero-tile-inner{background:linear-gradient(150deg,var(--yellow-400),#a7ac00); animation-duration:6s; animation-delay:-2s;}
-.hero-tile.t5{margin-top:10vh; aspect-ratio:4/5;}
-.hero-tile.t5 .hero-tile-inner{background:linear-gradient(150deg,#5a4326,#332711); animation-duration:6.8s; animation-delay:-4s;}
-.hero-tile.t6{margin-top:-2vh; aspect-ratio:3/4;}
-.hero-tile.t6 .hero-tile-inner{background:linear-gradient(150deg,var(--orange-500),#7a2f10); animation-duration:5.8s; animation-delay:-1.5s;}
-.hero-tile.t7{margin-top:8vh; aspect-ratio:4/5;}
-.hero-tile.t7 .hero-tile-inner{background:linear-gradient(150deg,#6b4f2c,#3a2e1e); animation-duration:6.3s; animation-delay:-2.6s;}
-.hero-tile.t8{margin-top:-6vh; aspect-ratio:3/4;}
-.hero-tile.t8 .hero-tile-inner{background:linear-gradient(150deg,var(--yellow-400),var(--orange-500)); animation-duration:5.2s; animation-delay:-.8s;}
-@media (max-width:520px){
-  .hero-tile.t7,.hero-tile.t8{display:none;}
-}
-
-.hero-content{
-  position:relative; z-index:5;
-  padding:0 clamp(20px,4vw,56px) 64px;
-  background:linear-gradient(180deg, transparent, var(--brown-950) 55%);
-  padding-top:22vh;
-}
-.hero-eyebrow{
-  display:flex; align-items:center; gap:10px;
-  font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--yellow-400);
-  margin-bottom:18px;
-}
-.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--orange-500);}
-h1.hero-title{
-  font-family:var(--display);
-  font-weight:400;
-  font-size:clamp(3rem, 9vw, 7.5rem);
-  line-height:.92;
-  letter-spacing:-.01em;
-  text-transform:uppercase;
-  max-width:14ch;
-}
-h1.hero-title em{
-  font-style:normal;
-  color:var(--orange-500);
-}
-.hero-sub{
-  margin-top:24px;
-  max-width:520px;
-  font-size:clamp(1rem,1.6vw,1.2rem);
-  color:var(--cream-200);
-  line-height:1.55;
-}
-.hero-actions{margin-top:38px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
-.btn{
-  font-family:var(--body); font-weight:600; font-size:.85rem; letter-spacing:.02em;
-  padding:15px 28px; border-radius:999px; display:inline-flex; align-items:center; gap:8px;
-  transition:transform .25s ease, background .25s ease;
-}
-.btn-primary{background:var(--orange-500); color:var(--brown-950);}
-.btn-primary:hover{transform:translateY(-2px); background:var(--yellow-400);}
-.btn-ghost{border:1px solid rgba(248,244,233,.35); color:var(--cream-50);}
-.btn-ghost:hover{border-color:var(--cream-50);}
-.hero-scroll{
-  position:absolute; right:clamp(20px,4vw,56px); bottom:36px; z-index:5;
-  writing-mode:vertical-rl; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--cream-200);
-  display:flex; align-items:center; gap:12px;
-}
-.hero-scroll::after{content:""; width:1px; height:52px; background:currentColor; opacity:.5;}
-@media (max-width:700px){.hero-scroll{display:none;}}
-
-/* ================= EYE SIGNATURE ================= */
-.eye-wrap{display:inline-block;}
-.eye-svg .ray{transform-origin:150px 150px; transition:transform .6s ease;}
-.eye-svg .pupil{transform-origin:150px 150px;}
-
-/* ================= MANIFESTO (Nós, Ukêria) ================= */
-.manifesto{
-  background:var(--cream-50);
-  padding:clamp(80px,12vw,150px) 0;
-}
-.manifesto .container{
-  display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,6vw,90px); align-items:center;
-}
-.manifesto-eye{display:flex; justify-content:center;}
-.manifesto-eye svg{width:min(380px,80vw); height:auto; transform-origin:50% 50%; will-change:transform;}
-.manifesto-text .eyebrow{color:var(--orange-600);}
-.manifesto-text h2{
-  font-family:var(--editorial);
-  font-style:italic;
-  font-weight:600;
-  font-size:clamp(2.1rem,4.4vw,3.4rem);
-  line-height:1.08;
-  margin:14px 0 26px;
-}
-.manifesto-text p{
-  font-size:1.05rem; line-height:1.75; color:#4a3f2e; max-width:46ch;
-}
-.manifesto-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
-.tag{
-  border:1px solid var(--brown-700); border-radius:999px; padding:7px 16px;
-  font-size:.78rem; letter-spacing:.03em; color:var(--brown-800);
-}
-@media (max-width:820px){
-  .manifesto .container{grid-template-columns:1fr; text-align:center;}
-  .manifesto-text p{margin-inline:auto;}
-  .manifesto-tags{justify-content:center;}
-}
-
-/* ================= ORIGEM DO NOME ================= */
-.origin{
-  background:var(--cream-50);
-  padding-bottom:clamp(60px,10vw,120px);
-}
-.origin-stage{
-  display:flex; flex-wrap:nowrap; justify-content:center; align-items:center;
-  gap:15px;
-  padding:clamp(50px,7vw,90px) 0 clamp(30px,4vw,50px);
-  border-top:1px solid var(--cream-200);
-  overflow:hidden;
-}
-.origin-word{
-  font-family:var(--display);
-  font-size:clamp(1.9rem,9vw,4.6rem);
-  text-transform:lowercase;
-  display:flex; flex-wrap:nowrap; align-items:center; gap:clamp(6px,2vw,16px);
-  white-space:nowrap;
-  will-change:transform;
-}
-.origin-word .bar{
-  width:clamp(30px,7vw,74px); height:clamp(18px,4vw,40px);
-  background:var(--yellow-400);
-  clip-path:polygon(14% 0, 100% 0, 86% 100%, 0% 100%);
-  flex-shrink:0;
-}
-.origin-grid{
-  display:grid; grid-template-columns:1fr 1fr;
-}
-.origin-cell{
-  padding:0 clamp(24px,4vw,60px) clamp(50px,6vw,90px);
-  display:flex; flex-direction:column; justify-content:center;
-  border-right:1px solid var(--cream-200);
-}
-.origin-cell:last-child{border-right:none;}
-.origin-cell p{font-size:1.68rem; line-height:1.55; color:#4a3f2e; max-width:34ch; will-change:font-size;}
-.origin-cell strong{color:var(--orange-600);}
-@media (max-width:760px){
-  .origin-grid{grid-template-columns:1fr;}
-  .origin-cell{border-right:none; border-bottom:1px solid var(--cream-200); padding-top:24px;}
-}
-
-/* ================= TERENA ================= */
-.terena{
-  background:var(--brown-900);
-  color:var(--cream-50);
-  padding:clamp(80px,12vw,150px) 0;
-  position:relative;
-  overflow:hidden;
-}
-.terena-blob{
-  position:absolute; top:-10%; left:-12%;
-  width:60vw; height:60vw; max-width:720px; max-height:720px;
-  background:radial-gradient(circle at 35% 35%, var(--yellow-400), transparent 70%);
-  opacity:.35; filter:blur(10px);
-  border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;
-}
-.terena .container{position:relative; z-index:2;}
-.terena-head{max-width:640px; margin-bottom:64px;}
-.terena-head .eyebrow{color:var(--yellow-400);}
-.terena-head h2{
-  font-family:var(--display); text-transform:uppercase; font-weight:400;
-  font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.02; margin-top:14px;
-}
-.terena-head p{margin-top:20px; font-size:1.05rem; line-height:1.75; color:var(--cream-200); max-width:56ch;}
-
-.terena-quotes{
-  display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(24px,4vw,48px); align-items:stretch;
-}
-.eye-frame{
-  clip-path: ellipse(52% 40% at 50% 50%);
-  aspect-ratio:4/3;
-  background:linear-gradient(150deg,#5a4326,#241c12);
-  display:flex; align-items:center; justify-content:center;
-  position:relative;
-}
-.eye-frame .cap{
-  position:absolute; bottom:14px; left:0; right:0; text-align:center;
-  font-size:.65rem; letter-spacing:.08em; color:rgba(248,244,233,.55); text-transform:uppercase;
-}
-.quote-card{
-  background:rgba(248,244,233,.05);
-  border:1px solid rgba(248,244,233,.14);
-  border-radius:18px;
-  padding:clamp(28px,3.4vw,44px);
-  display:flex; flex-direction:column; justify-content:space-between; gap:22px;
-}
-.quote-card blockquote{
-  font-family:var(--editorial); font-style:italic; font-weight:500;
-  font-size:clamp(1.3rem,2.2vw,1.8rem); line-height:1.3;
-}
-.quote-card cite{font-style:normal; font-size:.85rem; letter-spacing:.03em; color:var(--yellow-400);}
-.quote-card .role{display:block; font-size:.75rem; color:var(--cream-200); opacity:.7; margin-top:2px;}
-
-.terena-row2{margin-top:clamp(24px,4vw,48px); display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(24px,4vw,48px);}
-@media (max-width:900px){
-  .terena-quotes,.terena-row2{grid-template-columns:1fr;}
-}
-
-.terena-closing{
-  margin-top:clamp(60px,8vw,100px);
-  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
-}
-.terena-closing svg{width:70px; height:70px; flex-shrink:0;}
-.terena-closing ul{list-style:none; font-family:var(--editorial); font-style:italic; font-size:clamp(1.3rem,2.6vw,2rem);}
-.terena-closing li{line-height:1.35;}
-.terena-closing li em{color:var(--orange-500); font-style:italic;}
-.terena-closing li:last-child{color:var(--yellow-400); font-style:normal; font-family:var(--display); text-transform:uppercase; font-size:.9em; letter-spacing:.02em;}
-
-/* ================= SERVIÇOS (mega) ================= */
-.mega-services{padding:clamp(80px,12vw,150px) 0; background:var(--cream-50);}
-.services-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:56px;}
-.services-head h2{
-  font-family:var(--display); text-transform:uppercase; font-weight:400;
-  font-size:clamp(2rem,4.6vw,3.2rem); max-width:14ch; line-height:.98;
-}
-.services-head p{max-width:36ch; color:#4a3f2e; line-height:1.6;}
-.btn-sm{padding:11px 22px; font-size:.76rem;}
-
-.service-category{margin-top:clamp(64px,8vw,110px);}
-.service-category:first-of-type{margin-top:0;}
-.category-head{
-  display:flex; align-items:flex-end; gap:20px; flex-wrap:wrap; justify-content:space-between;
-  border-top:1px solid var(--brown-700); padding-top:26px; margin-bottom:40px;
-}
-.category-head-left{display:flex; align-items:baseline; gap:18px;}
-.category-index{font-family:var(--display); font-size:clamp(1rem,2vw,1.3rem); color:var(--orange-600);}
-.category-head h3{font-family:var(--display); text-transform:uppercase; font-weight:400; font-size:clamp(2rem,5vw,3.4rem); line-height:1;}
-
-.subservice-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,32px);}
-.subservice{display:flex; flex-direction:column; gap:16px;}
-.subservice-media{
-  aspect-ratio:4/3; border-radius:18px; overflow:hidden; position:relative;
-  background:linear-gradient(150deg,var(--brown-700),var(--brown-800));
-}
-.subservice-media video, .subservice-media img{width:100%; height:100%; object-fit:cover; display:block;}
-.subservice-media.video-media{aspect-ratio:9/16;}
-.subservice-media.trio{display:grid; grid-template-columns:1.3fr 1fr; grid-template-rows:1fr 1fr; gap:4px;}
-.subservice-media.trio img:first-child{grid-row:1/3;}
-.sub-index{font-family:var(--body); font-weight:700; font-size:.78rem; color:var(--orange-600); letter-spacing:.04em;}
-.subservice h4{font-family:var(--display); text-transform:uppercase; font-size:clamp(1.1rem,2vw,1.45rem); margin:4px 0 8px;}
-.subservice p{font-size:.9rem; line-height:1.6; color:#4a3f2e;}
-.eye-list{list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:8px;}
-.eye-list li{position:relative; padding-left:28px; font-size:.84rem; color:#4a3f2e; line-height:1.5;}
-.eye-list li::before{content:""; position:absolute; left:0; top:.42em; width:15px; height:9px; border:1.4px solid var(--orange-500); border-radius:50%;}
-.eye-list li::after{content:""; position:absolute; left:6px; top:.58em; width:4px; height:4px; background:var(--orange-500); border-radius:50%;}
-.category-cta{margin-top:32px;}
-
-.social-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
-.social-pill{
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
-  border:1px solid var(--brown-700); border-radius:999px; padding:16px 24px;
-  font-family:var(--display); text-transform:uppercase; font-size:.92rem; letter-spacing:.01em;
-  transition:all .25s ease;
-}
-.social-pill:hover{background:var(--brown-950); color:var(--cream-50); border-color:var(--brown-950);}
-.social-pill span.arrow{opacity:.6; font-family:var(--body); transition:transform .25s ease;}
-.social-pill:hover span.arrow{transform:translateX(4px); opacity:1;}
-
-@media (max-width:900px){
-  .subservice-grid{grid-template-columns:1fr;}
-  .social-grid{grid-template-columns:1fr;}
-}
-
-/* ================= SERVIÇOS AVULSOS (pricing) ================= */
-.pricing{background:var(--brown-950); color:var(--cream-50); padding:clamp(80px,12vw,150px) 0; position:relative; overflow:hidden;}
-.pricing-blob{position:absolute; top:-15%; right:-15%; width:50vw; height:50vw; max-width:560px; max-height:560px; background:radial-gradient(circle at 40% 40%, var(--yellow-400), transparent 70%); opacity:.28; border-radius:44% 56% 60% 40%/46% 42% 58% 54%;}
-.pricing .container{position:relative; z-index:2;}
-.pricing-head{max-width:560px; margin-bottom:50px;}
-.pricing-head .eyebrow{color:var(--yellow-400);}
-.pricing-head h2{font-family:var(--display); text-transform:uppercase; font-weight:400; font-size:clamp(2rem,4.6vw,3.2rem); margin-top:14px;}
-.price-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
-.price-card{
-  background:rgba(248,244,233,.05); border:1px solid rgba(248,244,233,.16); border-radius:20px;
-  padding:clamp(28px,3vw,40px); display:flex; flex-direction:column; gap:18px;
-}
-.price-card h3{font-family:var(--display); text-transform:uppercase; font-size:1.4rem;}
-.price-card .sub{font-size:.82rem; color:var(--cream-200); opacity:.75;}
-.price-rows{display:flex; flex-direction:column; gap:12px; margin-top:6px;}
-.price-row{display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid rgba(248,244,233,.14); padding-top:12px; font-size:.92rem;}
-.price-row span:last-child{font-family:var(--display); color:var(--yellow-400); font-size:1.2rem;}
-@media (max-width:760px){.price-grid{grid-template-columns:1fr;}}
-
-/* ================= PORTFÓLIO GRID ================= */
-.portfolio-grid-section{background:var(--cream-50); padding:clamp(80px,12vw,150px) 0;}
-.portfolio-grid-head{max-width:560px; margin-bottom:44px;}
-.portfolio-grid-head .eyebrow{color:var(--orange-600);}
-.portfolio-grid-head h2{font-family:var(--display); text-transform:uppercase; font-weight:400; font-size:clamp(2rem,4.6vw,3.2rem); margin-top:14px;}
-.mosaic{columns:3 220px; column-gap:16px;}
-.mosaic img{width:100%; display:block; margin-bottom:16px; border-radius:14px; break-inside:avoid;}
-@media (max-width:700px){.mosaic{columns:2 160px;}}
-
-/* ================= CLIENTES ================= */
-.clients{background:var(--brown-900); padding:clamp(70px,10vw,120px) 0;}
-.clients-head{text-align:center; margin-bottom:44px;}
-.clients-head .eyebrow{color:var(--yellow-400); justify-content:center; display:flex;}
-.clients-head h2{font-family:var(--display); text-transform:uppercase; color:var(--cream-50); font-size:clamp(1.8rem,4vw,2.6rem); margin-top:14px;}
-.client-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:28px; align-items:center;}
-.client-grid img{
-  width:100%; height:64px; object-fit:contain;
-  background:var(--cream-50); border-radius:10px; padding:12px;
-  box-shadow:0 1px 3px rgba(0,0,0,.2);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.client-grid img:hover{transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.3);}
-@media (max-width:820px){.client-grid{grid-template-columns:repeat(3,1fr);}}
-
-/* ================= CASES ================= */
-.cases{background:var(--brown-950); color:var(--cream-50); padding:clamp(80px,12vw,150px) 0;}
-.cases-head{max-width:640px; margin-bottom:60px;}
-.cases-head .eyebrow{color:var(--orange-500);}
-.cases-head h2{font-family:var(--display); text-transform:uppercase; font-weight:400; font-size:clamp(2rem,4.6vw,3.2rem); margin-top:14px;}
-.case-flow{display:flex; flex-direction:column; gap:clamp(50px,6vw,90px);}
-.case-row{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,60px); align-items:center;}
-.case-row:nth-child(even){direction:rtl;}
-.case-row:nth-child(even) > *{direction:ltr;}
-.case-media{
-  aspect-ratio:5/4; border-radius:20px; overflow:hidden; position:relative;
-  background:linear-gradient(150deg,var(--brown-700),var(--brown-800));
-}
-.case-media img{width:100%; height:100%; object-fit:cover; display:block;}
-.case-media .badge{
-  position:absolute; top:16px; left:16px; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase;
-  background:rgba(248,244,233,.12); padding:6px 12px; border-radius:999px;
-}
-.case-text .eyebrow{color:var(--yellow-400);}
-.case-text h3, .case-text h4{font-family:var(--display); text-transform:uppercase; font-size:clamp(1.6rem,3vw,2.4rem); margin:12px 0 16px;}
-.case-text p{color:var(--cream-200); line-height:1.7; max-width:46ch;}
-.case-text .tags{margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;}
-.case-text .tags span{font-size:.72rem; border:1px solid rgba(248,244,233,.25); padding:5px 12px; border-radius:999px; color:var(--cream-200);}
-@media (max-width:820px){
-  .case-row, .case-row:nth-child(even){direction:ltr; grid-template-columns:1fr;}
-}
-
-/* Fotografia — estilo "cases" reaproveitado dentro de Serviços */
-.photo-cases{
-  background:var(--brown-950); color:var(--cream-50);
-  border-radius:24px; padding:clamp(40px,6vw,72px) clamp(24px,4vw,56px);
-}
-.photo-cases .category-index{color:var(--orange-500);}
-.photo-cases .category-head h3{color:var(--cream-50);}
-.photo-cases .case-text h4{margin-top:0;}
-
-/* ================= MANIFESTO EDITORIAL ================= */
-.editorial{
-  background:var(--brown-900); color:var(--cream-50);
-  padding:clamp(90px,14vw,180px) 0;
-  position:relative; overflow:hidden;
-}
-.editorial .cross{position:absolute; font-size:2rem; color:var(--orange-500); opacity:.8;}
-.editorial .cross.c1{top:8%; left:6%;}
-.editorial .cross.c2{top:18%; right:10%;}
-.editorial .cross.c3{bottom:12%; left:14%;}
-.editorial .container{position:relative; z-index:2; text-align:center;}
-.editorial-q{
-  font-family:var(--display); text-transform:uppercase; font-weight:400;
-  font-size:clamp(2.2rem,7vw,5.2rem); line-height:1; color:var(--orange-500);
-  max-width:16ch; margin-inline:auto;
-}
-.editorial-a{
-  font-family:var(--editorial); font-style:italic; font-weight:600;
-  font-size:clamp(1.4rem,3.6vw,2.4rem); margin-top:30px; color:var(--cream-50);
-}
-.editorial-photos{display:flex; justify-content:center; gap:18px; margin-top:56px;}
-.editorial-photos .ph{
-  width:clamp(110px,16vw,180px); aspect-ratio:1; border-radius:14px; overflow:hidden;
-  background:linear-gradient(150deg,var(--brown-700),var(--brown-800));
-}
-.editorial-photos .ph:nth-child(1){transform:rotate(-6deg);}
-.editorial-photos .ph:nth-child(2){transform:rotate(5deg); background:linear-gradient(150deg,var(--orange-600),#7a2f10);}
-
-/* ================= FEEDBACKS ================= */
-.feedbacks{background:var(--cream-50); padding:clamp(80px,12vw,150px) 0;}
-.feedbacks-head{text-align:center; max-width:520px; margin:0 auto 56px;}
-.feedbacks-head .eyebrow{color:var(--orange-600); justify-content:center; display:flex;}
-.feedbacks-head h2{font-family:var(--display); text-transform:uppercase; font-size:clamp(2rem,4.6vw,3rem); margin-top:14px;}
-.feedback-track{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.feedback-card{
-  background:#fff; border:1px solid var(--cream-200); border-radius:18px; padding:32px;
-  display:flex; flex-direction:column; gap:20px;
-}
-.feedback-card blockquote{font-family:var(--editorial); font-style:italic; font-size:1.1rem; line-height:1.55;}
-.feedback-who{display:flex; align-items:center; gap:12px;}
-.feedback-avatar{width:40px; height:40px; border-radius:50%; background:linear-gradient(150deg,var(--yellow-400),var(--orange-500));}
-.feedback-who span{display:block; font-size:.85rem; font-weight:600;}
-.feedback-who small{font-size:.75rem; color:#7a6f58;}
-@media (max-width:900px){.feedback-track{grid-template-columns:1fr;}}
-
-/* ================= CONTACT ================= */
-.contact{
-  background:var(--brown-950); color:var(--cream-50);
-  padding:clamp(80px,12vw,160px) 0;
-  position:relative; overflow:hidden;
-}
-.contact-blob{
-  position:absolute; bottom:-20%; right:-10%; width:55vw; height:55vw; max-width:640px; max-height:640px;
-  background:radial-gradient(circle at 60% 40%, var(--orange-600), transparent 70%);
-  opacity:.4; border-radius:38% 62% 55% 45% / 48% 40% 60% 52%;
-}
-.contact .container{position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,80px);}
-.contact-left .eyebrow{color:var(--yellow-400);}
-.contact-left h2{font-family:var(--display); text-transform:uppercase; font-size:clamp(2.2rem,5vw,3.6rem); line-height:1; margin:16px 0 24px;}
-.contact-left p{color:var(--cream-200); line-height:1.7; max-width:40ch; margin-bottom:32px;}
-.contact-links{display:flex; flex-direction:column; gap:14px;}
-.contact-links a{display:flex; align-items:center; gap:10px; font-size:.95rem; opacity:.85; transition:opacity .2s;}
-.contact-links a:hover{opacity:1; color:var(--yellow-400);}
-
-.form-field{margin-bottom:18px;}
-.form-field label{display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px; color:var(--cream-200);}
-.form-field input, .form-field select, .form-field textarea{
-  width:100%; background:transparent; border:none; border-bottom:1px solid rgba(248,244,233,.3);
-  color:var(--cream-50); font-family:var(--body); font-size:1rem; padding:10px 2px; transition:border-color .2s;
-}
-.form-field input:focus, .form-field select:focus, .form-field textarea:focus{border-color:var(--yellow-400); outline:none;}
-.form-field select option{color:#000;}
-.contact-form .btn-primary{width:100%; justify-content:center; margin-top:8px; border:none; cursor:pointer;}
-
-/* ================= FOOTER ================= */
-footer{background:var(--brown-950); color:var(--cream-200); padding:36px 0; border-top:1px solid rgba(248,244,233,.1);}
-footer .container{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:.8rem;}
-footer .foot-links{display:flex; gap:22px;}
-footer .foot-links a{opacity:.75; transition:opacity .2s;}
-footer .foot-links a:hover{opacity:1;}
-
-/* ================= reveal on scroll ================= */
-.reveal{opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease;}
-.reveal.in{opacity:1; transform:translateY(0);}
-</style>
+<title>Ukêria Produções — Produtora audiovisual</title>
+<meta name="description" content="Ukêria Produções: produtora de audiovisual e fotografia formada por mulheres. Estratégia de comunicação, produção de vídeo, fotografia profissional e gestão de redes sociais.">
+<meta name="theme-color" content="#141414">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ukêria Produções — O olhar estratégico que potencializa a sua marca">
+<meta property="og:description" content="Unimos estratégia de comunicação, produção de vídeo, fotografia profissional e gestão de redes sociais para marcas que querem construir autoridade no digital.">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+<link rel="preload" href="assets/fonts/Raleway-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/Quatera-Italic.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M20 8C10 8 3 20 3 20C3 20 10 32 20 32C30 32 37 20 37 20C37 20 30 8 20 8Z" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="20" cy="20" r="5.5" fill="currentColor"/>
-    </svg>
-    ukêria
-  </div>
-  <div class="nav-links">
-    <a href="#origem">A marca</a>
-    <a href="#terena">Ancestralidade</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#portfolio">Portfólio</a>
-    <a href="#clientes">Clientes</a>
-    <a href="#contato">Contato</a>
-  </div>
-  <a href="#contato" class="nav-cta">Solicitar orçamento</a>
-</nav>
+<!-- Símbolo oficial (a letra "a" com a íris/olho) — usado em avatares e marcas d'água -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="sym-a" viewBox="0 0 202.35 136.68">
+    <path fill="currentColor" d="m123.51,3.63l-3.27,27.25c-6.28-9.49-14.04-16.95-23.29-22.36C87.26,2.84,76.36,0,64.25,0,51.54,0,40.38,2.88,30.76,8.63c-9.61,5.75-17.14,13.74-22.59,23.95C2.72,42.8,0,54.72,0,68.34s2.72,25.54,8.17,35.76c5.45,10.22,12.98,18.2,22.59,23.95,9.61,5.75,20.78,8.63,33.49,8.63s23.01-2.84,32.7-8.51c9.28-5.44,17.03-12.96,23.25-22.57l3.31,27.45h43.82l-7.95-64.71,7.95-64.71h-43.82Zm-12.26,83.21c-4.54,5.37-9.8,9.61-15.78,12.72-5.98,3.1-12.3,4.65-18.96,4.65s-12.53-1.55-17.6-4.65c-5.07-3.1-9.05-7.34-11.92-12.72-2.88-5.37-4.31-11.54-4.31-18.5s1.44-13.13,4.31-18.5c2.87-5.37,6.85-9.61,11.92-12.72,5.07-3.1,10.93-4.65,17.6-4.65s12.98,1.55,18.96,4.65c5.98,3.1,11.24,7.34,15.78,12.72,4.54,5.37,7.95,11.54,10.22,18.5-2.27,6.96-5.68,13.13-10.22,18.5Z"/>
+    <path fill="currentColor" d="m89.97,55.81c-.59-.31-1.19-.57-1.8-.81-1.65-.7-3.47-1.06-5.48-1.06-.05,0-.1,0-.15,0-.05,0-.1,0-.16,0-2.02,0-3.85.36-5.5,1.07-.6.23-1.19.49-1.77.79-2.39,1.24-4.5,2.94-6.31,5.09-1.82,2.15-3.18,4.62-4.09,7.4.91,2.79,2.27,5.25,4.09,7.4,1.82,2.15,3.92,3.85,6.31,5.09.59.31,1.19.57,1.8.81,1.65.7,3.47,1.06,5.48,1.06.05,0,.1,0,.15,0,.05,0,.1,0,.16,0,2.02,0,3.85-.36,5.5-1.07.6-.23,1.19-.49,1.77-.79,2.39-1.24,4.5-2.94,6.31-5.09,1.82-2.15,3.18-4.62,4.09-7.4-.91-2.79-2.27-5.25-4.09-7.4-1.82-2.15-3.92-3.85-6.31-5.09Z"/>
+    <polygon fill="currentColor" points="193.58 68.12 200.98 3.76 182.84 3.76 174.89 67.35 174.89 68.89 183.26 133.18 202.35 132.97 193.58 68.12"/>
+  </symbol>
+</svg>
 
-<!-- ================= HERO ================= -->
-<header class="hero" id="hero">
-  <div class="hero-parallax" id="heroParallax">
-    <div class="hero-tile t1" data-speed="0.15"><div class="hero-tile-inner" data-tag="bastidores"></div></div>
-    <div class="hero-tile t2" data-speed="0.3"><div class="hero-tile-inner" data-tag="fotografia"></div></div>
-    <div class="hero-tile t3" data-speed="0.08"><div class="hero-tile-inner" data-tag="vídeo"></div></div>
-    <div class="hero-tile t4" data-speed="0.25"><div class="hero-tile-inner" data-tag="conceito"></div></div>
-    <div class="hero-tile t5" data-speed="0.12"><div class="hero-tile-inner" data-tag="mentoria"></div></div>
-    <div class="hero-tile t6" data-speed="0.2"><div class="hero-tile-inner" data-tag="feedbacks"></div></div>
-    <div class="hero-tile t7" data-speed="0.1"><div class="hero-tile-inner" data-tag="cases"></div></div>
-    <div class="hero-tile t8" data-speed="0.28"><div class="hero-tile-inner" data-tag="ancestralidade"></div></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-eyebrow"><span class="dot"></span>Produtora audiovisual · 100% mulheres</div>
-    <h1 class="hero-title">Contar histórias <em>com olhar</em> estratégico</h1>
-    <p class="hero-sub">Fotografia, vídeo e gestão de canais digitais com propósito, ancestralidade e resultado. Somos a Ukêria — o olho que enxerga o que sua marca precisa mostrar.</p>
-    <div class="hero-actions">
-      <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
-      <a href="#portfolio" class="btn btn-ghost">Ver trabalhos</a>
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="container">
+    <a class="nav-logo" href="#inicio" aria-label="Ukêria Produções — início">
+      <img src="assets/brand/logo-tipografico-bege.svg" alt="Ukêria" width="117" height="26">
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" id="menu" aria-label="Principal">
+        <a href="#ukeria">A Ukêria</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-fazemos">Como fazemos</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <a href="#contato" class="btn btn-primary nav-cta-m">Bora conversar</a>
+      </nav>
+      <a href="#contato" class="btn btn-primary">Bora conversar</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span></button>
     </div>
   </div>
-  <div class="hero-scroll">role para explorar</div>
 </header>
 
-<!-- ================= MANIFESTO ================= -->
-<section class="manifesto reveal" id="marca">
+<main>
+
+<!-- ================= INÍCIO ================= -->
+<section class="sec hero bg-verde-05" id="inicio">
   <div class="container">
-    <div class="manifesto-eye">
-      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" class="eye-svg" aria-hidden="true">
-        <g class="ray" stroke="var(--ink)" stroke-width="1.6">
-          <line x1="150" y1="150" x2="150" y2="30"/>
-          <line x1="150" y1="150" x2="230" y2="50"/>
-          <line x1="150" y1="150" x2="272" y2="112"/>
-          <line x1="150" y1="150" x2="272" y2="188"/>
-          <line x1="150" y1="150" x2="230" y2="250"/>
-          <line x1="150" y1="150" x2="80" y2="60"/>
+    <div class="hero-text">
+      <p class="hero-kicker">Antes de produzir, a gente entende.</p>
+      <h1>O <span class="q">olhar estratégico</span> que potencializa a sua marca!</h1>
+      <p class="lead">Unimos estratégia de comunicação, produção de vídeo, fotografia profissional e gestão de redes sociais para marcas que querem construir autoridade no digital.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contato">Vamos entender o que sua marca precisa?</a>
+        <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <svg viewBox="0 0 640 640" role="img" aria-label="Símbolo da Ukêria: a letra a com um olho que acompanha o cursor">
+        <defs>
+          <radialGradient id="gLaranja"><stop offset="0" style="stop-color:var(--laranja-03)"/><stop offset="1" style="stop-color:var(--laranja-03);stop-opacity:0"/></radialGradient>
+          <radialGradient id="gAmarelo"><stop offset="0" style="stop-color:var(--amarelo-03)"/><stop offset="1" style="stop-color:var(--amarelo-03);stop-opacity:0"/></radialGradient>
+        </defs>
+        <!-- degrade focado -->
+        <circle class="eye-glow-o" cx="210" cy="400" r="210" fill="url(#gLaranja)"/>
+        <circle class="eye-glow-y" cx="430" cy="230" r="150" fill="url(#gAmarelo)"/>
+        <!-- linhas e perspectiva: raios saindo de um único ponto (o olho) -->
+        <g stroke="var(--bege-01)" stroke-width="2.4" stroke-linecap="round" opacity=".7">
+          <line x1="210" y1="400" x2="152.7" y2="75"/>
+          <line x1="210" y1="400" x2="251.8" y2="2.2"/>
+          <line x1="210" y1="400" x2="348.6" y2="56.9"/>
+          <line x1="210" y1="400" x2="462.8" y2="64.6"/>
+          <line x1="210" y1="400" x2="513.1" y2="154.6"/>
+          <line x1="210" y1="400" x2="596.5" y2="211.5"/>
+          <line x1="210" y1="400" x2="599.7" y2="310"/>
+          <line x1="210" y1="400" x2="589.9" y2="406.6"/>
         </g>
-        <circle class="pupil" cx="150" cy="150" r="46" fill="var(--orange-500)" opacity=".85"/>
+        <!-- símbolo oficial -->
+        <g transform="translate(36 250) scale(2.2)" fill="var(--bege-01)">
+          <path d="m123.51,3.63l-3.27,27.25c-6.28-9.49-14.04-16.95-23.29-22.36C87.26,2.84,76.36,0,64.25,0,51.54,0,40.38,2.88,30.76,8.63c-9.61,5.75-17.14,13.74-22.59,23.95C2.72,42.8,0,54.72,0,68.34s2.72,25.54,8.17,35.76c5.45,10.22,12.98,18.2,22.59,23.95,9.61,5.75,20.78,8.63,33.49,8.63s23.01-2.84,32.7-8.51c9.28-5.44,17.03-12.96,23.25-22.57l3.31,27.45h43.82l-7.95-64.71,7.95-64.71h-43.82Zm-12.26,83.21c-4.54,5.37-9.8,9.61-15.78,12.72-5.98,3.1-12.3,4.65-18.96,4.65s-12.53-1.55-17.6-4.65c-5.07-3.1-9.05-7.34-11.92-12.72-2.88-5.37-4.31-11.54-4.31-18.5s1.44-13.13,4.31-18.5c2.87-5.37,6.85-9.61,11.92-12.72,5.07-3.1,10.93-4.65,17.6-4.65s12.98,1.55,18.96,4.65c5.98,3.1,11.24,7.34,15.78,12.72,4.54,5.37,7.95,11.54,10.22,18.5-2.27,6.96-5.68,13.13-10.22,18.5Z"/>
+          <g class="iris-move" id="irisMove">
+            <path class="iris-blink" d="m89.97,55.81c-.59-.31-1.19-.57-1.8-.81-1.65-.7-3.47-1.06-5.48-1.06-.05,0-.1,0-.15,0-.05,0-.1,0-.16,0-2.02,0-3.85.36-5.5,1.07-.6.23-1.19.49-1.77.79-2.39,1.24-4.5,2.94-6.31,5.09-1.82,2.15-3.18,4.62-4.09,7.4.91,2.79,2.27,5.25,4.09,7.4,1.82,2.15,3.92,3.85,6.31,5.09.59.31,1.19.57,1.8.81,1.65.7,3.47,1.06,5.48,1.06.05,0,.1,0,.15,0,.05,0,.1,0,.16,0,2.02,0,3.85-.36,5.5-1.07.6-.23,1.19-.49,1.77-.79,2.39-1.24,4.5-2.94,6.31-5.09,1.82-2.15,3.18-4.62,4.09-7.4-.91-2.79-2.27-5.25-4.09-7.4-1.82-2.15-3.92-3.85-6.31-5.09Z"/>
+          </g>
+          <polygon points="193.58 68.12 200.98 3.76 182.84 3.76 174.89 67.35 174.89 68.89 183.26 133.18 202.35 132.97 193.58 68.12"/>
+        </g>
       </svg>
     </div>
-    <div class="manifesto-text">
-      <div class="eyebrow">Nós, Ukêria</div>
-      <h2>Um olhar que não se contenta em só registrar — quer transformar.</h2>
-      <p>Somos uma produtora audiovisual e de canais digitais formada 100% por mulheres. Criamos conteúdo com propósito, estratégia e resultado — da fotografia ao vídeo, da mentoria à gestão do seu Instagram. Cada projeto carrega a mesma pergunta: por que isso precisa existir?</p>
-      <div class="manifesto-tags">
-        <span class="tag">Fotografia</span>
-        <span class="tag">Videografia</span>
-        <span class="tag">Gestão de canais digitais</span>
-        <span class="tag">Mentoria</span>
+  </div>
+</section>
+
+<!-- ================= A UKÊRIA ================= -->
+<section class="sec bg-bege-01" id="ukeria">
+  <span class="mark tl" aria-hidden="true"></span>
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="eyebrow">A Ukêria · Quem somos</span>
+      <h2>Produção audiovisual estratégica para marcas que querem <span class="q">ser lembradas.</span></h2>
+      <div class="prose">
+        <p>Somos uma produtora de audiovisual e fotografia composta por mulheres. Criamos a partir do olhar, da escuta e da intenção, transformando histórias, posicionamentos e ideias em imagens capazes de gerar conexão e construir presença.</p>
+        <p>Tudo o que produzimos parte de um propósito. Unimos criatividade, produção e estratégia para transformar a essência de cada marca em uma comunicação que conecta, posiciona e permanece.</p>
       </div>
+      <p class="pull" style="margin-top:28px">Porque não basta aparecer. É preciso ser visto, reconhecido e lembrado.</p>
+    </div>
+    <div class="about-art reveal" aria-hidden="true">
+      <div class="glow"></div>
+      <!-- linhas e perspectiva: espiral de proporção áurea com linhas de construção -->
+      <svg viewBox="0 0 809 500" fill="none" stroke="var(--preto-ukeria)" stroke-width="2">
+        <rect x="0" y="0" width="809" height="500"/>
+        <rect x="0" y="0" width="500" height="500"/>
+        <rect x="500" y="0" width="309" height="309"/>
+        <rect x="618" y="309" width="191" height="191"/>
+        <rect x="500" y="382" width="118" height="118"/>
+        <rect x="500" y="309" width="73" height="73"/>
+        <rect x="573" y="309" width="45" height="45"/>
+        <path d="M0 500 A500 500 0 0 1 500 0 A309 309 0 0 1 809 309 A191 191 0 0 1 618 500 A118 118 0 0 1 500 382 A73 73 0 0 1 573 309 A45 45 0 0 1 618 354" stroke-width="3"/>
+      </svg>
     </div>
   </div>
 </section>
 
-<!-- ================= ORIGEM DO NOME ================= -->
-<section class="origin reveal" id="origem">
+<section class="sec origin bg-amarelo-03" id="origem" aria-labelledby="origem-t">
+  <svg class="origin-art" viewBox="0 0 420 300" fill="none" stroke="var(--preto-ukeria)" stroke-width="2" aria-hidden="true">
+    <ellipse cx="60" cy="150" rx="44" ry="118"/><ellipse cx="90" cy="150" rx="44" ry="118"/><ellipse cx="120" cy="150" rx="44" ry="118"/><ellipse cx="150" cy="150" rx="44" ry="118"/><ellipse cx="180" cy="150" rx="44" ry="118"/><ellipse cx="210" cy="150" rx="44" ry="118"/><ellipse cx="240" cy="150" rx="44" ry="118"/><ellipse cx="270" cy="150" rx="44" ry="118"/><ellipse cx="300" cy="150" rx="44" ry="118"/>
+  </svg>
   <div class="container">
-    <div class="origin-stage">
-      <div class="origin-word word-uke"><span class="bar"></span>ukê</div>
-      <div class="origin-word word-ria">ria<span class="bar"></span></div>
+    <span class="eyebrow">Origem</span>
+    <h2 class="sr-only" id="origem-t">Origem do nome Ukêria</h2>
+    <div class="origin-stage" aria-hidden="true"><span class="w w-uke" id="wUke">ukê</span><span class="w-dot"></span><span class="w w-ria" id="wRia">ria</span></div>
+    <div class="origin-def reveal">
+      <div><strong>Ukê</strong> vem da língua Terena e significa <strong>olho</strong>.</div>
+      <div><strong>Ria</strong> é um sufixo da língua portuguesa que remete a <strong>coletivo, conjunto</strong>.</div>
     </div>
-    <div class="origin-grid">
-      <div class="origin-cell">
-        <p class="origin-desc desc-uke">Palavra vinda da língua <strong>Terena</strong>, que significa <strong>olho</strong>.</p>
-      </div>
-      <div class="origin-cell">
-        <p class="origin-desc desc-ria">Sufixo da língua Portuguesa, que significa <strong>lugar</strong>, ramo de negócio ou coletivo, e <strong>ação</strong>.</p>
-      </div>
+    <p class="pull origin-sum reveal">Ukêria: um conjunto de olhares.</p>
+    <div class="prose reveal" style="max-width:62ch; margin:28px auto 0; text-align:left">
+      <p>Olhares diferentes que se encontram para enxergar cada marca por novos ângulos, encontrar o que existe de potente em cada história e transformar tudo isso em comunicação.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= TERENA ================= -->
-<section class="terena reveal" id="terena">
-  <div class="terena-blob" aria-hidden="true"></div>
+<section class="sec ancestry bg-verde-05" id="ancestralidade">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="glow y" aria-hidden="true"></div>
   <div class="container">
-    <div class="terena-head">
-      <div class="eyebrow">Ukêria &amp; a etnia Terena</div>
-      <h2>Presentes do Mato Grosso do Sul</h2>
-      <p>A etnia Terena foi escolhida por ser o local de origem da avó materna de Letícia Palhão, fundadora da produtora e mulher de etnia indígena. É essa ancestralidade que dá nome e visão à Ukêria.</p>
-    </div>
-
-    <div class="terena-quotes">
-      <div class="eye-frame">
-        <span class="cap">Foto: Alice Aedy e Eric Terena</span>
+    <div class="ancestry-grid">
+      <div class="reveal">
+        <span class="eyebrow">Ancestralidade</span>
+        <h2>Uma história de <span class="q">resistência.</span></h2>
+        <div class="prose" style="margin-top:24px">
+          <p>O nome também carrega uma história de ancestralidade. A referência à cultura Terena vem da origem da avó materna de Letícia Palhão, fundadora da Ukêria. É uma forma de reconhecer de onde viemos e levar essa história para o que estamos construindo.</p>
+          <p>O povo Terena carrega uma história marcada por resistência, preservação e luta por espaço. E essa ideia também atravessa a Ukêria.</p>
+        </div>
       </div>
-      <div class="quote-card">
-        <blockquote>"Nós temos a capacidade e temos a certeza que vamos cuidar bem do Brasil."</blockquote>
-        <div>
-          <cite>Val' Terena</cite>
-          <span class="role">Liderança indígena do Mato Grosso do Sul</span>
+      <div class="reveal">
+        <figure class="quote">
+          <blockquote>“Resistir para não morrer. Vamos em frente!”</blockquote>
+          <figcaption>Frase escolhida por representantes do povo Terena da aldeia de Icatu, no interior de São Paulo, para representar o módulo Terena em uma exposição realizada pelo Museu de Arqueologia e Etnologia da Universidade de São Paulo (MAE-USP), dedicada às histórias e culturas dos povos indígenas.</figcaption>
+        </figure>
+        <div class="prose" style="margin-top:28px">
+          <p>Para nós, ela carrega um significado que vai além da ancestralidade: fala sobre permanecer, avançar e construir novos caminhos sem deixar para trás aquilo que nos trouxe até aqui.</p>
+          <p>Às vezes, uma marca só precisa de novos olhares para enxergar a potência que já existe nela.</p>
         </div>
       </div>
     </div>
+    <ul class="mantra reveal">
+      <li>Ukêria é <em>resistência</em></li>
+      <li>é <em>transformação</em></li>
+      <li>é <em>visão</em></li>
+      <li>é futuro</li>
+    </ul>
+  </div>
+</section>
 
-    <div class="terena-row2">
-      <div class="quote-card">
-        <blockquote>"Resistir para não morrer. Vamos em frente!"</blockquote>
-        <span class="role">Índios Terena, em exposição sobre história e cultura na USP</span>
+<section class="sec move bg-bege-03" id="o-que-nos-move">
+  <span class="mark tr" aria-hidden="true"></span>
+  <div class="container">
+    <div class="move-grid">
+      <div class="reveal">
+        <span class="eyebrow">O que nos move</span>
+        <div class="big-num" aria-hidden="true">100%</div>
+        <h2>Uma produtora composta por <span class="q">mulheres.</span></h2>
       </div>
-      <div class="eye-frame">
-        <span class="cap">Foto: Reprodução / MAE-USP</span>
+      <div class="reveal">
+        <p class="lead" style="font-weight:700">Onde mulheres crescem juntas, todas chegam mais longe.</p>
+        <div class="prose">
+          <p>A Ukêria é uma produtora formada exclusivamente por mulheres. Mais do que uma característica da nossa equipe, isso faz parte da forma como enxergamos o mercado: mulheres ocupando espaços, criando, liderando e construindo juntas.</p>
+          <p>Nos move a luta das mulheres para conquistar seus espaços, construir seus negócios e ter seu trabalho reconhecido. Por isso, acreditamos na força dos nossos olhares, das nossas ideias e daquilo que somos capazes de construir juntas.</p>
+        </div>
+        <p class="move-lines">O nosso trabalho tem potência.<br>A nossa voz tem espaço.<br>E o que fazemos pode transformar a forma como marcas são vistas, lembradas e reconhecidas.</p>
       </div>
     </div>
 
-    <div class="terena-closing">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g fill="none" stroke="var(--yellow-400)" stroke-width="1.4" opacity=".85">
-          <ellipse cx="50" cy="50" rx="14" ry="34"/>
-          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(25 50 50)"/>
-          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(50 50 50)"/>
-          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(75 50 50)"/>
-          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(100 50 50)"/>
-          <ellipse cx="50" cy="50" rx="14" ry="34" transform="rotate(125 50 50)"/>
-        </g>
-      </svg>
-      <ul>
-        <li>Ukêria é <em>resistência</em></li>
-        <li>é <em>transformação</em></li>
-        <li>é <em>visão</em></li>
-        <li>é futuro</li>
-      </ul>
+    <div class="leaders reveal">
+      <h3>Quem lidera</h3>
+      <div class="leader-grid">
+        <article class="leader">
+          <div class="avatar" aria-hidden="true"><span class="glow"></span><svg><use href="#sym-a"/></svg></div>
+          <div>
+            <h4>Letícia Palhão</h4>
+            <p>Fundadora &amp; Fotógrafa</p>
+            <div class="social">
+              <a href="https://www.instagram.com/leticiapalhaolima/" target="_blank" rel="noopener" aria-label="Instagram de Letícia Palhão">Instagram</a>
+              <a href="https://www.linkedin.com/in/leticia-lima-9b8014272/" target="_blank" rel="noopener" aria-label="LinkedIn de Letícia Palhão">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+        <article class="leader">
+          <div class="avatar" aria-hidden="true"><span class="glow"></span><svg><use href="#sym-a"/></svg></div>
+          <div>
+            <h4>Ketheleen Dias</h4>
+            <p>Head de Design &amp; Analista de Projetos</p>
+            <div class="social">
+              <a href="https://www.instagram.com/neelehtek/" target="_blank" rel="noopener" aria-label="Instagram de Ketheleen Dias">Instagram</a>
+              <a href="https://www.linkedin.com/in/ketheleen-dias-009b98111/" target="_blank" rel="noopener" aria-label="LinkedIn de Ketheleen Dias">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= SERVIÇOS ================= -->
-<section class="mega-services reveal" id="servicos">
+<section class="sec bg-bege-01" id="servicos">
+  <span class="mark tr" aria-hidden="true"></span>
   <div class="container">
-    <div class="services-head">
-      <h2>O que fazemos</h2>
-      <p>Serviços pensados para dar visibilidade estratégica à sua marca — do conceito à entrega final.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Serviços</span>
+      <h2>O que podemos construir <span class="q">a partir dessa estratégia.</span></h2>
     </div>
-
-    <!-- Categoria: Vídeos -->
-    <div class="service-category">
-      <div class="category-head">
-        <div class="category-head-left">
-          <span class="category-index">01</span>
-          <h3>Vídeos</h3>
-        </div>
-        <a class="btn btn-primary btn-sm" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Orçamento personalizado</a>
-      </div>
-      <div class="subservice-grid">
-        <article class="subservice">
-          <div class="subservice-media video-media">
-            <video src="assets/videos/09f8db59e879feb31d7f3620787e003a.mp4" muted loop autoplay playsinline preload="metadata"></video>
-          </div>
-          <span class="sub-index">01</span>
-          <h4>Reels</h4>
-          <p>Vídeos curtos, dinâmicos e envolventes que destacam o melhor do seu conteúdo — feitos pra atrair atenção e gerar impacto imediato.</p>
-          <ul class="eye-list">
-            <li>Planejamento e roteiro criativo</li>
-            <li>Filmagem profissional com equipamento de alta qualidade</li>
-            <li>Edição ágil e moderna, com música, legendas e efeitos</li>
-          </ul>
-        </article>
-        <article class="subservice">
-          <div class="subservice-media video-media">
-            <video src="assets/videos/b47d59e382bfe77bcad171450a7545e5.mp4" muted loop autoplay playsinline preload="metadata"></video>
-          </div>
-          <span class="sub-index">02</span>
-          <h4>YouTube</h4>
-          <p>O YouTube como plataforma de comunicação e marketing — vídeos cativantes e profissionais que engajam seu público e fortalecem sua marca.</p>
-          <ul class="eye-list">
-            <li>Roteirização para retenção de audiência</li>
-            <li>Produção completa, da captação à entrega</li>
-            <li>Edição pensada para o algoritmo da plataforma</li>
-          </ul>
-        </article>
-        <article class="subservice">
-          <div class="subservice-media video-media">
-            <video src="assets/videos/85efa1542886b24627071e7183616535.mp4" muted loop autoplay playsinline preload="metadata"></video>
-          </div>
-          <span class="sub-index">03</span>
-          <h4>Cobertura de Eventos</h4>
-          <p>Cada evento é único e cheio de momentos que merecem ser eternizados — corporativo, social, cultural ou esportivo.</p>
-          <ul class="eye-list">
-            <li>Registro completo com criatividade e profissionalismo</li>
-            <li>Equipe especializada em cada detalhe do evento</li>
-            <li>Entrega ágil pós-evento</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-
-    <!-- Categoria: Fotografia -->
-    <div class="service-category photo-cases">
-      <div class="category-head">
-        <div class="category-head-left">
-          <span class="category-index">02</span>
-          <h3>Fotografia</h3>
-        </div>
-        <a class="btn btn-primary btn-sm" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Orçamento personalizado</a>
-      </div>
-      <div class="case-flow">
-        <div class="case-row">
-          <div class="case-media">
-            <img src="assets/images/2260b2c2fec10d3bbf1bb8b93e1d08d7.jpg" alt="Retrato profissional de empreendedora" loading="lazy">
-          </div>
-          <div class="case-text">
-            <h4>Retratos para Empreendedoras</h4>
-            <p>Celebramos a força e a determinação das mulheres empreendedoras — retratos pensados pra destacar personalidade, confiança e profissionalismo.</p>
-          </div>
-        </div>
-        <div class="case-row">
-          <div class="case-media">
-            <img src="assets/images/0662bf402e6d31adb5ed7d556578979f.jpg" alt="Fotografia para salão de beleza" loading="lazy">
-          </div>
-          <div class="case-text">
-            <h4>Fotografia para Salões de Beleza</h4>
-            <div class="tags"><span>Cortes, colorações e penteados</span><span>Ambientação do salão</span><span>Clientes satisfeitos</span></div>
-          </div>
-        </div>
-        <div class="case-row">
-          <div class="case-media">
-            <img src="assets/images/afa3440a6d81093b11dc489935236026.jpg" alt="Cobertura fotográfica de evento" loading="lazy">
-          </div>
-          <div class="case-text">
-            <h4>Cobertura de Eventos</h4>
-            <p>Cada detalhe e emoção do seu evento capturados — corporativo, social ou cultural — pela equipe Ukêria.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Categoria: Redes Sociais -->
-    <div class="service-category">
-      <div class="category-head">
-        <div class="category-head-left">
-          <span class="category-index">03</span>
-          <h3>Marketing para redes sociais</h3>
-        </div>
-        <a class="btn btn-primary btn-sm" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Orçamento personalizado</a>
-      </div>
-      <div class="social-grid">
-        <a class="social-pill" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Gerenciamento de redes sociais <span class="arrow">↗</span></a>
-        <a class="social-pill" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Artes para redes sociais <span class="arrow">↗</span></a>
-        <a class="social-pill" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Apresentação de portfólio <span class="arrow">↗</span></a>
-        <a class="social-pill" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Análise de Instagram <span class="arrow">↗</span></a>
-        <a class="social-pill" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Estratégia de conteúdo <span class="arrow">↗</span></a>
-        <a class="social-pill" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Pack de conteúdo <span class="arrow">↗</span></a>
-      </div>
-    </div>
-
-    <!-- Categoria: Mentoria -->
-    <div class="service-category">
-      <div class="category-head">
-        <div class="category-head-left">
-          <span class="category-index">04</span>
-          <h3>Mentoria</h3>
-        </div>
-        <a class="btn btn-primary btn-sm" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">Orçamento personalizado</a>
-      </div>
-      <p style="max-width:56ch; color:#4a3f2e; line-height:1.7; font-size:1rem;">Acompanhamento para marcas e criadoras que querem estruturar sua própria produção de conteúdo — do planejamento à execução, com o mesmo olhar estratégico que a Ukêria aplica em seus próprios projetos.</p>
-    </div>
+    <ul class="service-grid reveal">
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">01</span><h3>Produção Audiovisual</h3></li>
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">02</span><h3>Conteúdo para Redes Sociais</h3></li>
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">03</span><h3>Gerenciamento de redes sociais</h3></li>
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">04</span><h3>Vídeos institucionais</h3></li>
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">05</span><h3>Fotografia para marcas</h3></li>
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">06</span><h3>Cobertura Real-time</h3></li>
+      <li class="service"><span class="mark tr" aria-hidden="true"></span><span class="n">07</span><h3>Estratégia de comunicação e presença digital</h3></li>
+      <li><a class="service cta" href="#contato" style="height:100%"><span class="mark tr" aria-hidden="true"></span><h3>Vamos entender o que sua marca precisa?</h3><span class="arrow">Falar com a gente →</span></a></li>
+    </ul>
   </div>
 </section>
 
-<!-- ================= SERVIÇOS AVULSOS ================= -->
-<section class="pricing reveal" id="avulsos">
-  <div class="pricing-blob" aria-hidden="true"></div>
+<!-- ================= COMO FAZEMOS ================= -->
+<section class="sec bg-verde-05" id="como-fazemos">
+  <svg class="how-bg" viewBox="0 0 420 300" fill="none" stroke="var(--verde-03)" stroke-width="2" aria-hidden="true">
+    <ellipse cx="60" cy="150" rx="44" ry="118"/><ellipse cx="90" cy="150" rx="44" ry="118"/><ellipse cx="120" cy="150" rx="44" ry="118"/><ellipse cx="150" cy="150" rx="44" ry="118"/><ellipse cx="180" cy="150" rx="44" ry="118"/><ellipse cx="210" cy="150" rx="44" ry="118"/><ellipse cx="240" cy="150" rx="44" ry="118"/><ellipse cx="270" cy="150" rx="44" ry="118"/><ellipse cx="300" cy="150" rx="44" ry="118"/>
+  </svg>
   <div class="container">
-    <div class="pricing-head">
-      <div class="eyebrow">Serviços avulsos</div>
-      <h2>Precisa de algo pontual?</h2>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Como fazemos</span>
+      <h2>A estratégia por trás <span class="q">da criação.</span></h2>
     </div>
-    <div class="price-grid">
-      <div class="price-card">
-        <h3>Edição de Reels</h3>
-        <p class="sub">Vídeos atrativos e criativos para o seu negócio.</p>
-        <div class="price-rows">
-          <div class="price-row"><span>30s a 1min</span><span>R$150,00</span></div>
-          <div class="price-row"><span>1min a 3min</span><span>R$250,00</span></div>
-        </div>
-        <a class="btn btn-primary btn-sm" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" style="align-self:flex-start;">Solicitar</a>
-      </div>
-      <div class="price-card">
-        <h3>Presets para Fotos</h3>
-        <p class="sub">Edição no Lightroom, personalizado para a sua marca.</p>
-        <div class="price-rows">
-          <div class="price-row"><span>Pacote personalizado</span><span>R$250,00</span></div>
-        </div>
-        <a class="btn btn-primary btn-sm" href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" style="align-self:flex-start;">Solicitar</a>
-      </div>
-    </div>
+    <ol class="steps reveal" style="list-style:none; padding:0">
+      <li class="step"><span class="n">1</span><h3>Entender</h3><p>Antes de produzir, a gente precisa entender. Conhecemos a empresa, seus objetivos, o que precisa ser comunicado e para quem.</p></li>
+      <li class="step"><span class="n">2</span><h3>Direcionar</h3><p>É aqui que a estratégia entra. Em uma reunião estratégica, usamos perguntas e ferramentas para definir, junto com a empresa, seu posicionamento, valores, tom de voz e caminhos de comunicação no digital. A partir disso, direcionamos os conteúdos e as produções da marca.</p></li>
+      <li class="step"><span class="n">3</span><h3>Produzir</h3><p>É hora de colocar a estratégia em prática. Planejamos e produzimos cada entrega, seja conteúdo para redes sociais, vídeo, fotografia ou outro formato, pensando não só em como produzir, mas também em como aquele conteúdo será usado e divulgado.</p></li>
+      <li class="step"><span class="n">4</span><h3>Acompanhar</h3><p>Depois que o conteúdo vai para o mundo, a gente acompanha o que acontece. Observamos as entregas, identificamos o que funciona melhor e usamos esses aprendizados para ajustar os próximos conteúdos e produções.</p></li>
+    </ol>
+    <p class="how-flow reveal">Entender → Direcionar → Produzir → Acompanhar.</p>
   </div>
 </section>
 
-<!-- ================= PORTFÓLIO (grid rápido) ================= -->
-<section class="portfolio-grid-section reveal" id="portfolio">
+<!-- ================= PROJETOS ================= -->
+<section class="sec bg-bege-01" id="projetos">
+  <span class="mark tr" aria-hidden="true"></span>
   <div class="container">
-    <div class="portfolio-grid-head">
-      <div class="eyebrow">Portfólio</div>
-      <h2>Um pouco do que já produzimos</h2>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Projetos</span>
+      <h2>O que esse processo <span class="q">já produziu</span> na prática.</h2>
     </div>
-    <div class="mosaic">
-      <img src="assets/images/e4635eb95847c247cb91f32f3af26f5d.png" alt="Trabalho de portfólio Ukêria" loading="lazy">
-      <img src="assets/images/da5665114165e83cb760560251f6c8cd.png" alt="Trabalho de portfólio Ukêria" loading="lazy">
-      <img src="assets/images/4b6a2e8da4e8298333f4b2016f89d0a0.png" alt="Trabalho de portfólio Ukêria" loading="lazy">
-      <img src="assets/images/233fe58c45e5bfa3693f68386cbe66e2.png" alt="Trabalho de portfólio Ukêria" loading="lazy">
-      <img src="assets/images/897582ccef5db873dd71e56edcfa4ead.png" alt="Trabalho de portfólio Ukêria" loading="lazy">
-      <img src="assets/images/5529877d1994be7f09f8459689c67249.png" alt="Trabalho de portfólio Ukêria" loading="lazy">
-    </div>
-  </div>
-</section>
 
-<!-- ================= CLIENTES ================= -->
-<section class="clients reveal" id="clientes">
-  <div class="container">
-    <div class="clients-head">
-      <div class="eyebrow">Clientes</div>
-      <h2>Marcas que confiam no nosso olhar</h2>
+    <div class="chips" role="group" aria-label="Filtrar projetos por categoria">
+      <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" data-filter="producao" aria-pressed="false">Produções audiovisuais</button>
+      <button class="chip" type="button" data-filter="redes" aria-pressed="false">Redes Sociais</button>
+      <button class="chip" type="button" data-filter="institucional" aria-pressed="false">Vídeos Institucionais</button>
+      <button class="chip" type="button" data-filter="cobertura" aria-pressed="false">Cobertura real-time</button>
+      <button class="chip" type="button" data-filter="estrategia" aria-pressed="false">Estratégia e presença digital</button>
     </div>
-    <div class="client-grid">
-      <img src="assets/images/7ac4472c80a563ff5b3b8964d4c66d58.png" alt="Cliente Ukêria" loading="lazy">
-      <img src="assets/images/58a1285ffc92f15ee9158afdcefaf2d2.png" alt="Cliente Ukêria" loading="lazy">
-      <img src="assets/images/469a5d750b58f7e546f4f52ea4db9744.png" alt="Cliente Ukêria" loading="lazy">
-      <img src="assets/images/ef15319fbd31e83038c974ae090203a4.png" alt="Cliente Ukêria" loading="lazy">
-      <img src="assets/images/206550ca1e7e0dce47817aa0ce5872fb.png" alt="Cliente Ukêria" loading="lazy">
-      <img src="assets/images/tati-pugliese.svg" alt="Cliente Tati Pugliese" loading="lazy">
-      <img src="assets/images/multiforme-filmes.svg" alt="Cliente Multiforme Filmes" loading="lazy">
-      <img src="assets/images/owner-entertainment.svg" alt="Cliente Owner Entertainment" loading="lazy">
-      <img src="assets/images/ferrasin-advogados.svg" alt="Cliente Ferrasin Advogados" loading="lazy">
-      <img src="assets/images/luxxuoso-cosmeticos.svg" alt="Cliente Luxxuoso Cosméticos" loading="lazy">
-      <img src="assets/images/fd59fd5959b65751603fb9e823491fcf.png" alt="Cliente Ukêria" loading="lazy">
-    </div>
-  </div>
-</section>
 
-<!-- ================= MANIFESTO EDITORIAL ================= -->
-<section class="editorial reveal">
-  <span class="cross c1">+</span>
-  <span class="cross c2">+</span>
-  <span class="cross c3">+</span>
-  <div class="container">
-    <div class="eyebrow" style="color:var(--yellow-400); margin-bottom:18px;">O que nos move</div>
-    <div class="editorial-q">A pergunta não é<br>"o que vamos postar?"</div>
-    <div class="editorial-a">é "por que isso precisa existir?"</div>
-    <div class="editorial-photos">
-      <div class="ph"></div>
-      <div class="ph"></div>
-    </div>
-  </div>
-</section>
+    <div class="masonry" id="grid">
+      <!-- Produções audiovisuais -->
+      <figure class="project glass" data-cat="producao" style="--ar:540/960"><video src="assets/video/web/produto-luxxuoso.mp4" poster="assets/video/web/produto-luxxuoso.jpg" muted loop playsinline preload="none" aria-label="Vídeo de produto da Luxxuoso Cosméticos"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Produções audiovisuais</figcaption></figure>
+      <figure class="project glass" data-cat="producao" style="--ar:900/600"><img src="assets/img/web/av-equipe-gravacao.webp" width="900" height="600" loading="lazy" alt="Equipe reunida em frente a uma câmera durante uma gravação"><figcaption class="tag">Produções audiovisuais</figcaption></figure>
+      <figure class="project glass" data-cat="producao" style="--ar:540/960"><video src="assets/video/web/estudio-producao.mp4" poster="assets/video/web/estudio-producao.jpg" muted loop playsinline preload="none" aria-label="Vídeo em estúdio de produção"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Produções audiovisuais</figcaption></figure>
+      <figure class="project glass" data-cat="producao" style="--ar:1000/666"><img src="assets/img/web/av-salao.webp" width="1000" height="666" loading="lazy" alt="Cabeleireiro atendendo cliente em um salão de beleza"><figcaption class="tag">Produções audiovisuais</figcaption></figure>
+      <figure class="project glass" data-cat="producao" style="--ar:789/1402"><img src="assets/img/web/av-retrato.webp" width="789" height="1402" loading="lazy" alt="Retrato de três mulheres em ensaio fotográfico"><figcaption class="tag">Produções audiovisuais</figcaption></figure>
 
-<!-- ================= FEEDBACKS ================= -->
-<section class="feedbacks reveal">
-  <div class="container">
-    <div class="feedbacks-head">
-      <div class="eyebrow">Feedbacks</div>
-      <h2>Quem trabalha com a gente, confia</h2>
+      <!-- Redes Sociais -->
+      <figure class="project glass" data-cat="redes" style="--ar:1/1"><video src="assets/video/web/reels-motion.mp4" poster="assets/video/web/reels-motion.jpg" muted loop playsinline preload="none" aria-label="Reels com animação gráfica"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Redes Sociais</figcaption></figure>
+      <figure class="project glass" data-cat="redes" style="--ar:1/1"><img src="assets/img/web/rs-autenticidade.webp" width="384" height="384" loading="lazy" alt="Arte para rede social com a palavra autenticidade"><figcaption class="tag">Redes Sociais</figcaption></figure>
+      <figure class="project glass" data-cat="redes" style="--ar:540/960"><video src="assets/video/web/reels-limpeza.mp4" poster="assets/video/web/reels-limpeza.jpg" muted loop playsinline preload="none" aria-label="Reels de produto de limpeza"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Redes Sociais</figcaption></figure>
+      <figure class="project glass" data-cat="redes" style="--ar:768/432"><img src="assets/img/web/rs-shiplap.webp" width="768" height="432" loading="lazy" alt="Arte para rede social da Shiplap"><figcaption class="tag">Redes Sociais</figcaption></figure>
+      <figure class="project glass" data-cat="redes" style="--ar:742/532"><img src="assets/img/web/rs-gift-card.webp" width="742" height="532" loading="lazy" alt="Arte de gift card para rede social"><figcaption class="tag">Redes Sociais</figcaption></figure>
+
+      <!-- Vídeos Institucionais -->
+      <figure class="project glass" data-cat="institucional" style="--ar:540/960"><video src="assets/video/web/institucional-apresentadora.mp4" poster="assets/video/web/institucional-apresentadora.jpg" muted loop playsinline preload="none" aria-label="Vídeo institucional com apresentadora"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Vídeos Institucionais</figcaption></figure>
+      <figure class="project glass" data-cat="institucional" style="--ar:540/956"><video src="assets/video/web/institucional-conferencia.mp4" poster="assets/video/web/institucional-conferencia.jpg" muted loop playsinline preload="none" aria-label="Vídeo institucional de conferência"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Vídeos Institucionais</figcaption></figure>
+
+      <!-- Cobertura real-time -->
+      <figure class="project glass" data-cat="cobertura" style="--ar:960/540"><video src="assets/video/web/cobertura-evento.mp4" poster="assets/video/web/cobertura-evento.jpg" muted loop playsinline preload="none" aria-label="Cobertura de um evento corporativo"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button><figcaption class="tag">Cobertura real-time</figcaption></figure>
+      <figure class="project glass" data-cat="cobertura" style="--ar:1000/666"><img src="assets/img/web/rt-festival.webp" width="1000" height="666" loading="lazy" alt="Palestrante no palco de um festival de cinema"><figcaption class="tag">Cobertura real-time</figcaption></figure>
+      <figure class="project glass" data-cat="cobertura" style="--ar:900/600"><img src="assets/img/web/rt-bastidor-campo.webp" width="900" height="600" loading="lazy" alt="Câmera registrando um homem em um campo"><figcaption class="tag">Cobertura real-time</figcaption></figure>
+      <figure class="project glass" data-cat="cobertura" style="--ar:1000/666"><img src="assets/img/web/rt-bastidor-set.webp" width="1000" height="666" loading="lazy" alt="Bastidores de uma gravação em set com luzes"><figcaption class="tag">Cobertura real-time</figcaption></figure>
+
+      <!-- Estratégia e presença digital -->
+      <figure class="project glass" data-cat="estrategia" style="--ar:1/1"><img src="assets/img/web/ep-resultados.webp" width="648" height="648" loading="lazy" alt="Arte com a frase resultados extraordinários"><figcaption class="tag">Estratégia e presença digital</figcaption></figure>
+      <figure class="project glass" data-cat="estrategia" style="--ar:1/1"><img src="assets/img/web/ep-marca-em-evidencia.webp" width="648" height="648" loading="lazy" alt="Arte com a frase sua marca em evidência"><figcaption class="tag">Estratégia e presença digital</figcaption></figure>
+      <figure class="project glass" data-cat="estrategia" style="--ar:1/1"><img src="assets/img/web/ep-citacao.webp" width="648" height="648" loading="lazy" alt="Arte com uma citação sobre o poder das histórias"><figcaption class="tag">Estratégia e presença digital</figcaption></figure>
     </div>
-    <div class="feedback-track">
-      <div class="feedback-card">
-        <blockquote>"A Ukêria entendeu exatamente o que a nossa marca precisava mostrar — o resultado foi muito além do esperado."</blockquote>
-        <div class="feedback-who">
-          <div class="feedback-avatar"></div>
-          <div><span>Nome do cliente</span><small>Cargo · Empresa</small></div>
+
+    <!-- Siga a Ukêria -->
+    <div class="follow reveal" id="siga">
+      <div class="follow-head">
+        <div>
+          <span class="eyebrow">Redes</span>
+          <h3>Siga a <span class="q">Ukêria</span></h3>
+        </div>
+        <div class="follow-ctrl">
+          <button class="arrow-btn" type="button" id="prev" aria-label="Posts anteriores">←</button>
+          <button class="arrow-btn" type="button" id="next" aria-label="Próximos posts">→</button>
         </div>
       </div>
-      <div class="feedback-card">
-        <blockquote>"Profissionalismo, sensibilidade e muita estratégia. Cada entrega vem com propósito."</blockquote>
-        <div class="feedback-who">
-          <div class="feedback-avatar"></div>
-          <div><span>Nome do cliente</span><small>Cargo · Empresa</small></div>
-        </div>
-      </div>
-      <div class="feedback-card">
-        <blockquote>"Nosso Instagram nunca teve tanta consistência e identidade quanto depois da Ukêria."</blockquote>
-        <div class="feedback-who">
-          <div class="feedback-avatar"></div>
-          <div><span>Nome do cliente</span><small>Cargo · Empresa</small></div>
-        </div>
-      </div>
+      <div class="track" id="track" tabindex="0" role="region" aria-label="Carrossel de posts da Ukêria"></div>
     </div>
   </div>
 </section>
 
 <!-- ================= CONTATO ================= -->
-<section class="contact reveal" id="contato">
-  <div class="contact-blob" aria-hidden="true"></div>
-  <div class="container">
-    <div class="contact-left">
-      <div class="eyebrow">Vamos criar juntas</div>
-      <h2>Solicite um orçamento</h2>
-      <p>Conte um pouco sobre o seu projeto e retornamos com uma proposta pensada para o que a sua marca precisa mostrar.</p>
-      <div class="contact-links">
-        <a href="https://instagram.com/ukeria.audiovisual" target="_blank" rel="noopener">Instagram — @ukeria.audiovisual</a>
-        <a href="https://api.whatsapp.com/send/?phone=5511974995600&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.behance.net/ukriaprodu" target="_blank" rel="noopener">Behance</a>
-      </div>
+<section class="sec contact bg-verde-05" id="contato">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="glow y" aria-hidden="true"></div>
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contato</span>
+      <h2>Bora <span class="q">conversar.</span></h2>
+      <p>Conta pra gente sobre sua marca.</p>
+      <nav class="contact-links" aria-label="Redes e contatos">
+        <a href="https://wa.me/5511910355500?text=Ol%C3%A1%2C+gostaria+de+uma+proposta%21" target="_blank" rel="noopener">WhatsApp comercial <span>↗</span></a>
+        <a href="https://www.instagram.com/ukeria.audiovisual/" target="_blank" rel="noopener">Instagram <span>↗</span></a>
+        <a href="https://www.linkedin.com/company/uk%C3%AAria/posts/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+        <a href="https://www.behance.net/ukriaprodu" target="_blank" rel="noopener">Behance <span>↗</span></a>
+        <a href="https://www.youtube.com/@ukeria.audiovisual" target="_blank" rel="noopener">YouTube <span>↗</span></a>
+      </nav>
     </div>
-    <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.btn-primary').textContent='Recebemos sua mensagem ✓';">
-      <div class="form-field">
-        <label for="name">Nome</label>
-        <input id="name" type="text" required>
-      </div>
-      <div class="form-field">
-        <label for="email">E-mail</label>
-        <input id="email" type="email" required>
-      </div>
-      <div class="form-field">
-        <label for="service">Serviço de interesse</label>
-        <select id="service">
-          <option>Fotografia</option>
-          <option>Videografia</option>
-          <option>Gestão de canais digitais</option>
-          <option>Mentoria</option>
-          <option>Não sei ainda</option>
+
+    <form class="form reveal" id="form" novalidate>
+      <span class="mark tr" aria-hidden="true"></span>
+      <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field">
+        <label for="f-servico">Serviço de interesse</label>
+        <select id="f-servico" name="servico">
+          <option>Produção Audiovisual</option>
+          <option>Conteúdo para Redes Sociais</option>
+          <option>Gerenciamento de redes sociais</option>
+          <option>Vídeos institucionais</option>
+          <option>Fotografia para marcas</option>
+          <option>Cobertura Real-time</option>
+          <option>Estratégia de comunicação e presença digital</option>
+          <option>Ainda não sei</option>
         </select>
       </div>
-      <div class="form-field">
-        <label for="msg">Conte sobre o projeto</label>
-        <textarea id="msg" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+      <div class="field"><label for="f-msg">Conte sobre sua marca</label><textarea id="f-msg" name="mensagem" rows="4"></textarea></div>
+      <label class="consent"><input type="checkbox" id="f-ok" required><span>Li e concordo com a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e com os <a href="termos.html" target="_blank" rel="noopener">Termos de Uso</a>.</span></label>
+      <button class="btn btn-primary" type="submit">Enviar pelo WhatsApp</button>
+      <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
 
-<footer>
-  <div class="container" style="flex-direction:column; align-items:flex-start; gap:22px;">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; width:100%;">
-      <div class="nav-logo" style="color:var(--cream-50);">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M20 8C10 8 3 20 3 20C3 20 10 32 20 32C30 32 37 20 37 20C37 20 30 8 20 8Z" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="20" cy="20" r="5.5" fill="currentColor"/>
-        </svg>
-        ukêria
-      </div>
-      <div class="foot-links">
-        <a href="#marca">A marca</a>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer bg-preto">
+  <div class="container">
+    <div class="footer-row">
+      <img src="assets/brand/logo-completo-bege.svg" alt="Ukêria Produções" width="170" height="64">
+      <nav aria-label="Rodapé">
+        <a href="#ukeria">A Ukêria</a>
         <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
+        <a href="#como-fazemos">Como fazemos</a>
+        <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
-        <a href="https://www.instagram.com/ukeria.audiovisual" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.behance.net/ukriaprodu" target="_blank" rel="noopener">Behance</a>
-      </div>
+      </nav>
     </div>
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; width:100%; padding-top:18px; border-top:1px solid rgba(248,244,233,.1);">
-      <span style="font-family:var(--editorial); font-style:italic; font-size:.95rem; color:var(--cream-100);">Transformando histórias, amplificando vozes.</span>
-      <span>© 2026 Ukêria. Produzido com olhar estratégico.</span>
+    <div class="footer-bottom">
+      <span>© 2026 Ukêria Produções.</span>
+      <span><a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a></span>
     </div>
   </div>
 </footer>
 
-<script>
-// Parallax hero
-const tiles = document.querySelectorAll('.hero-tile');
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!prefersReduced){
-  window.addEventListener('scroll', ()=>{
-    const y = window.scrollY;
-    tiles.forEach(t=>{
-      const speed = parseFloat(t.dataset.speed || 0.1);
-      t.style.transform = `translateY(${y*speed*-1}px)`;
-    });
-  }, {passive:true});
-}
-
-// Manifesto eye: rotates slowly in place, following scroll direction (smoothed with lerp)
-const manifestoEyeSvg = document.querySelector('.manifesto-eye svg');
-// Origin words: "ukê" and "ria" slide together as the section enters view, and back apart on scroll up
-const originSection = document.getElementById('origem');
-const originWords = document.querySelectorAll('.origin-word');
-const originDescUke = document.querySelector('.origin-desc.desc-uke');
-const UKE_START_SIZE = 2.2;   // rem — starts zoomed in
-const UKE_END_SIZE = 1.68;    // rem — matches the "ria" description by the time they merge
-
-let targetRot = 0, currentRot = 0;
-let targetOriginProgress = 0, currentOriginProgress = 0;
-
-function computeScrollTargets(){
-  targetRot = window.scrollY * 0.12;
-  if(originSection){
-    const rect = originSection.getBoundingClientRect();
-    const vh = window.innerHeight;
-    // Merge completes early as the section enters the viewport, not at the very end of its scroll
-    const startAt = vh * 0.9;   // words start approaching once section is 90% down the viewport
-    const endAt = vh * 0.4;     // fully merged well before the section is scrolled past
-    let p = (startAt - rect.top) / (startAt - endAt);
-    targetOriginProgress = Math.max(0, Math.min(1, p));
-  }
-}
-window.addEventListener('scroll', computeScrollTargets, {passive:true});
-window.addEventListener('resize', computeScrollTargets);
-computeScrollTargets();
-
-function smoothScrollFx(){
-  currentRot += (targetRot - currentRot) * 0.06;
-  currentOriginProgress += (targetOriginProgress - currentOriginProgress) * 0.12;
-
-  if(manifestoEyeSvg){
-    manifestoEyeSvg.style.transform = `rotate(${currentRot}deg)`;
-  }
-  if(originWords.length === 2){
-    const mergeDist = Math.min(window.innerWidth * 0.22, window.innerWidth < 560 ? 70 : 260);
-    const spread = (1 - currentOriginProgress) * mergeDist;
-    originWords[0].style.transform = `translateX(${-spread}px)`;
-    originWords[1].style.transform = `translateX(${spread}px)`;
-  }
-  if(originDescUke){
-    const size = UKE_START_SIZE - (UKE_START_SIZE - UKE_END_SIZE) * currentOriginProgress;
-    originDescUke.style.fontSize = `${size}rem`;
-  }
-  requestAnimationFrame(smoothScrollFx);
-}
-if(!prefersReduced){
-  requestAnimationFrame(smoothScrollFx);
-}
-
-// Reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-  });
-}, {threshold:0.12});
-revealEls.forEach(el=>io.observe(el));
-</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
