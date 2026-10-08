@@ -1,4 +1,4 @@
-# Ukêria Produções — Site V1
+﻿# Ukêria Produções — Site V1
 
 Site estático (HTML, CSS e JS puros, sem build). A identidade segue o brandbook em `referencia/`.
 
@@ -15,6 +15,7 @@ python -m http.server 8000
 index.html                  página única: Início, A Ukêria, Serviços, Como fazemos, Projetos, Contato
 privacidade.html, termos.html   minutas (precisam de revisão jurídica)
 assets/css/site.css         tokens da marca (18 cores oficiais) e componentes
+assets/js/track.js          rastreamento de cliques (GA4)
 assets/js/site.js           menu, olho do hero, filtro de projetos, carrossel, formulário
 assets/fonts/               Raleway (400/600/700) e Quatera Italic, self-hosted
 assets/brand/               logotipo e símbolo em SVG, só nas cores permitidas, e favicon
@@ -49,6 +50,10 @@ node tools/check-seo.mjs
 - **Páginas legais** ficam `noindex` e fora do sitemap enquanto forem minuta.
 - **Importante:** `Disallow` no robots.txt não protege arquivos. Não publique as pastas `referencia/`, `tools/` e `old/` no servidor.
 
+## Analytics (GA4)
+
+Tag `G-DFJGSGH2MF` (gtag.js) no `<head>` das 3 páginas. `assets/js/track.js` envia: `click_whatsapp` (wa.me), `click_external` (Instagram, YouTube, LinkedIn, Behance, Valkhan Tech etc., com `platform`), `click_cta` (botões que levam a `#contato`) e `generate_lead` (formulário enviado, em `site.js`). Parâmetros: `link_url`, `link_text`, `link_location`, `platform`. Marque `generate_lead` como evento-chave no GA4.
+
 ## Como editar
 
 - **Projetos:** cada item é um `<figure class="project glass" data-cat="...">` em `#grid` no `index.html`. Categorias: `producao`, `redes`, `institucional`, `cobertura`, `estrategia`. O `--ar` é a proporção (largura/altura) da mídia.
@@ -62,3 +67,4 @@ node tools/check-seo.mjs
 - Títulos em Raleway com palavras de destaque em Quatera Italic (`<span class="q">`). Texto corrido sempre Raleway. Unbounded é só do logotipo (SVG).
 - Logotipo nunca em laranja, amarelo ou verde.
 - Só os 3 motivos oficiais: vidro desfocado (`.glass`), degrade focado (`.glow`) e linhas e perspectiva (SVG). A mira "+" (`.mark`) é pequena e fica no canto.
+

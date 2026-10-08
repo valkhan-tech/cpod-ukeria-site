@@ -182,6 +182,7 @@
       ];
       if (texto) linhas.push('Sobre a marca: ' + texto);
       var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(linhas.join('\n'));
+      if (window.ukTrack) window.ukTrack('generate_lead', { form_id: 'contato', method: 'whatsapp', service: servico, link_location: 'contato' });
       msg.textContent = 'Abrindo o WhatsApp com a sua mensagem…';
       window.open(url, '_blank', 'noopener');
     });
