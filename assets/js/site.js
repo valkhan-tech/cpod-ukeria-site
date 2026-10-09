@@ -1,4 +1,4 @@
-/* Ukêria Produções — Site V1 */
+/* Ukêria Produções — Site V2 */
 (function () {
   'use strict';
 
@@ -76,83 +76,143 @@
     onScroll();
   }
 
-  /* ---------- projetos: filtro por categoria ---------- */
-  var chips = $$('.chip');
-  var items = $$('.project');
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var f = chip.getAttribute('data-filter');
-      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
-      items.forEach(function (it) {
-        var show = f === 'todos' || it.getAttribute('data-cat') === f;
-        it.hidden = !show;
-        var v = $('video', it);
-        if (v && !show) { v.pause(); it.classList.remove('playing'); }
-      });
-    });
-  });
-
-  /* ---------- projetos: vídeos tocam quando visíveis ---------- */
-  function setPlaying(fig, v, on) {
-    if (on) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
-    fig.classList.toggle('playing', on);
+  /* ---------- vídeos dos carrosséis: capa primeiro, vídeo só quando visível ----------
+     O HTML traz só a capa (img lazy). O <video> nasce sem src: o arquivo é buscado quando o slide
+     fica ≥60% visível (e a capa já carregou) ou quando o visitante clica em play. Com
+     prefers-reduced-motion ou economia de dados, nada toca sozinho. */
+  var conn = navigator.connection || {};
+  var autoplay = !reduced && !conn.saveData && !/(^|-)2g$/.test(conn.effectiveType || '');
+  function hydrate(v) {
+    var src = v.getAttribute('data-src');
+    if (src && !v.getAttribute('src')) { v.setAttribute('src', src); v.removeAttribute('aria-hidden'); }
   }
-  $$('.project').forEach(function (fig) {
-    var v = $('video', fig);
-    if (!v) return;
+  $$('.slide video').forEach(function (v) {
+    var fig = v.closest('.slide');
+    var cover = $('.cover', fig);
     var btn = $('.play', fig);
-    var manual = false;
-    var toggleManual = function () { manual = true; setPlaying(fig, v, v.paused); };
+    var manual = false, visible = false;
+    var play = function (on) {
+      if (on) { hydrate(v); var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      fig.classList.toggle('playing', on);
+    };
+    var whenCover = function (fn) {
+      if (!cover || cover.complete) fn(); else cover.addEventListener('load', fn, { once: true });
+    };
+    v.addEventListener('playing', function () { fig.classList.add('ready'); });
+    var toggleManual = function () { manual = true; play(v.paused || !v.getAttribute('src')); };
     v.addEventListener('click', toggleManual);
     if (btn) btn.addEventListener('click', toggleManual);
-    if (!reduced && 'IntersectionObserver' in window) {
+    if (autoplay && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
-          if (manual) return;
-          setPlaying(fig, v, en.isIntersecting && en.intersectionRatio >= 0.5);
+          visible = en.isIntersecting && en.intersectionRatio >= 0.6;
+          if (!visible) { manual = false; play(false); return; }
+          if (manual) return;                 // respeita a escolha do visitante enquanto está à vista
+          whenCover(function () { if (visible && !manual) play(true); });
         });
-      }, { threshold: [0, 0.5] }).observe(fig);
+      }, { threshold: [0, 0.6] }).observe(fig);
     }
   });
 
-  /* ---------- carrossel "Siga a Ukêria" ----------
-     Troque os itens abaixo pelos posts reais:
-     { type: 'instagram' | 'youtube', href: 'URL do post/vídeo' }          */
-  var INSTAGRAM = 'https://www.instagram.com/ukeria.audiovisual/';
-  var YOUTUBE = 'https://www.youtube.com/@ukeria.audiovisual';
-  var POSTS = [
-    { type: 'instagram', href: INSTAGRAM },
-    { type: 'youtube',   href: YOUTUBE },
-    { type: 'instagram', href: INSTAGRAM },
-    { type: 'instagram', href: INSTAGRAM },
-    { type: 'youtube',   href: YOUTUBE },
-    { type: 'instagram', href: INSTAGRAM }
-  ];
-  var LABEL = {
-    instagram: { platform: 'Instagram', cta: 'Ver no Instagram' },
-    youtube:   { platform: 'YouTube',   cta: 'Ver no YouTube' }
-  };
-  var track = $('#track');
-  if (track) {
-    track.innerHTML = POSTS.map(function (p, i) {
-      var l = LABEL[p.type];
-      return '<a class="post c' + ((i % 4) + 1) + '" href="' + p.href + '" target="_blank" rel="noopener" aria-label="' + l.cta + '">' +
-        '<svg class="wm" viewBox="0 0 202.35 136.68" aria-hidden="true"><use href="#sym-a"/></svg>' +
-        '<span class="platform">' + l.platform + '</span>' +
-        '<span class="cta">' + l.cta + '</span></a>';
-    }).join('');
-    var step = function (dir) {
-      var card = $('.post', track);
-      var w = card ? card.getBoundingClientRect().width + 16 : 280;
-      track.scrollBy({ left: dir * w, behavior: reduced ? 'auto' : 'smooth' });
+  /* ---------- carrosséis (serviços e "Siga a Ukêria") ---------- */
+  var carousels = $$('[data-carousel]').map(function (car) {
+    var track = $('.car-track', car);
+    var items = $$('.slide, .post', track);
+    var count = $('.car-count', car);
+    var ctrl = car.querySelector('.car-ui') || document.querySelector('.follow-ctrl[data-for="' + car.getAttribute('data-carousel') + '"]');
+    var prev = ctrl && $('[data-dir="-1"]', ctrl);
+    var next = ctrl && $('[data-dir="1"]', ctrl);
+    var base = function () { return items.length ? items[0].offsetLeft : 0; };
+    var pos = function (i) { return items[i].offsetLeft - base(); };
+    var current = function () {
+      var x = track.scrollLeft + 6, idx = 0;
+      for (var i = 0; i < items.length; i++) { if (pos(i) <= x) idx = i; }
+      return idx;
     };
-    $('#prev').addEventListener('click', function () { step(-1); });
-    $('#next').addEventListener('click', function () { step(1); });
+    var update = function () {
+      var atStart = track.scrollLeft <= 2;
+      var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      if (prev) prev.disabled = atStart;
+      if (next) next.disabled = atEnd;
+      if (count) count.textContent = (atEnd ? items.length : current() + 1) + ' / ' + items.length;
+    };
+    var step = function (dir) {
+      var i = current(), target;
+      if (dir > 0) { target = Math.min(items.length - 1, i + 1); }
+      else { target = pos(i) < track.scrollLeft - 8 ? i : Math.max(0, i - 1); }
+      track.scrollTo({ left: pos(target), behavior: reduced ? 'auto' : 'smooth' });
+      setTimeout(update, 60); setTimeout(update, 450);   // garante o contador mesmo se o navegador atrasar o evento de scroll
+      if (window.ukTrack) window.ukTrack('carousel_nav', { carousel: car.getAttribute('data-carousel'), direction: dir > 0 ? 'next' : 'prev' });
+    };
+    if (prev) prev.addEventListener('click', function () { step(-1); });
+    if (next) next.addEventListener('click', function () { step(1); });
     track.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
     });
+    track.addEventListener('scroll', update, { passive: true });
+    if ('onscrollend' in window) track.addEventListener('scrollend', update);
+    window.addEventListener('resize', update);
+    update();
+    return { update: update, track: track };
+  });
+  var refreshCarousels = function (root) {
+    carousels.forEach(function (c) { if (root.contains(c.track)) { c.track.scrollLeft = 0; c.update(); } });
+  };
+
+  /* As imagens dos painéis (fechados) só ganham src quando o painel abre; a partir daí o loading="lazy"
+     nativo cuida dos slides fora da área visível do carrossel. As capas dos primeiros slides vêm primeiro. */
+  function hydrateImages(root) {
+    $$('img[data-src]', root).forEach(function (img) {
+      var ss = img.getAttribute('data-srcset');
+      if (ss) { img.setAttribute('srcset', ss); img.removeAttribute('data-srcset'); }
+      img.setAttribute('src', img.getAttribute('data-src'));
+      img.removeAttribute('data-src');
+    });
   }
+
+  /* ---------- serviços: card abre a "janela" com tópicos e carrossel ---------- */
+  var svcBtns = $$('.service[data-svc]');
+  var svcPanels = $$('.svc-panel');
+  function openService(slug, opts) {
+    opts = opts || {};
+    svcBtns.forEach(function (b) { b.setAttribute('aria-expanded', String(b.getAttribute('data-svc') === slug)); });
+    svcPanels.forEach(function (p) { p.hidden = !slug || p.id !== 'svc-panel-' + slug; });
+    var url = new URL(location.href);
+    if (slug) url.searchParams.set('servico', slug); else url.searchParams.delete('servico');
+    history.replaceState(null, '', url.pathname + url.search + (slug ? '#servicos' : url.hash));
+    if (!slug) return;
+    var panel = $('#svc-panel-' + slug);
+    hydrateImages(panel);
+    refreshCarousels(panel);
+    if (opts.scroll !== false) panel.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  }
+  svcBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var slug = b.getAttribute('data-svc');
+      var willOpen = b.getAttribute('aria-expanded') !== 'true';
+      if (willOpen && window.ukTrack) window.ukTrack('service_open', { service: slug, link_location: 'servicos' });
+      openService(willOpen ? slug : null);
+    });
+  });
+  $$('.svc-close').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var slug = c.closest('.svc-panel').id.replace('svc-panel-', '');
+      openService(null);
+      var b = $('#svc-btn-' + slug); if (b) b.focus();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = svcPanels.filter(function (p) { return !p.hidden; })[0];
+    if (open && open.contains(document.activeElement)) {
+      var slug = open.id.replace('svc-panel-', '');
+      openService(null);
+      var b = $('#svc-btn-' + slug); if (b) b.focus();
+    }
+  });
+  var wanted = new URLSearchParams(location.search).get('servico');
+  if (wanted && $('#svc-panel-' + wanted)) openService(wanted);
 
   /* ---------- formulário: monta a mensagem e abre o WhatsApp comercial ---------- */
   var form = $('#form');

@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 Disallow: /referencia/
 Disallow: /tools/
-Disallow: /old/
+Disallow: /remover/
 
 # Busca e respostas de IA (citam o site com link)
 User-agent: OAI-SearchBot

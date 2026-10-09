@@ -1,0 +1,191 @@
+[
+ {
+  "slug": "fly-print",
+  "nome": "FLY Print",
+  "branco": "10.png",
+  "preto": "33.png",
+  "distancia": 0,
+  "w": 638,
+  "h": 120
+ },
+ {
+  "slug": "celso-kamura",
+  "nome": "Celso Kamura",
+  "branco": "11.png",
+  "preto": "34.png",
+  "distancia": 0.38,
+  "w": 1131,
+  "h": 120
+ },
+ {
+  "slug": "chris-loiola",
+  "nome": "Chris Loiola",
+  "branco": "12.png",
+  "preto": "35.png",
+  "distancia": 0.51,
+  "w": 939,
+  "h": 120
+ },
+ {
+  "slug": "val-alves",
+  "nome": "Val Alves Hairstylist",
+  "branco": "13.png",
+  "preto": "36.png",
+  "distancia": 0.26,
+  "w": 92,
+  "h": 120
+ },
+ {
+  "slug": "ferrasin-advogados",
+  "nome": "Ferrasin Advogados",
+  "branco": "14.png",
+  "preto": "37.png",
+  "distancia": 0.43,
+  "w": 414,
+  "h": 120
+ },
+ {
+  "slug": "oba-print",
+  "nome": "Oba Print",
+  "branco": "15.png",
+  "preto": "38.png",
+  "distancia": 0,
+  "w": 194,
+  "h": 120
+ },
+ {
+  "slug": "inova-cursos-brasil",
+  "nome": "Inova Cursos Brasil",
+  "branco": "16.png",
+  "preto": "39.png",
+  "distancia": 0.06,
+  "w": 112,
+  "h": 120
+ },
+ {
+  "slug": "mania",
+  "nome": "Mania",
+  "branco": "17.png",
+  "preto": "32.png",
+  "distancia": 0,
+  "w": 120,
+  "h": 120
+ },
+ {
+  "slug": "tati-pugliese",
+  "nome": "Tati Pugliese",
+  "branco": "18.png",
+  "preto": "40.png",
+  "distancia": 0,
+  "w": 1420,
+  "h": 120
+ },
+ {
+  "slug": "multiforme",
+  "nome": "Multiforme",
+  "branco": "19.png",
+  "preto": "41.png",
+  "distancia": 0,
+  "w": 123,
+  "h": 120
+ },
+ {
+  "slug": "owner-entertainment",
+  "nome": "Owner Entertainment",
+  "branco": "20.png",
+  "preto": "42.png",
+  "distancia": 0,
+  "w": 495,
+  "h": 120
+ },
+ {
+  "slug": "technical-fire",
+  "nome": "Technical Fire",
+  "branco": "21.png",
+  "preto": "44.png",
+  "distancia": 0,
+  "w": 175,
+  "h": 120
+ },
+ {
+  "slug": "karine-peres",
+  "nome": "Karine Peres",
+  "branco": "22.png",
+  "preto": "31.png",
+  "distancia": 0,
+  "w": 833,
+  "h": 120
+ },
+ {
+  "slug": "atelie-beatriz-barros",
+  "nome": "Ateliê Beatriz Barros",
+  "branco": "23.png",
+  "preto": "46.png",
+  "distancia": 0,
+  "w": 193,
+  "h": 120
+ },
+ {
+  "slug": "lizandra-neves",
+  "nome": "Lizandra Neves",
+  "branco": "24.png",
+  "preto": "47.png",
+  "distancia": 0.69,
+  "w": 189,
+  "h": 120
+ },
+ {
+  "slug": "isabela-barbosa",
+  "nome": "Isabela Barbosa",
+  "branco": "25.png",
+  "preto": "48.png",
+  "distancia": 0.02,
+  "w": 596,
+  "h": 120
+ },
+ {
+  "slug": "bruna-siolari",
+  "nome": "Bruna Siolari",
+  "branco": "26.png",
+  "preto": "49.png",
+  "distancia": 0,
+  "w": 309,
+  "h": 120
+ },
+ {
+  "slug": "zabotto-beauty",
+  "nome": "Zabotto Beauty",
+  "branco": "27.png",
+  "preto": "50.png",
+  "distancia": 0.01,
+  "w": 770,
+  "h": 120
+ },
+ {
+  "slug": "okkabio",
+  "nome": "Okkabio",
+  "branco": "28.png",
+  "preto": "51.png",
+  "distancia": 0.31,
+  "w": 1035,
+  "h": 120
+ },
+ {
+  "slug": "aphelia-engenharia",
+  "nome": "Aphélia Engenharia",
+  "branco": "29.png",
+  "preto": "45.png",
+  "distancia": 0,
+  "w": 130,
+  "h": 120
+ },
+ {
+  "slug": "luxxuoso",
+  "nome": "Luxxuoso",
+  "branco": "30.png",
+  "preto": "43.png",
+  "distancia": 0,
+  "w": 550,
+  "h": 120
+ }
+]

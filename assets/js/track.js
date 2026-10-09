@@ -4,6 +4,8 @@
    - click_external : links para outros domínios (Instagram, YouTube, LinkedIn, Behance, Valkhan Tech...)
    - click_cta      : botões/links internos que levam ao formulário de contato (#contato)
    - generate_lead  : formulário de contato enviado (disparado em site.js)
+   - service_open   : visitante abriu um serviço (param service)  — disparado em site.js
+   - carousel_nav   : setas dos carrosséis (params carousel, direction) — disparado em site.js
    Parâmetros: link_url, link_text, link_location (id da seção, nav ou footer), platform. */
 (function () {
   'use strict';

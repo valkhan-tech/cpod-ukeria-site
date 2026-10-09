@@ -1,0 +1,474 @@
+{
+ "assets/img/web/servicos/social-media/social-media-01.webp": [
+  1080,
+  1350
+ ],
+ "assets/img/web/servicos/social-media/social-media-01-640.webp": [
+  512,
+  640
+ ],
+ "assets/img/web/servicos/social-media/social-media-02.webp": [
+  1080,
+  1350
+ ],
+ "assets/img/web/servicos/social-media/social-media-02-640.webp": [
+  512,
+  640
+ ],
+ "assets/img/web/servicos/social-media/social-media-03.webp": [
+  1280,
+  1600
+ ],
+ "assets/img/web/servicos/social-media/social-media-03-640.webp": [
+  512,
+  640
+ ],
+ "assets/img/web/servicos/social-media/social-media-04.webp": [
+  1080,
+  1350
+ ],
+ "assets/img/web/servicos/social-media/social-media-04-640.webp": [
+  512,
+  640
+ ],
+ "assets/img/web/servicos/social-media/social-media-05.webp": [
+  1080,
+  1350
+ ],
+ "assets/img/web/servicos/social-media/social-media-05-640.webp": [
+  512,
+  640
+ ],
+ "assets/img/web/servicos/social-media/social-media-06.webp": [
+  1080,
+  1350
+ ],
+ "assets/img/web/servicos/social-media/social-media-06-640.webp": [
+  512,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-01.webp": [
+  1105,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-01-640.webp": [
+  442,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-02.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-02-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-03.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-03-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-04.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-04-640.webp": [
+  640,
+  427
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-05.webp": [
+  1600,
+  1066
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-05-640.webp": [
+  640,
+  426
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-06.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-06-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-07.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-07-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-08.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-08-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-09.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-09-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-10.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-10-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-11.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-11-640.webp": [
+  640,
+  427
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-12.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-12-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-13.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-13-640.webp": [
+  640,
+  427
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-14.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-14-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02-640.webp": [
+  640,
+  427
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04-640.webp": [
+  640,
+  427
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06-640.webp": [
+  640,
+  427
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08.webp": [
+  1067,
+  1600
+ ],
+ "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08-640.webp": [
+  427,
+  640
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01.webp": [
+  900,
+  1600
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01-640.webp": [
+  360,
+  640
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02.webp": [
+  900,
+  1600
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02-640.webp": [
+  360,
+  640
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03.webp": [
+  1066,
+  1600
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03-640.webp": [
+  426,
+  640
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04.webp": [
+  1066,
+  1600
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04-640.webp": [
+  426,
+  640
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05.webp": [
+  1066,
+  1600
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05-640.webp": [
+  426,
+  640
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06.webp": [
+  900,
+  1600
+ ],
+ "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06-640.webp": [
+  360,
+  640
+ ],
+ "assets/img/web/ancestralidade-mae-usp.webp": [
+  1200,
+  600
+ ],
+ "assets/img/web/quem-lidera.webp": [
+  1600,
+  1067
+ ],
+ "assets/img/web/clientes/fly-print-branco.webp": [
+  638,
+  120
+ ],
+ "assets/img/web/clientes/fly-print-preto.webp": [
+  638,
+  120
+ ],
+ "assets/img/web/clientes/celso-kamura-branco.webp": [
+  1131,
+  120
+ ],
+ "assets/img/web/clientes/celso-kamura-preto.webp": [
+  1135,
+  120
+ ],
+ "assets/img/web/clientes/chris-loiola-branco.webp": [
+  939,
+  120
+ ],
+ "assets/img/web/clientes/chris-loiola-preto.webp": [
+  940,
+  120
+ ],
+ "assets/img/web/clientes/val-alves-branco.webp": [
+  92,
+  120
+ ],
+ "assets/img/web/clientes/val-alves-preto.webp": [
+  92,
+  120
+ ],
+ "assets/img/web/clientes/ferrasin-advogados-branco.webp": [
+  414,
+  120
+ ],
+ "assets/img/web/clientes/ferrasin-advogados-preto.webp": [
+  415,
+  120
+ ],
+ "assets/img/web/clientes/oba-print-branco.webp": [
+  194,
+  120
+ ],
+ "assets/img/web/clientes/oba-print-preto.webp": [
+  194,
+  120
+ ],
+ "assets/img/web/clientes/inova-cursos-brasil-branco.webp": [
+  112,
+  120
+ ],
+ "assets/img/web/clientes/inova-cursos-brasil-preto.webp": [
+  112,
+  120
+ ],
+ "assets/img/web/clientes/mania-branco.webp": [
+  120,
+  120
+ ],
+ "assets/img/web/clientes/mania-preto.webp": [
+  120,
+  120
+ ],
+ "assets/img/web/clientes/tati-pugliese-branco.webp": [
+  1420,
+  120
+ ],
+ "assets/img/web/clientes/tati-pugliese-preto.webp": [
+  1420,
+  120
+ ],
+ "assets/img/web/clientes/multiforme-branco.webp": [
+  123,
+  120
+ ],
+ "assets/img/web/clientes/multiforme-preto.webp": [
+  123,
+  120
+ ],
+ "assets/img/web/clientes/owner-entertainment-branco.webp": [
+  495,
+  120
+ ],
+ "assets/img/web/clientes/owner-entertainment-preto.webp": [
+  495,
+  120
+ ],
+ "assets/img/web/clientes/technical-fire-branco.webp": [
+  175,
+  120
+ ],
+ "assets/img/web/clientes/technical-fire-preto.webp": [
+  175,
+  120
+ ],
+ "assets/img/web/clientes/karine-peres-branco.webp": [
+  833,
+  120
+ ],
+ "assets/img/web/clientes/karine-peres-preto.webp": [
+  833,
+  120
+ ],
+ "assets/img/web/clientes/atelie-beatriz-barros-branco.webp": [
+  193,
+  120
+ ],
+ "assets/img/web/clientes/atelie-beatriz-barros-preto.webp": [
+  193,
+  120
+ ],
+ "assets/img/web/clientes/lizandra-neves-branco.webp": [
+  189,
+  120
+ ],
+ "assets/img/web/clientes/lizandra-neves-preto.webp": [
+  188,
+  120
+ ],
+ "assets/img/web/clientes/isabela-barbosa-branco.webp": [
+  596,
+  120
+ ],
+ "assets/img/web/clientes/isabela-barbosa-preto.webp": [
+  596,
+  120
+ ],
+ "assets/img/web/clientes/bruna-siolari-branco.webp": [
+  309,
+  120
+ ],
+ "assets/img/web/clientes/bruna-siolari-preto.webp": [
+  309,
+  120
+ ],
+ "assets/img/web/clientes/zabotto-beauty-branco.webp": [
+  770,
+  120
+ ],
+ "assets/img/web/clientes/zabotto-beauty-preto.webp": [
+  770,
+  120
+ ],
+ "assets/img/web/clientes/okkabio-branco.webp": [
+  1035,
+  120
+ ],
+ "assets/img/web/clientes/okkabio-preto.webp": [
+  1033,
+  120
+ ],
+ "assets/img/web/clientes/aphelia-engenharia-branco.webp": [
+  130,
+  120
+ ],
+ "assets/img/web/clientes/aphelia-engenharia-preto.webp": [
+  130,
+  120
+ ],
+ "assets/img/web/clientes/luxxuoso-branco.webp": [
+  550,
+  120
+ ],
+ "assets/img/web/clientes/luxxuoso-preto.webp": [
+  550,
+  120
+ ],
+ "assets/img/web/siga/yt-01.webp": [
+  640,
+  360
+ ],
+ "assets/img/web/siga/yt-02.webp": [
+  640,
+  360
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-01.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-02.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-03.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-04.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-05.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-06.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-07.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-08.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-01.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03.webp": [
+  540,
+  676
+ ],
+ "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05.webp": [
+  540,
+  960
+ ],
+ "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07.webp": [
+  540,
+  960
+ ]
+}

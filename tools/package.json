@@ -1,0 +1,10 @@
+{
+  "name": "ukeria-tools",
+  "private": true,
+  "type": "module",
+  "description": "Ferramentas de desenvolvimento (otimização de mídia e checagens). Não faz parte do site publicado.",
+  "devDependencies": {
+    "sharp": "^0.34.0",
+    "subset-font": "^2.9.0"
+  }
+}

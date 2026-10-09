@@ -1,0 +1,551 @@
+{
+ "version": 1,
+ "notes": "Origem em referencia/v2 (nao versionada). Saidas em assets/. Gerado por tools/optimize-media.mjs.",
+ "items": [
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/1 PRODUÇÃO AUDIOVISUAL.mp4",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-01",
+   "start": 5,
+   "dur": 14,
+   "alt": "Vídeo de moda em uma cidade à noite"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/2 PRODUÇÃO AUDIOVISUAL.mov",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-02",
+   "start": 8,
+   "dur": 14,
+   "alt": "Vídeo em gramado com grupo de mulheres e brinde"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/3 PRODUÇÃO AUDIOVISUAL.mp4",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-03",
+   "start": 4,
+   "dur": 14,
+   "alt": "Vídeo institucional com apresentadora de cabelo vermelho"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/4 PRODUÇÃO AUDIOVISUAL-001.mp4",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-04",
+   "start": 40,
+   "dur": 15,
+   "alt": "Vídeo de apresentação de uma casa com a corretora"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/5 PRODUÇÃO AUDIOVISUAL.mp4",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-05",
+   "start": 15,
+   "dur": 14,
+   "alt": "Vídeo de treinamento de brigada de incêndio, à noite"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/6 PRODUÇÃO AUDIOVISUAL.mp4",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-06",
+   "start": 2,
+   "dur": 14,
+   "alt": "Vídeo com homem de camiseta preta e legendas animadas"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/7 PRODUÇÃO AUDIOVISUAL.mov",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-07",
+   "start": 0.5,
+   "dur": 15,
+   "alt": "Vídeo de produto: sapatos femininos"
+  },
+  {
+   "type": "video",
+   "service": "producao-audiovisual",
+   "src": "referencia/v2/producao-audiovisual/8 produção.mp4",
+   "dest": "assets/video/web/servicos/producao-audiovisual/producao-audiovisual-08",
+   "start": 5,
+   "dur": 14,
+   "alt": "Vídeo de produto: linha de cosméticos Luxxuoso"
+  },
+  {
+   "type": "image",
+   "service": "social-media",
+   "src": "referencia/v2/social-media/1 SOCIAL MEDIA.png",
+   "dest": "assets/img/web/servicos/social-media/social-media-01",
+   "max": 1600,
+   "q": 88,
+   "alt": "Arte para rede social com a frase \"Uma jogada pode decidir o futuro\""
+  },
+  {
+   "type": "image",
+   "service": "social-media",
+   "src": "referencia/v2/social-media/2 SOCIAL MEDIA.png",
+   "dest": "assets/img/web/servicos/social-media/social-media-02",
+   "max": 1600,
+   "q": 88,
+   "alt": "Arte para rede social sobre treinamentos regulamentados"
+  },
+  {
+   "type": "image",
+   "service": "social-media",
+   "src": "referencia/v2/social-media/3 SOCIAL MEDIA.png",
+   "dest": "assets/img/web/servicos/social-media/social-media-03",
+   "max": 1600,
+   "q": 88,
+   "alt": "Arte para rede social: \"Você acha que está escolhendo quem amar\""
+  },
+  {
+   "type": "image",
+   "service": "social-media",
+   "src": "referencia/v2/social-media/4 SOCIAL MEDIA.png",
+   "dest": "assets/img/web/servicos/social-media/social-media-04",
+   "max": 1600,
+   "q": 88,
+   "alt": "Arte para rede social com caderno: \"Depois que o contato acaba, é o material que continua representando sua marca\""
+  },
+  {
+   "type": "image",
+   "service": "social-media",
+   "src": "referencia/v2/social-media/5 SOCIAL MEDIA.png",
+   "dest": "assets/img/web/servicos/social-media/social-media-05",
+   "max": 1600,
+   "q": 88,
+   "alt": "Arte para rede social: \"Antes de produzir, a gente pensa como o cliente\""
+  },
+  {
+   "type": "image",
+   "service": "social-media",
+   "src": "referencia/v2/social-media/6 SOCIAL MEDIA.png",
+   "dest": "assets/img/web/servicos/social-media/social-media-06",
+   "max": 1600,
+   "q": 88,
+   "alt": "Arte para rede social: \"Foi essa resposta que um dos nossos clientes precisava\""
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/still 2.webp",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-01",
+   "max": 1600,
+   "q": 80,
+   "alt": "Still de produto: esmalte e embalagem sobre fundo verde"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/sill 3.webp",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-02",
+   "max": 1600,
+   "q": 80,
+   "alt": "Still de produto: mãos com luvas rosa derramando creme sobre fundo rosa"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/still 1.png",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-03",
+   "max": 1600,
+   "q": 80,
+   "alt": "Still de produto: mãos com luvas rosa abrindo potes de creme"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/retrato corporativo 1.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-04",
+   "max": 1600,
+   "q": 80,
+   "alt": "Retrato corporativo: casal de profissionais junto a uma janela"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/retrato corporativo 2.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-05",
+   "max": 1600,
+   "q": 80,
+   "alt": "Retrato corporativo: equipe reunida em estúdio de fundo branco"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/retrato corporativo 3.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-06",
+   "max": 1600,
+   "q": 80,
+   "alt": "Retrato corporativo: profissional trabalhando com notebook sobre um banco"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/retrato corporativo 4.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-07",
+   "max": 1600,
+   "q": 80,
+   "alt": "Retrato corporativo: mão organizando cadernos sobre a mesa"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/retrato corporativo 5.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-08",
+   "max": 1600,
+   "q": 80,
+   "alt": "Retrato corporativo: profissional escrevendo à mesa"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/retrato corporativo 6.webp",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-09",
+   "max": 1600,
+   "q": 80,
+   "alt": "Retrato corporativo: profissional sorrindo com papéis rosa no ar"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/empresarial 1.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-10",
+   "max": 1600,
+   "q": 80,
+   "alt": "Fotografia empresarial: brigada de incêndio diante de chamas, à noite"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/empresarial 2.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-11",
+   "max": 1600,
+   "q": 80,
+   "alt": "Fotografia empresarial: operador em uma gráfica industrial"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/empresarial 3.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-12",
+   "max": 1600,
+   "q": 80,
+   "alt": "Fotografia empresarial: detalhe de máquina de impressão"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/empresarial 4.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-13",
+   "max": 1600,
+   "q": 80,
+   "alt": "Fotografia empresarial: treinamento de bombeiros com mangueiras"
+  },
+  {
+   "type": "image",
+   "service": "fotografia-para-marcas",
+   "src": "referencia/v2/fotografia-para-marcas/empresarial 5.jpg",
+   "dest": "assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-14",
+   "max": 1600,
+   "q": 80,
+   "alt": "Fotografia empresarial: treinamento em estrutura metálica, em contraluz"
+  },
+  {
+   "type": "video",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 1.MOV",
+   "alt": "Vídeo de cobertura: cerimônia de formatura, abraços e discursos",
+   "dest": "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-01",
+   "start": 2,
+   "dur": 14
+  },
+  {
+   "type": "image",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 2.JPG",
+   "alt": "Palco de evento com duas apresentadoras e telão",
+   "dest": "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02",
+   "max": 1600,
+   "q": 80
+  },
+  {
+   "type": "video",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 5.mp4",
+   "alt": "Vídeo de cobertura: decoração, drinks e apresentação no palco",
+   "dest": "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03",
+   "start": 1,
+   "dur": 14
+  },
+  {
+   "type": "image",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 3.JPG",
+   "alt": "Palestrante em palco com fundo vermelho",
+   "dest": "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04",
+   "max": 1600,
+   "q": 80
+  },
+  {
+   "type": "video",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 6.mov",
+   "alt": "Vídeo de cobertura: entrevista com participante do evento",
+   "dest": "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05",
+   "start": 1,
+   "dur": 14
+  },
+  {
+   "type": "image",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 4.jpg",
+   "alt": "Apresentador de camiseta vermelha com microfone no palco",
+   "dest": "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06",
+   "max": 1600,
+   "q": 80
+  },
+  {
+   "type": "video",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 7.mov",
+   "alt": "Vídeo de cobertura: visita a uma feira de decoração",
+   "dest": "assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07",
+   "start": 4,
+   "dur": 15
+  },
+  {
+   "type": "image",
+   "service": "cobertura-de-eventos",
+   "src": "referencia/v2/cobertura-de-eventos/COBERTURA DE EVENTOS 8.jpg",
+   "alt": "Telão com a mensagem \"Feliz Formatura\" em sala escura",
+   "dest": "assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08",
+   "max": 1600,
+   "q": 80
+  },
+  {
+   "type": "image",
+   "service": "estrategia-de-comunicacao",
+   "src": "referencia/v2/estrategia-de-comunicacao/estratégia 1.png",
+   "dest": "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01",
+   "max": 1600,
+   "q": 88,
+   "alt": "Identidade visual da Technical Fire: logotipo, cores e aplicações"
+  },
+  {
+   "type": "image",
+   "service": "estrategia-de-comunicacao",
+   "src": "referencia/v2/estrategia-de-comunicacao/estratégia 2.png",
+   "dest": "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02",
+   "max": 1600,
+   "q": 88,
+   "alt": "Identidade visual da FLY Print: logotipo, cores e aplicações"
+  },
+  {
+   "type": "image",
+   "service": "estrategia-de-comunicacao",
+   "src": "referencia/v2/estrategia-de-comunicacao/estratégia 3.jpg",
+   "dest": "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03",
+   "max": 1600,
+   "q": 88,
+   "alt": "Cartas colecionáveis ilustradas sobre uma mesa"
+  },
+  {
+   "type": "image",
+   "service": "estrategia-de-comunicacao",
+   "src": "referencia/v2/estrategia-de-comunicacao/estratégia 4.jpg",
+   "dest": "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04",
+   "max": 1600,
+   "q": 88,
+   "alt": "Reunião de estratégia com cartas de posicionamento sobre a mesa"
+  },
+  {
+   "type": "image",
+   "service": "estrategia-de-comunicacao",
+   "src": "referencia/v2/estrategia-de-comunicacao/estratégia 5.jpg",
+   "dest": "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05",
+   "max": 1600,
+   "q": 88,
+   "alt": "Cartas de posicionamento e tela com a pergunta sobre o tom de voz do escritório"
+  },
+  {
+   "type": "image",
+   "service": "estrategia-de-comunicacao",
+   "src": "referencia/v2/estrategia-de-comunicacao/estratégia 6.png",
+   "dest": "assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06",
+   "max": 1600,
+   "q": 88,
+   "alt": "Identidade visual da Lizandra Neves, design de interiores"
+  },
+  {
+   "type": "image",
+   "service": null,
+   "src": "referencia/v2/ukeria-fotoreproducao-mae-usp.jpg",
+   "dest": "assets/img/web/ancestralidade-mae-usp",
+   "max": 1200,
+   "q": 82,
+   "thumb": false,
+   "alt": "Dançarinos Terena em exposição do Museu de Arqueologia e Etnologia da USP (MAE-USP)"
+  },
+  {
+   "type": "image",
+   "service": null,
+   "src": "referencia/v2/quem-lidera.jpg",
+   "dest": "assets/img/web/quem-lidera",
+   "max": 1600,
+   "q": 80,
+   "thumb": false,
+   "alt": "Letícia Palhão e Ketheleen Dias, liderança da Ukêria, rindo juntas"
+  }
+ ],
+ "clientes": [
+  {
+   "slug": "fly-print",
+   "nome": "FLY Print",
+   "branco": "referencia/v2/clientes-logos-branco/10.png"
+  },
+  {
+   "slug": "celso-kamura",
+   "nome": "Celso Kamura",
+   "branco": "referencia/v2/clientes-logos-branco/11.png"
+  },
+  {
+   "slug": "chris-loiola",
+   "nome": "Chris Loiola",
+   "branco": "referencia/v2/clientes-logos-branco/12.png"
+  },
+  {
+   "slug": "val-alves",
+   "nome": "Val Alves Hairstylist",
+   "branco": "referencia/v2/clientes-logos-branco/13.png"
+  },
+  {
+   "slug": "ferrasin-advogados",
+   "nome": "Ferrasin Advogados",
+   "branco": "referencia/v2/clientes-logos-branco/14.png"
+  },
+  {
+   "slug": "oba-print",
+   "nome": "Oba Print",
+   "branco": "referencia/v2/clientes-logos-branco/15.png"
+  },
+  {
+   "slug": "inova-cursos-brasil",
+   "nome": "Inova Cursos Brasil",
+   "branco": "referencia/v2/clientes-logos-branco/16.png"
+  },
+  {
+   "slug": "mania",
+   "nome": "Mania",
+   "branco": "referencia/v2/clientes-logos-branco/17.png"
+  },
+  {
+   "slug": "tati-pugliese",
+   "nome": "Tati Pugliese",
+   "branco": "referencia/v2/clientes-logos-branco/18.png"
+  },
+  {
+   "slug": "multiforme",
+   "nome": "Multiforme",
+   "branco": "referencia/v2/clientes-logos-branco/19.png"
+  },
+  {
+   "slug": "owner-entertainment",
+   "nome": "Owner Entertainment",
+   "branco": "referencia/v2/clientes-logos-branco/20.png"
+  },
+  {
+   "slug": "technical-fire",
+   "nome": "Technical Fire",
+   "branco": "referencia/v2/clientes-logos-branco/21.png"
+  },
+  {
+   "slug": "karine-peres",
+   "nome": "Karine Peres",
+   "branco": "referencia/v2/clientes-logos-branco/22.png"
+  },
+  {
+   "slug": "atelie-beatriz-barros",
+   "nome": "Ateliê Beatriz Barros",
+   "branco": "referencia/v2/clientes-logos-branco/23.png"
+  },
+  {
+   "slug": "lizandra-neves",
+   "nome": "Lizandra Neves",
+   "branco": "referencia/v2/clientes-logos-branco/24.png"
+  },
+  {
+   "slug": "isabela-barbosa",
+   "nome": "Isabela Barbosa",
+   "branco": "referencia/v2/clientes-logos-branco/25.png"
+  },
+  {
+   "slug": "bruna-siolari",
+   "nome": "Bruna Siolari",
+   "branco": "referencia/v2/clientes-logos-branco/26.png"
+  },
+  {
+   "slug": "zabotto-beauty",
+   "nome": "Zabotto Beauty",
+   "branco": "referencia/v2/clientes-logos-branco/27.png"
+  },
+  {
+   "slug": "okkabio",
+   "nome": "Okkabio",
+   "branco": "referencia/v2/clientes-logos-branco/28.png"
+  },
+  {
+   "slug": "aphelia-engenharia",
+   "nome": "Aphélia Engenharia",
+   "branco": "referencia/v2/clientes-logos-branco/29.png"
+  },
+  {
+   "slug": "luxxuoso",
+   "nome": "Luxxuoso",
+   "branco": "referencia/v2/clientes-logos-branco/30.png"
+  }
+ ],
+ "siga": [
+  {
+   "id": "ig-01",
+   "type": "instagram",
+   "url": "https://www.instagram.com/p/DZs6TplmZKz/"
+  },
+  {
+   "id": "yt-01",
+   "type": "youtube",
+   "url": "https://youtu.be/38ebCS9p1U8",
+   "video": "38ebCS9p1U8"
+  },
+  {
+   "id": "ig-02",
+   "type": "instagram",
+   "url": "https://www.instagram.com/p/DWmpVcNkriY/"
+  },
+  {
+   "id": "ig-03",
+   "type": "instagram",
+   "url": "https://www.instagram.com/p/Dai9RqJhEvQ/"
+  },
+  {
+   "id": "yt-02",
+   "type": "youtube",
+   "url": "https://youtu.be/ZLBTSe56TjM",
+   "video": "ZLBTSe56TjM"
+  },
+  {
+   "id": "ig-04",
+   "type": "instagram",
+   "url": "https://www.instagram.com/p/DZ5IvEoxTVt/"
+  },
+  {
+   "id": "ig-05",
+   "type": "instagram",
+   "url": "https://www.instagram.com/p/DcCOos4FFzm/"
+  }
+ ],
+ "clientes_preto_dir": "referencia/v2/clientes-logos-preto"
+}
