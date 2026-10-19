@@ -3,14 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFJGSGH2MF"></script>
+<!-- Google tag (gtag.js): a fila (dataLayer) já aceita eventos; o gtag.js só é baixado depois do carregamento ou na primeira interação -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-DFJGSGH2MF');
+  (function () {
+    var loaded = false;
+    function load() {
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DFJGSGH2MF';
+      document.head.appendChild(s);
+    }
+    function idle() { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(load, { timeout: 3000 }); }
+    if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle);
+    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (e) { window.addEventListener(e, load, { once: true, passive: true }); });
+  })();
 </script>
 <title>Ukêria Produções | Produtora audiovisual, fotografia e redes sociais</title>
 <meta name="description" content="Produtora audiovisual e de fotografia formada por mulheres. Estratégia, vídeo, fotografia e gestão de redes sociais para marcas que querem autoridade digital.">
@@ -42,7 +53,9 @@
 
 <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/Raleway-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/video/web/hero/hero.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Raleway-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/Quatera-Italic.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">
@@ -302,7 +315,7 @@
 <!-- ================= INÍCIO ================= -->
 <!-- ================= INÍCIO ================= -->
 <section class="hero" id="inicio" aria-label="Início">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/web/hero/hero.webp" width="1280" height="720" aria-hidden="true" tabindex="-1">
+  <video class="hero-video" muted loop playsinline preload="none" poster="assets/video/web/hero/hero.webp" width="1280" height="720" aria-hidden="true" tabindex="-1">
     <source src="assets/video/web/hero/hero-854.mp4" type="video/mp4" media="(max-width: 700px)">
     <source src="assets/video/web/hero/hero-1280.mp4" type="video/mp4">
   </video>
@@ -836,7 +849,7 @@
 <footer class="footer bg-preto">
   <div class="container">
     <div class="footer-row">
-      <img src="assets/brand/logo-completo-bege.svg" alt="Ukêria Produções" width="170" height="64">
+      <img src="assets/brand/logo-completo-bege.svg" alt="Ukêria Produções" width="170" height="64" loading="lazy" decoding="async">
       <nav aria-label="Rodapé">
         <a href="#ukeria">A Ukêria</a>
         <a href="#servicos">Serviços</a>

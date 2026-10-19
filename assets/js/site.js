@@ -25,14 +25,12 @@
   /* ---------- menu flutuante: transparente sobre o hero, sólido depois dele ---------- */
   var nav = $('.nav');
   var heroEl = $('#inicio');
-  function navState() {
-    if (!nav) return;
-    var limit = heroEl ? heroEl.offsetHeight - nav.offsetHeight - 8 : 10;
-    nav.classList.toggle('is-solid', window.scrollY > Math.max(limit, 10));
-  }
+  var navLimit = 10;
+  function measureNav() { navLimit = heroEl ? Math.max(heroEl.offsetHeight - nav.offsetHeight - 8, 10) : 10; navState(); }
+  function navState() { if (nav) nav.classList.toggle('is-solid', window.scrollY > navLimit); }
   window.addEventListener('scroll', navState, { passive: true });
-  window.addEventListener('resize', navState);
-  navState();
+  window.addEventListener('resize', measureNav);
+  if (nav) requestAnimationFrame(function () { requestAnimationFrame(measureNav); });   // mede depois da primeira pintura (evita reflow forçado no carregamento)
 
   /* ---------- hero: vídeo de fundo em loop (só com movimento permitido e sem economia de dados) ---------- */
   var heroVideo = $('.hero-video');
@@ -40,13 +38,16 @@
     var hConn = navigator.connection || {};
     var lite = reduced || hConn.saveData || /(^|-)2g$/.test(hConn.effectiveType || '');
     if (lite) {                                   // fica só a capa (poster); o arquivo nem é baixado
-      heroVideo.removeAttribute('autoplay');
       heroVideo.pause();
       $$('source', heroVideo).forEach(function (src) { src.remove(); });
       heroVideo.preload = 'none';
       heroVideo.load();
     } else {
-      var playHero = function () { var pr = heroVideo.play(); if (pr && pr.catch) pr.catch(function () {}); };
+      var heroReady = false;                       // o vídeo só é baixado depois da página carregada, para não competir com a capa (LCP), a fonte e o CSS
+      var playHero = function () { if (!heroReady) return; var pr = heroVideo.play(); if (pr && pr.catch) pr.catch(function () {}); };
+      var startHero = function () { heroReady = true; heroVideo.preload = 'auto'; if (heroInView && !document.hidden) playHero(); };
+      var afterLoad = function () { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(startHero, { timeout: 2500 }); };
+      if (document.readyState === 'complete') afterLoad(); else window.addEventListener('load', afterLoad);
       document.addEventListener('visibilitychange', function () { if (document.hidden) heroVideo.pause(); else if (heroInView) playHero(); });
       var heroInView = true;
       if ('IntersectionObserver' in window && heroEl) {

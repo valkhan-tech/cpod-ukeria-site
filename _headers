@@ -1,0 +1,13 @@
+# Cache de longa duração (Netlify / Cloudflare Pages). Os arquivos de mídia mantêm o nome; ao trocar um, renomeie ou aguarde o prazo.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+/assets/video/*
+  Cache-Control: public, max-age=2592000
+/assets/brand/*
+  Cache-Control: public, max-age=2592000
+/assets/css/*
+  Cache-Control: public, max-age=86400
+/assets/js/*
+  Cache-Control: public, max-age=86400
