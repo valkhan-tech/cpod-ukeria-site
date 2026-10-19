@@ -53,13 +53,13 @@ async function video(it) {
   ensure(mp4);
   const hdr = /arib-std-b67|smpte2084/.test(probeTransfer(it.src));
   // HLG/HDR -> SDR bt709 (iPhone grava HLG; sem isso as cores ficam lavadas)
-  const vf = ['scale=540:-2:flags=lanczos', 'fps=30']
+  const vf = [`scale=${it.width || 540}:-2:flags=lanczos`, 'fps=30']
     .concat(hdr ? ['zscale=t=linear:npl=100', 'format=gbrpf32le', 'zscale=p=bt709', 'tonemap=tonemap=hable:desat=0',
       'zscale=t=bt709:m=bt709:r=tv'] : [])
     .concat(['format=yuv420p']).join(',');
   if (!skip(mp4)) {
     const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-ss', String(it.start), '-i', abs(it.src), '-t', String(it.dur), '-an',
-      '-vf', vf, '-c:v', 'libx264', '-preset', 'veryslow', '-profile:v', 'high', '-crf', '30', '-maxrate', '900k', '-bufsize', '1800k',
+      '-vf', vf, '-c:v', 'libx264', '-preset', 'veryslow', '-profile:v', 'high', '-crf', '30', '-maxrate', (it.width > 540 ? '1800k' : '900k'), '-bufsize', (it.width > 540 ? '3600k' : '1800k'),
       '-movflags', '+faststart', abs(mp4)], { encoding: 'utf8' });
     if (r.status !== 0) throw new Error('ffmpeg falhou em ' + it.src + '\n' + r.stderr);
   }
@@ -70,6 +70,33 @@ async function video(it) {
   }
   report.push({ file: mp4, size: statSync(abs(mp4)).size }, { file: jpg, size: statSync(abs(jpg)).size });
   log('video', mp4, kb(mp4), hdr ? '(HDR->SDR)' : '', 'poster', kb(jpg));
+}
+
+
+// ------------------------------------------------------------------ hero
+// Vídeo de fundo: sem áudio, dois tamanhos (desktop 1280 / celular 854) e capa WebP (é o LCP da página).
+async function hero() {
+  const h = manifest.hero;
+  const vfBase = (w) => `scale=${w}:-2:flags=lanczos,fps=30,format=yuv420p`;
+  for (const [w, crf, maxrate] of [[1280, 27, '2600k'], [854, 28, '1100k']]) {
+    const out = `${h.dest}-${w}.mp4`;
+    ensure(out);
+    if (!skip(out)) {
+      const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', abs(h.src), '-an', '-vf', vfBase(w), '-c:v', 'libx264', '-preset', 'veryslow', '-profile:v', 'high',
+        '-crf', String(crf), '-maxrate', maxrate, '-bufsize', String(parseInt(maxrate, 10) * 2) + 'k', '-movflags', '+faststart', abs(out)], { encoding: 'utf8' });
+      if (r.status !== 0) throw new Error('hero falhou: ' + r.stderr);
+    }
+    report.push({ file: out, size: statSync(abs(out)).size });
+    log('hero ', out, kb(out));
+  }
+  const poster = `${h.dest}.webp`;
+  if (!skip(poster)) {
+    const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-ss', String(h.poster_at || 1), '-i', abs(h.src), '-frames:v', '1', '-vf', 'scale=1280:-2', '-f', 'image2pipe', '-vcodec', 'png', '-'], { maxBuffer: 1 << 26 });
+    if (r.status !== 0) throw new Error('capa do hero falhou');
+    await sharp(r.stdout).webp({ quality: 72, effort: 6 }).toFile(abs(poster));
+  }
+  report.push({ file: poster, size: statSync(abs(poster)).size });
+  log('hero ', poster, kb(poster));
 }
 
 // ----------------------------------------------------------------- logos
@@ -98,19 +125,19 @@ async function clientes() {
   for (const c of manifest.clientes) {
     const wbuf = await trimmed(abs(c.branco));
     const wsig = await signature(wbuf);
-    const ranked = pretos.filter((p) => !p.used).map((p) => ({ p, d: dist(wsig, p.sig) })).sort((a, b) => a.d - b.d);
-    const best = ranked[0];
-    best.p.used = true;
+    const best = c.semPreto ? null : pretos.filter((p) => !p.used).map((p) => ({ p, d: dist(wsig, p.sig) })).sort((a, b) => a.d - b.d)[0];
+    if (best) best.p.used = true;
     const outB = `assets/img/web/clientes/${c.slug}-branco.webp`;
     const outP = `assets/img/web/clientes/${c.slug}-preto.webp`;
     ensure(outB);
     const enc = (buf, out) => sharp(buf).resize({ height: 120, fit: 'inside' }).webp({ quality: 92, alphaQuality: 100, effort: 5 }).toFile(abs(out));
     if (!skip(outB)) await enc(wbuf, outB);
-    if (!skip(outP)) await enc(best.p.buf, outP);
+    if (best && !skip(outP)) await enc(best.p.buf, outP);
     const meta = await sharp(abs(outB)).metadata();
-    mapa.push({ slug: c.slug, nome: c.nome, branco: c.branco.split('/').pop(), preto: best.p.f, distancia: +best.d.toFixed(2), w: meta.width, h: meta.height });
-    report.push({ file: outB, size: statSync(abs(outB)).size }, { file: outP, size: statSync(abs(outP)).size });
-    log('logo ', c.slug.padEnd(22), `${c.branco.split('/').pop()} <-> ${best.p.f}`.padEnd(18), 'dist', best.d.toFixed(2), `${meta.width}x${meta.height}`);
+    mapa.push({ slug: c.slug, nome: c.nome, branco: c.branco.split('/').pop(), preto: best ? best.p.f : null, distancia: best ? +best.d.toFixed(2) : null, w: meta.width, h: meta.height });
+    report.push({ file: outB, size: statSync(abs(outB)).size });
+    if (best) report.push({ file: outP, size: statSync(abs(outP)).size });
+    log('logo ', c.slug.padEnd(22), (best ? `${c.branco.split('/').pop()} <-> ${best.p.f}` : `${c.branco.split('/').pop()} (só branco)`).padEnd(18), best ? 'dist ' + best.d.toFixed(2) : '', `${meta.width}x${meta.height}`);
   }
   writeFileSync(abs('tools/clientes-map.json'), JSON.stringify(mapa, null, 1));
 }
@@ -124,11 +151,14 @@ async function download(url, headers = {}) {
 async function siga() {
   const out = [];
   for (const p of manifest.siga) {
-    const dest = `assets/img/web/siga/${p.id}.webp`;
-    const item = { id: p.id, type: p.type, url: p.url, cover: null, title: null };
+    const dest = `assets/img/web/siga/${p.slug || p.id}.webp`;
+    const item = { id: p.id, type: p.type, url: p.url, cover: null, title: null, alt: p.alt || null };
     try {
       let imgBuf;
-      if (p.type === 'youtube') {
+      if (p.src) {                                // capa local enviada pelo cliente (Instagram não entrega a imagem sem login)
+        imgBuf = readFileSync(abs(p.src));
+        item.title = p.alt;
+      } else if (p.type === 'youtube') {
         const o = await (await download(`https://www.youtube.com/oembed?url=${encodeURIComponent(p.url)}&format=json`)).json();
         item.title = o.title;
         for (const q of ['maxresdefault', 'hqdefault']) {
@@ -144,8 +174,8 @@ async function siga() {
         item.title = d ? d[1].replace(/&amp;/g, '&').replace(/&#039;/g, "'").replace(/&quot;/g, '"') : null;
       }
       ensure(dest);
-      const w = p.type === 'youtube' ? 640 : 640;
-      await sharp(imgBuf).resize({ width: w, height: p.type === 'youtube' ? 360 : 800, fit: p.type === 'youtube' ? 'cover' : 'inside', withoutEnlargement: true })
+      const dims = p.type === 'youtube' ? { width: 640, height: 360 } : { width: 640, height: 800 };   // card do Instagram é 4:5
+      await sharp(imgBuf).rotate().resize({ ...dims, fit: 'cover', position: 'attention', withoutEnlargement: true })
         .webp({ quality: 80 }).toFile(abs(dest));
       item.cover = dest;
       report.push({ file: dest, size: statSync(abs(dest)).size });
@@ -160,6 +190,7 @@ async function siga() {
 
 // ------------------------------------------------------------------- main
 if (want('images')) for (const it of manifest.items.filter((i) => i.type === 'image')) await image(it);
+if (want('hero')) await hero();
 if (want('videos')) for (const it of manifest.items.filter((i) => i.type === 'video')) await video(it);
 if (want('clientes')) await clientes();
 if (want('siga')) await siga();

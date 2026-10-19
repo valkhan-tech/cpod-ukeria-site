@@ -1,6 +1,9 @@
 # Originais pesados do cliente (7 GB). Só as saídas otimizadas em assets/ são versionadas.
 referencia/v2/
 referencia/V2/
+referencia/v3/
+referencia/V3/
+
 # Arquivos marcados para exclusão (aguardando a limpeza definitiva)
 remover/
 # Dependências das ferramentas de desenvolvimento

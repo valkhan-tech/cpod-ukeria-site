@@ -122,15 +122,16 @@ h3{font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.2;}
 /* ---------- NAV ---------- */
 .nav{
   position:fixed; inset:0 0 auto 0; z-index:100; height:var(--nav-h);
-  background:var(--preto-ukeria); color:var(--bege-01);
+  background:transparent; color:var(--branco); transition:background .3s ease;
 }
+/* sobre o hero fica sem fundo; ao passar do hero (ou com o menu mobile aberto) ganha Preto Ukêria */
+.nav.is-solid, .nav.menu-open{background:var(--preto-ukeria);}
 .nav .container{height:100%; display:flex; align-items:center; justify-content:space-between; gap:20px;}
 .nav-logo img{height:26px; width:auto;}
 .nav-links{display:flex; gap:clamp(18px, 2.6vw, 38px); font-weight:600; font-size:.92rem;}
 .nav-links a{padding:6px 0; border-bottom:2px solid transparent; transition:border-color .2s, color .2s;}
 .nav-links a:hover{color:var(--amarelo-03); border-bottom-color:var(--amarelo-03);}
-.nav .btn{padding:10px 20px; font-size:.88rem;}
-.nav-toggle{display:none; width:44px; height:44px; background:none; border:0; cursor:pointer; color:var(--bege-01); position:relative;}
+.nav-toggle{display:none; width:44px; height:44px; background:none; border:0; cursor:pointer; color:var(--branco); position:relative;}
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{content:""; position:absolute; left:10px; right:10px; height:2px; background:currentColor; transition:transform .25s, opacity .2s;}
 .nav-toggle span{top:21px;} .nav-toggle span::before{left:0; right:0; top:-7px;} .nav-toggle span::after{left:0; right:0; top:7px;}
 .nav-toggle[aria-expanded="true"] span{background:transparent;}
@@ -146,10 +147,7 @@ h3{font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.2;}
   }
   .nav-links.open{opacity:1; transform:none; visibility:visible;}
   .nav-links a{padding:16px 0; font-size:1.1rem; border-bottom:1px solid var(--verde-05);}
-  .nav .btn{display:none;}
-  .nav-links .nav-cta-m{display:block; margin-top:16px; text-align:center; border:0;}
 }
-.nav-cta-m{display:none;}
 
 /* ---------- seções ---------- */
 .sec{position:relative; overflow:hidden; padding:clamp(72px, 10vw, 140px) 0;}
@@ -157,25 +155,29 @@ h3{font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.2;}
 .sec-head{max-width:760px; margin-bottom:clamp(36px, 5vw, 64px);}
 .sec-head p{margin-top:18px; color:var(--fg-soft);}
 
-/* ---------- INÍCIO / HERO ---------- */
-.hero{min-height:100svh; padding-top:calc(var(--nav-h) + 40px); padding-bottom:64px; display:flex; align-items:center;}
-.hero .container{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px, 5vw, 72px); align-items:center;}
-.hero-kicker{font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem, 2vw, 1.6rem); color:var(--amarelo-03); margin-bottom:20px;}
-.hero h1{max-width:16ch;}
-.hero .lead{margin-top:26px; max-width:52ch; color:var(--bege-01);}
-.hero-actions{margin-top:36px; display:flex; flex-wrap:wrap; gap:14px;}
-.hero-visual{position:relative; width:100%; max-width:600px; margin-inline:auto;}
-.hero-visual svg{width:100%; height:auto; overflow:visible;}
-.eye-glow-o{animation:breathe 7s ease-in-out infinite; transform-origin:210px 400px;}
-.eye-glow-y{animation:breathe 9s ease-in-out -3s infinite; transform-origin:430px 230px;}
-@keyframes breathe{0%,100%{transform:scale(1); opacity:.92;} 50%{transform:scale(1.08); opacity:1;}}
+/* ---------- INÍCIO / HERO (vídeo de fundo) ---------- */
+.hero{position:relative; isolation:isolate; min-height:100svh; overflow:hidden; background:var(--preto-ukeria); color:var(--branco);}
+.hero-video{position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover;}
+/* camada chapada em Preto Ukêria: garante contraste do texto branco sobre qualquer quadro do vídeo */
+.hero-shade{position:absolute; inset:0; z-index:-1; background:var(--preto-ukeria); opacity:.6;}   /* 60%: pior quadro do vídeo ainda dá 4,8:1 para o texto branco (tools/check-hero-contrast.mjs) */
+.hero-grid{
+  position:relative; width:var(--container); margin-inline:auto; min-height:100svh;
+  display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:clamp(16px, 4vw, 56px);
+  padding:calc(var(--nav-h) + 32px) 0 clamp(40px, 7vh, 80px);
+}
+.hero-text{display:flex; flex-direction:column; align-items:flex-start;}
+.hero h1{max-width:15ch; color:var(--branco); font-size:clamp(2.6rem, 6vw, 5.4rem); text-shadow:0 2px 28px color-mix(in srgb, var(--preto-ukeria) 45%, transparent);}
+.btn-hero{margin-top:clamp(22px, 3vw, 34px); padding:12px 24px; font-size:.9rem; background:var(--amarelo-03); color:var(--preto-ukeria);}
+.btn-hero:hover{background:var(--branco); transform:translateY(-2px);}
+/* olho: símbolo branco, sem brilho nem raios; grande e levemente cortado no canto */
+.hero-eye{justify-self:end; align-self:end; width:min(46vw, 640px); margin:0 -3vw -4vh 0; color:var(--branco);}
+.hero-eye svg{display:block; width:100%; height:auto; overflow:visible;}
 .iris-blink{transform-box:fill-box; transform-origin:center; animation:blink 6.5s infinite;}
 @keyframes blink{0%,93%,100%{transform:scaleY(1);} 96%{transform:scaleY(.08);}}
 .iris-move{transition:transform .25s ease-out;}
 @media (max-width:860px){
-  .hero{min-height:0;}
-  .hero .container{grid-template-columns:1fr;}
-  .hero-visual{max-width:420px; order:-1;}
+  .hero-grid{grid-template-columns:1fr; align-content:space-between; gap:24px;}
+  .hero-eye{width:min(74vw, 420px); margin:0 -6vw -2vh 0;}
 }
 
 /* ---------- A UKÊRIA ---------- */
@@ -197,17 +199,41 @@ h3{font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.2;}
 .origin-def div{border-top:2px solid var(--line); padding-top:18px; font-size:clamp(1.15rem, 2vw, 1.5rem); line-height:1.4; font-weight:600;}
 .origin-def strong{font-family:var(--serif); font-style:italic; font-weight:400; font-size:1.15em;}
 .origin-sum{margin-top:clamp(36px, 5vw, 60px);}
-.origin-art{position:absolute; right:-70px; bottom:-70px; width:min(400px, 44vw); pointer-events:none;}
+.origin-art{position:absolute; right:-90px; bottom:-120px; width:min(400px, 44vw); pointer-events:none;}
 @media (max-width:760px){.origin-def{grid-template-columns:1fr;} .origin-art{display:none;}}
+
+
+/* botões de abas de "A Ukêria": Ancestralidade e Quem lidera (mesma lógica dos serviços) */
+.tab-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px, 3vw, 32px); max-width:1000px; margin:clamp(40px, 6vw, 64px) auto 0;}
+.tab-btn{
+  position:relative; width:100%; min-height:112px; padding:28px 32px; border:0; border-radius:var(--radius); cursor:pointer;
+  background:var(--preto-ukeria); color:var(--bege-01); text-align:center; text-transform:uppercase; letter-spacing:.01em;
+  font:700 clamp(1.15rem, 2.4vw, 2rem)/1.1 var(--sans); transition:background .25s, transform .25s, box-shadow .25s;
+}
+.tab-btn:hover{transform:translateY(-4px); background:var(--verde-05);}
+.tab-btn[aria-expanded="true"]{background:var(--verde-05); box-shadow:inset 0 -6px 0 var(--laranja-03);}
+.tab-btn .mark{color:var(--bege-01);}
+.about-panels{margin-top:16px; text-align:left;}
+.about-panel{position:relative; overflow:hidden; margin-top:16px; border-radius:24px; scroll-margin-top:calc(var(--nav-h) + 16px);}
+.about-panel[hidden]{display:none;}
+/* "Fechar" legível também sobre o Bege 03 */
+.about-panel.bg-bege-03 .svc-close{color:var(--preto-ukeria); border-color:var(--preto-ukeria);}
+.about-panel.bg-bege-03 .svc-close:hover{background:var(--amarelo-03); border-color:var(--amarelo-03);}
+.about-panel-in{position:relative; z-index:2; padding:72px clamp(24px, 4vw, 56px) clamp(32px, 5vw, 56px);}
+@media (max-width:760px){.tab-grid{grid-template-columns:1fr;} .tab-btn{min-height:84px;}}
 
 /* ancestralidade */
 .ancestry-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px, 6vw, 88px); align-items:start;}
-.ancestry .glow{width:min(70vw, 760px); aspect-ratio:1; left:-18%; top:-26%; --glow:var(--verde-03); opacity:.9;}
-.ancestry .glow.y{width:min(46vw, 480px); left:auto; right:-8%; top:auto; bottom:-18%; --glow:var(--laranja-03); opacity:.75;}
+.ancestry .glow{width:min(70%, 560px); aspect-ratio:1; left:-12%; top:-22%; --glow:var(--verde-03); opacity:.9;}
+.ancestry .glow.y{width:min(46%, 380px); left:auto; right:-6%; top:auto; bottom:-14%; --glow:var(--laranja-03); opacity:.75;}
 .quote{position:relative; padding:clamp(26px, 4vw, 44px); border:1px solid color-mix(in srgb, var(--bege-01) 40%, transparent); border-radius:var(--radius); background:color-mix(in srgb, var(--verde-05) 70%, transparent); backdrop-filter:blur(6px);}
 .quote blockquote{font-family:var(--serif); font-style:italic; font-size:clamp(1.7rem, 3.4vw, 2.7rem); line-height:1.15; color:var(--amarelo-03);}
-.mae{position:relative; margin-top:20px; aspect-ratio:2/1;}
-.mae figcaption{position:absolute; left:12px; bottom:12px; z-index:2; padding:6px 12px; border-radius:999px; background:var(--preto-ukeria); color:var(--bege-01); font-size:.72rem; font-weight:700; letter-spacing:.06em;}
+/* foto MAE-USP: a imagem do cliente já vem recortada em formato de olho (PNG com transparência).
+   O olho "abre" uma única vez, na primeira vez que a aba aparece. */
+.mae{position:relative; margin:20px 0 0; aspect-ratio:1600/1368;}
+.mae img{display:block; width:100%; height:100%; object-fit:contain; clip-path:ellipse(75% 75% at 50% 50%); transition:clip-path 1.4s cubic-bezier(.22,.8,.2,1), transform 1.8s ease-out;}
+.js .mae:not(.is-open) img{clip-path:ellipse(50% 1.5% at 50% 50%); transform:scale(1.08);}
+.mae figcaption{position:absolute; left:50%; bottom:0; transform:translateX(-50%); z-index:2; white-space:nowrap; padding:6px 12px; border-radius:999px; background:var(--preto-ukeria); color:var(--bege-01); font-size:.72rem; font-weight:700; letter-spacing:.06em;}
 .quote-note{margin-top:20px; font-size:.92rem; line-height:1.6; color:var(--bege-02);}
 .ancestry .prose + .prose{margin-top:1.1em;}
 .mantra{margin-top:clamp(40px, 6vw, 72px); font-size:clamp(1.5rem, 3vw, 2.3rem); font-weight:700; line-height:1.3;}
@@ -361,7 +387,7 @@ h3{font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.2;}
 .post.c3{background:var(--bege-03); color:var(--preto-ukeria);}
 .post.c4{background:var(--laranja-03); color:var(--preto-ukeria);}
 .post .cover{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
-.post.has-cover::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, var(--preto-ukeria) 0%, transparent 60%);}
+.post.has-cover::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, var(--preto-ukeria) 0%, transparent 48%);}
 .post.has-cover{color:var(--bege-01);}
 .post.has-cover .platform, .post.has-cover .cta{z-index:1;}
 .post.yt{padding:0; gap:0; justify-content:flex-start; background:var(--preto-ukeria); color:var(--bege-01);}

@@ -3,49 +3,56 @@
   "id": "ig-01",
   "type": "instagram",
   "url": "https://www.instagram.com/p/DZs6TplmZKz/",
-  "cover": null,
-  "title": null
+  "cover": "assets/img/web/siga/ukeria-instagram-764-novos-seguidores.webp",
+  "title": "764 novos seguidores e uma comunidade muito mais valiosa do que esse número",
+  "alt": "764 novos seguidores e uma comunidade muito mais valiosa do que esse número"
  },
  {
   "id": "yt-01",
   "type": "youtube",
   "url": "https://youtu.be/38ebCS9p1U8",
   "cover": "assets/img/web/siga/yt-01.webp",
-  "title": "Buscar referências fora do digital pode mudar o seu jeito de criar | VLOG UKÊRIA"
+  "title": "Buscar referências fora do digital pode mudar o seu jeito de criar | VLOG UKÊRIA",
+  "alt": null
  },
  {
   "id": "ig-02",
   "type": "instagram",
   "url": "https://www.instagram.com/p/DWmpVcNkriY/",
-  "cover": null,
-  "title": null
+  "cover": "assets/img/web/siga/ukeria-instagram-bastidores-time-ukeria.webp",
+  "title": "Bastidores da Ukêria: integrante da equipe sorrindo com o celular na mão no escritório",
+  "alt": "Bastidores da Ukêria: integrante da equipe sorrindo com o celular na mão no escritório"
  },
  {
   "id": "ig-03",
   "type": "instagram",
   "url": "https://www.instagram.com/p/Dai9RqJhEvQ/",
-  "cover": null,
-  "title": null
+  "cover": "assets/img/web/siga/ukeria-instagram-bastidores-producao-calcados.webp",
+  "title": "Bastidores de uma produção de fotografia de calçados para marca, em preto e branco",
+  "alt": "Bastidores de uma produção de fotografia de calçados para marca, em preto e branco"
  },
  {
   "id": "yt-02",
   "type": "youtube",
   "url": "https://youtu.be/ZLBTSe56TjM",
   "cover": "assets/img/web/siga/yt-02.webp",
-  "title": "O que acontece em 3 DIAS de captação para clientes? | VLOG"
+  "title": "O que acontece em 3 DIAS de captação para clientes? | VLOG",
+  "alt": null
  },
  {
   "id": "ig-04",
   "type": "instagram",
   "url": "https://www.instagram.com/p/DZ5IvEoxTVt/",
-  "cover": null,
-  "title": null
+  "cover": "assets/img/web/siga/ukeria-instagram-apresentacao-estrategia-cliente.webp",
+  "title": "Integrante da Ukêria apresentando uma estratégia de comunicação para uma equipe",
+  "alt": "Integrante da Ukêria apresentando uma estratégia de comunicação para uma equipe"
  },
  {
   "id": "ig-05",
   "type": "instagram",
   "url": "https://www.instagram.com/p/DcCOos4FFzm/",
-  "cover": null,
-  "title": null
+  "cover": "assets/img/web/siga/ukeria-instagram-coisas-que-a-ukeria-acha-chique.webp",
+  "title": "Coisas que a Ukêria acha chique, com bastidores de uma produção de moda",
+  "alt": "Coisas que a Ukêria acha chique, com bastidores de uma produção de moda"
  }
 ]

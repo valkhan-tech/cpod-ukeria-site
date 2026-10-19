@@ -206,7 +206,7 @@
         "width": 1200,
         "height": 630
       },
-      "dateModified": "2026-10-09"
+      "dateModified": "2026-10-19"
     },
     {
       "@type": "FAQPage",
@@ -291,9 +291,7 @@
         <a href="#como-fazemos">Como fazemos</a>
         <a href="#clientes">Clientes</a>
         <a href="#contato">Contato</a>
-        <a href="#contato" class="btn btn-primary nav-cta-m">Bora conversar</a>
       </nav>
-      <a href="#contato" class="btn btn-primary">Bora conversar</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span></button>
     </div>
   </div>
@@ -302,46 +300,23 @@
 <main>
 
 <!-- ================= INÍCIO ================= -->
-<section class="sec hero bg-verde-05" id="inicio">
-  <div class="container">
+<!-- ================= INÍCIO ================= -->
+<section class="hero" id="inicio" aria-label="Início">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/web/hero/hero.webp" width="1280" height="720" aria-hidden="true" tabindex="-1">
+    <source src="assets/video/web/hero/hero-854.mp4" type="video/mp4" media="(max-width: 700px)">
+    <source src="assets/video/web/hero/hero-1280.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-grid">
     <div class="hero-text">
-      <p class="hero-kicker">Antes de produzir, a gente entende.</p>
       <h1>O <span class="q">olhar estratégico</span> que potencializa a sua marca!</h1>
-      <p class="lead">Unimos estratégia de comunicação, produção de vídeo, fotografia profissional e gestão de redes sociais para marcas que querem construir autoridade no digital.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contato">Vamos entender o que sua marca precisa?</a>
-        <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
-      </div>
+      <a class="btn btn-hero" href="#contato">Bora conversar</a>
     </div>
-
-    <div class="hero-visual">
-      <svg viewBox="0 0 640 640" role="img" aria-label="Símbolo da Ukêria: a letra a com um olho que acompanha o cursor">
-        <defs>
-          <radialGradient id="gLaranja"><stop offset="0" style="stop-color:var(--laranja-03)"/><stop offset="1" style="stop-color:var(--laranja-03);stop-opacity:0"/></radialGradient>
-          <radialGradient id="gAmarelo"><stop offset="0" style="stop-color:var(--amarelo-03)"/><stop offset="1" style="stop-color:var(--amarelo-03);stop-opacity:0"/></radialGradient>
-        </defs>
-        <!-- degrade focado -->
-        <circle class="eye-glow-o" cx="210" cy="400" r="210" fill="url(#gLaranja)"/>
-        <circle class="eye-glow-y" cx="430" cy="230" r="150" fill="url(#gAmarelo)"/>
-        <!-- linhas e perspectiva: raios saindo de um único ponto (o olho) -->
-        <g stroke="var(--bege-01)" stroke-width="2.4" stroke-linecap="round" opacity=".7">
-          <line x1="210" y1="400" x2="152.7" y2="75"/>
-          <line x1="210" y1="400" x2="251.8" y2="2.2"/>
-          <line x1="210" y1="400" x2="348.6" y2="56.9"/>
-          <line x1="210" y1="400" x2="462.8" y2="64.6"/>
-          <line x1="210" y1="400" x2="513.1" y2="154.6"/>
-          <line x1="210" y1="400" x2="596.5" y2="211.5"/>
-          <line x1="210" y1="400" x2="599.7" y2="310"/>
-          <line x1="210" y1="400" x2="589.9" y2="406.6"/>
-        </g>
-        <!-- símbolo oficial -->
-        <g transform="translate(36 250) scale(2.2)" fill="var(--bege-01)">
-          <path d="m123.51,3.63l-3.27,27.25c-6.28-9.49-14.04-16.95-23.29-22.36C87.26,2.84,76.36,0,64.25,0,51.54,0,40.38,2.88,30.76,8.63c-9.61,5.75-17.14,13.74-22.59,23.95C2.72,42.8,0,54.72,0,68.34s2.72,25.54,8.17,35.76c5.45,10.22,12.98,18.2,22.59,23.95,9.61,5.75,20.78,8.63,33.49,8.63s23.01-2.84,32.7-8.51c9.28-5.44,17.03-12.96,23.25-22.57l3.31,27.45h43.82l-7.95-64.71,7.95-64.71h-43.82Zm-12.26,83.21c-4.54,5.37-9.8,9.61-15.78,12.72-5.98,3.1-12.3,4.65-18.96,4.65s-12.53-1.55-17.6-4.65c-5.07-3.1-9.05-7.34-11.92-12.72-2.88-5.37-4.31-11.54-4.31-18.5s1.44-13.13,4.31-18.5c2.87-5.37,6.85-9.61,11.92-12.72,5.07-3.1,10.93-4.65,17.6-4.65s12.98,1.55,18.96,4.65c5.98,3.1,11.24,7.34,15.78,12.72,4.54,5.37,7.95,11.54,10.22,18.5-2.27,6.96-5.68,13.13-10.22,18.5Z"/>
-          <g class="iris-move" id="irisMove">
-            <path class="iris-blink" d="m89.97,55.81c-.59-.31-1.19-.57-1.8-.81-1.65-.7-3.47-1.06-5.48-1.06-.05,0-.1,0-.15,0-.05,0-.1,0-.16,0-2.02,0-3.85.36-5.5,1.07-.6.23-1.19.49-1.77.79-2.39,1.24-4.5,2.94-6.31,5.09-1.82,2.15-3.18,4.62-4.09,7.4.91,2.79,2.27,5.25,4.09,7.4,1.82,2.15,3.92,3.85,6.31,5.09.59.31,1.19.57,1.8.81,1.65.7,3.47,1.06,5.48,1.06.05,0,.1,0,.15,0,.05,0,.1,0,.16,0,2.02,0,3.85-.36,5.5-1.07.6-.23,1.19-.49,1.77-.79,2.39-1.24,4.5-2.94,6.31-5.09,1.82-2.15,3.18-4.62,4.09-7.4-.91-2.79-2.27-5.25-4.09-7.4-1.82-2.15-3.92-3.85-6.31-5.09Z"/>
-          </g>
-          <polygon points="193.58 68.12 200.98 3.76 182.84 3.76 174.89 67.35 174.89 68.89 183.26 133.18 202.35 132.97 193.58 68.12"/>
-        </g>
+    <div class="hero-eye">
+      <svg viewBox="0 0 202.35 136.68" role="img" aria-label="Símbolo da Ukêria: a letra a com um olho que acompanha o cursor" fill="currentColor">
+        <path d="m123.51,3.63l-3.27,27.25c-6.28-9.49-14.04-16.95-23.29-22.36C87.26,2.84,76.36,0,64.25,0,51.54,0,40.38,2.88,30.76,8.63c-9.61,5.75-17.14,13.74-22.59,23.95C2.72,42.8,0,54.72,0,68.34s2.72,25.54,8.17,35.76c5.45,10.22,12.98,18.2,22.59,23.95,9.61,5.75,20.78,8.63,33.49,8.63s23.01-2.84,32.7-8.51c9.28-5.44,17.03-12.96,23.25-22.57l3.31,27.45h43.82l-7.95-64.71,7.95-64.71h-43.82Zm-12.26,83.21c-4.54,5.37-9.8,9.61-15.78,12.72-5.98,3.1-12.3,4.65-18.96,4.65s-12.53-1.55-17.6-4.65c-5.07-3.1-9.05-7.34-11.92-12.72-2.88-5.37-4.31-11.54-4.31-18.5s1.44-13.13,4.31-18.5c2.87-5.37,6.85-9.61,11.92-12.72,5.07-3.1,10.93-4.65,17.6-4.65s12.98,1.55,18.96,4.65c5.98,3.1,11.24,7.34,15.78,12.72,4.54,5.37,7.95,11.54,10.22,18.5-2.27,6.96-5.68,13.13-10.22,18.5Z"/>
+        <g class="iris-move" id="irisMove"><path class="iris-blink" d="m89.97,55.81c-.59-.31-1.19-.57-1.8-.81-1.65-.7-3.47-1.06-5.48-1.06-.05,0-.1,0-.15,0-.05,0-.1,0-.16,0-2.02,0-3.85.36-5.5,1.07-.6.23-1.19.49-1.77.79-2.39,1.24-4.5,2.94-6.31,5.09-1.82,2.15-3.18,4.62-4.09,7.4.91,2.79,2.27,5.25,4.09,7.4,1.82,2.15,3.92,3.85,6.31,5.09.59.31,1.19.57,1.8.81,1.65.7,3.47,1.06,5.48,1.06.05,0,.1,0,.15,0,.05,0,.1,0,.16,0,2.02,0,3.85-.36,5.5-1.07.6-.23,1.19-.49,1.77-.79,2.39-1.24,4.5-2.94,6.31-5.09,1.82-2.15,3.18-4.62,4.09-7.4-.91-2.79-2.27-5.25-4.09-7.4-1.82-2.15-3.92-3.85-6.31-5.09Z"/></g>
+        <polygon points="193.58 68.12 200.98 3.76 182.84 3.76 174.89 67.35 174.89 68.89 183.26 133.18 202.35 132.97 193.58 68.12"/>
       </svg>
     </div>
   </div>
@@ -393,14 +368,18 @@
     <div class="prose reveal" style="max-width:62ch; margin:28px auto 0; text-align:left">
       <p>Olhares diferentes que se encontram para enxergar cada marca por novos ângulos, encontrar o que existe de potente em cada história e transformar tudo isso em comunicação.</p>
     </div>
-  </div>
-</section>
-
-<section class="sec ancestry bg-verde-05" id="ancestralidade">
-  <div class="glow" aria-hidden="true"></div>
-  <div class="glow y" aria-hidden="true"></div>
-  <div class="container">
-    <div class="ancestry-grid">
+    <div class="about-tabs">
+      <ul class="tab-grid">
+        <li><button class="tab-btn" type="button" id="about-btn-ancestralidade" data-about="ancestralidade" aria-expanded="false" aria-controls="about-panel-ancestralidade"><span class="mark tr" aria-hidden="true"></span><span class="t">Ancestralidade</span></button></li>
+        <li><button class="tab-btn" type="button" id="about-btn-quem-lidera" data-about="quem-lidera" aria-expanded="false" aria-controls="about-panel-quem-lidera"><span class="mark tr" aria-hidden="true"></span><span class="t">Quem lidera</span></button></li>
+      </ul>
+      <div class="about-panels">
+        <div class="about-panel ancestry bg-verde-05" id="about-panel-ancestralidade" role="region" aria-labelledby="about-btn-ancestralidade" hidden>
+          <div class="glow" aria-hidden="true"></div>
+          <div class="glow y" aria-hidden="true"></div>
+          <div class="about-panel-in">
+            <button class="svc-close" type="button" aria-label="Fechar Ancestralidade">Fechar ×</button>
+            <div class="ancestry-grid">
       <div class="reveal">
         <span class="eyebrow">Ancestralidade</span>
         <h2>Uma história de <span class="q">resistência.</span></h2>
@@ -413,8 +392,8 @@
         <figure class="quote">
           <blockquote>“Resistir para não morrer. Vamos em frente!”</blockquote>
         </figure>
-        <figure class="mae glass">
-          <img src="assets/img/web/ancestralidade-mae-usp.webp" width="1200" height="600" loading="lazy" decoding="async" alt="Dançarinos Terena em exposição do Museu de Arqueologia e Etnologia da USP (MAE-USP)">
+        <figure class="mae" id="maeFig">
+          <img data-src="assets/img/web/ancestralidade-resistir.webp" width="1600" height="1368" loading="lazy" decoding="async" alt="Mulheres Terena dançando em uma exposição do Museu de Arqueologia e Etnologia da USP (MAE-USP)">
           <figcaption>Foto: Reprodução/MAE-USP</figcaption>
         </figure>
         <p class="quote-note">A frase foi escolhida por representantes do povo Terena da aldeia de Icatu, no interior de São Paulo, para representar o módulo Terena em uma exposição realizada pelo Museu de Arqueologia e Etnologia da Universidade de São Paulo (MAE-USP), dedicada às histórias e culturas dos povos indígenas.</p>
@@ -424,19 +403,18 @@
         </div>
       </div>
     </div>
-    <ul class="mantra reveal">
+    <ul class="mantra">
       <li>Ukêria é <em>resistência</em></li>
       <li>é <em>transformação</em></li>
       <li>é <em>visão</em></li>
       <li>é futuro</li>
     </ul>
-  </div>
-</section>
-
-<section class="sec move bg-bege-03" id="o-que-nos-move">
-  <span class="mark tr" aria-hidden="true"></span>
-  <div class="container">
-    <div class="move-grid">
+          </div>
+        </div>
+        <div class="about-panel move bg-bege-03" id="about-panel-quem-lidera" role="region" aria-labelledby="about-btn-quem-lidera" hidden>
+          <div class="about-panel-in">
+            <button class="svc-close" type="button" aria-label="Fechar Quem lidera">Fechar ×</button>
+            <div class="move-grid">
       <div class="reveal">
         <span class="eyebrow">O que nos move</span>
         <div class="big-num" aria-hidden="true">100%</div>
@@ -452,21 +430,13 @@
       </div>
     </div>
 
-    <div class="leaders reveal">
+    <div class="leaders">
       <h3>Quem lidera</h3>
       <div class="leaders-grid">
         <figure class="leaders-photo glass">
-          <img src="assets/img/web/quem-lidera.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="Letícia Palhão e Ketheleen Dias, liderança da Ukêria, rindo juntas">
+          <img data-src="assets/img/web/quem-lidera.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="Ketheleen Dias e Letícia Palhão, liderança da Ukêria, rindo juntas">
         </figure>
         <div class="leader-list">
-          <article class="leader">
-            <h4>Letícia Palhão</h4>
-            <p>Fundadora &amp; Fotógrafa</p>
-            <div class="social">
-              <a href="https://www.instagram.com/leticiapalhaolima/" target="_blank" rel="noopener" aria-label="Instagram de Letícia Palhão">Instagram</a>
-              <a href="https://www.linkedin.com/in/leticia-lima-9b8014272/" target="_blank" rel="noopener" aria-label="LinkedIn de Letícia Palhão">LinkedIn</a>
-            </div>
-          </article>
           <article class="leader">
             <h4>Ketheleen Dias</h4>
             <p>Head de Design &amp; Analista de Projetos</p>
@@ -475,6 +445,18 @@
               <a href="https://www.linkedin.com/in/ketheleen-dias-009b98111/" target="_blank" rel="noopener" aria-label="LinkedIn de Ketheleen Dias">LinkedIn</a>
             </div>
           </article>
+          <article class="leader">
+            <h4>Letícia Palhão</h4>
+            <p>Fundadora &amp; Fotógrafa</p>
+            <div class="social">
+              <a href="https://www.instagram.com/leticiapalhaolima/" target="_blank" rel="noopener" aria-label="Instagram de Letícia Palhão">Instagram</a>
+              <a href="https://www.linkedin.com/in/leticia-lima-9b8014272/" target="_blank" rel="noopener" aria-label="LinkedIn de Letícia Palhão">LinkedIn</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+          </div>
         </div>
       </div>
     </div>
@@ -491,7 +473,7 @@
       <p>Escolha um serviço para ver os tópicos e alguns dos nossos trabalhos.</p>
     </div>
     <ul class="service-grid reveal">
-      <li><button class="service" type="button" id="svc-btn-producao-audiovisual" data-svc="producao-audiovisual" aria-expanded="false" aria-controls="svc-panel-producao-audiovisual"><span class="mark tr" aria-hidden="true"></span><span class="n">01</span><span class="t">Produção Audiovisual</span><span class="hint">Ver tópicos e trabalhos</span></button></li>
+      <li><button class="service" type="button" id="svc-btn-producao-audiovisual" data-svc="producao-audiovisual" aria-expanded="true" aria-controls="svc-panel-producao-audiovisual"><span class="mark tr" aria-hidden="true"></span><span class="n">01</span><span class="t">Produção Audiovisual</span><span class="hint">Ver tópicos e trabalhos</span></button></li>
       <li><button class="service" type="button" id="svc-btn-social-media" data-svc="social-media" aria-expanded="false" aria-controls="svc-panel-social-media"><span class="mark tr" aria-hidden="true"></span><span class="n">02</span><span class="t">Social Media</span><span class="hint">Ver tópicos e trabalhos</span></button></li>
       <li><button class="service" type="button" id="svc-btn-fotografia-para-marcas" data-svc="fotografia-para-marcas" aria-expanded="false" aria-controls="svc-panel-fotografia-para-marcas"><span class="mark tr" aria-hidden="true"></span><span class="n">03</span><span class="t">Fotografia para marcas</span><span class="hint">Ver tópicos e trabalhos</span></button></li>
       <li><button class="service" type="button" id="svc-btn-cobertura-de-eventos" data-svc="cobertura-de-eventos" aria-expanded="false" aria-controls="svc-panel-cobertura-de-eventos"><span class="mark tr" aria-hidden="true"></span><span class="n">04</span><span class="t">Cobertura de Eventos</span><span class="hint">Ver tópicos e trabalhos</span></button></li>
@@ -499,7 +481,7 @@
       <li><a class="service cta" href="#contato"><span class="mark tr" aria-hidden="true"></span><span class="t">Vamos entender o que sua marca precisa?</span><span class="arrow">Falar com a gente →</span></a></li>
     </ul>
     <div class="svc-panels" id="svc-panels">
-    <div class="svc-panel bg-verde-05" id="svc-panel-producao-audiovisual" role="region" aria-labelledby="svc-btn-producao-audiovisual" hidden>
+    <div class="svc-panel bg-verde-05" id="svc-panel-producao-audiovisual" role="region" aria-labelledby="svc-btn-producao-audiovisual">
       <div class="svc-panel-in">
         <button class="svc-close" type="button" aria-label="Fechar Produção Audiovisual">Fechar ×</button>
         <div class="svc-topics">
@@ -513,14 +495,14 @@
         </div>
         <div class="car svc-media" data-carousel="producao-audiovisual">
           <div class="car-track" tabindex="0" role="region" aria-label="Galeria de Produção Audiovisual">
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-01.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de moda em uma cidade à noite"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-01.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-02.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo em gramado com grupo de mulheres e brinde"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-02.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-03.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo institucional com apresentadora de cabelo vermelho"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-03.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-04.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de apresentação de uma casa com a corretora"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-04.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-05.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de treinamento de brigada de incêndio, à noite"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-05.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-06.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo com homem de camiseta preta e legendas animadas"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-06.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-07.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de produto: sapatos femininos"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-07.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-08.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de produto: linha de cosméticos Luxxuoso"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-08.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-01.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de produto: sapatos femininos"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-01.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-02.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de moda em uma cidade à noite"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-02.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-03.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo institucional: jovem em escritório com a mensagem &quot;Materializamos visões&quot;"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-03.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-04.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de apresentação de uma casa com a corretora"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-04.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-05.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de treinamento de brigada de incêndio, à noite"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-05.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-06.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de produto: linha de cosméticos Luxxuoso"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-06.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-07.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo em gramado com grupo de mulheres e brinde"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-07.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-08.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cerimônia de formatura com entrega de certificados"><video data-src="assets/video/web/servicos/producao-audiovisual/producao-audiovisual-08.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
           </div>
           <div class="car-ui">
             <button class="arrow-btn" type="button" data-dir="-1" aria-label="Anterior">←</button>
@@ -539,12 +521,12 @@
         </div>
         <div class="car svc-media" data-carousel="social-media">
           <div class="car-track" tabindex="0" role="region" aria-label="Galeria de Social Media">
-            <figure class="slide flat" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-01-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-01-640.webp 512w, assets/img/web/servicos/social-media/social-media-01.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social com a frase &quot;Uma jogada pode decidir o futuro&quot;"></figure>
-            <figure class="slide flat" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-02-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-02-640.webp 512w, assets/img/web/servicos/social-media/social-media-02.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social sobre treinamentos regulamentados"></figure>
-            <figure class="slide flat" style="--ar:1280/1600"><img data-src="assets/img/web/servicos/social-media/social-media-03-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-03-640.webp 512w, assets/img/web/servicos/social-media/social-media-03.webp 1280w" sizes="(max-width: 700px) 70vw, 340px" width="1280" height="1600" loading="lazy" decoding="async" alt="Arte para rede social: &quot;Você acha que está escolhendo quem amar&quot;"></figure>
-            <figure class="slide flat" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-04-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-04-640.webp 512w, assets/img/web/servicos/social-media/social-media-04.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social com caderno: &quot;Depois que o contato acaba, é o material que continua representando sua marca&quot;"></figure>
-            <figure class="slide flat" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-05-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-05-640.webp 512w, assets/img/web/servicos/social-media/social-media-05.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social: &quot;Antes de produzir, a gente pensa como o cliente&quot;"></figure>
-            <figure class="slide flat" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-06-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-06-640.webp 512w, assets/img/web/servicos/social-media/social-media-06.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social: &quot;Foi essa resposta que um dos nossos clientes precisava&quot;"></figure>
+            <figure class="slide" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-01-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-01-640.webp 512w, assets/img/web/servicos/social-media/social-media-01.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social com a frase &quot;Uma jogada pode decidir o futuro&quot;"></figure>
+            <figure class="slide" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-02-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-02-640.webp 512w, assets/img/web/servicos/social-media/social-media-02.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social sobre treinamentos regulamentados"></figure>
+            <figure class="slide" style="--ar:1280/1600"><img data-src="assets/img/web/servicos/social-media/social-media-03-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-03-640.webp 512w, assets/img/web/servicos/social-media/social-media-03.webp 1280w" sizes="(max-width: 700px) 70vw, 340px" width="1280" height="1600" loading="lazy" decoding="async" alt="Arte para rede social: &quot;Você acha que está escolhendo quem amar&quot;"></figure>
+            <figure class="slide" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-04-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-04-640.webp 512w, assets/img/web/servicos/social-media/social-media-04.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social com caderno: &quot;Depois que o contato acaba, é o material que continua representando sua marca&quot;"></figure>
+            <figure class="slide" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-05-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-05-640.webp 512w, assets/img/web/servicos/social-media/social-media-05.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social: &quot;Antes de produzir, a gente pensa como o cliente&quot;"></figure>
+            <figure class="slide" style="--ar:1080/1350"><img data-src="assets/img/web/servicos/social-media/social-media-06-640.webp" data-srcset="assets/img/web/servicos/social-media/social-media-06-640.webp 512w, assets/img/web/servicos/social-media/social-media-06.webp 1080w" sizes="(max-width: 700px) 70vw, 340px" width="1080" height="1350" loading="lazy" decoding="async" alt="Arte para rede social: &quot;Foi essa resposta que um dos nossos clientes precisava&quot;"></figure>
           </div>
           <div class="car-ui">
             <button class="arrow-btn" type="button" data-dir="-1" aria-label="Anterior">←</button>
@@ -559,24 +541,29 @@
         <button class="svc-close" type="button" aria-label="Fechar Fotografia para marcas">Fechar ×</button>
         <div class="svc-topics">
           <h3>Fotografia para marcas</h3>
-          <ul><li>Still</li><li>Retrato Corporativo</li><li>Empresarial</li></ul>
+          <ul><li>Still</li><li>Retrato Artístico</li><li>Retrato Corporativo</li><li>Empresarial</li></ul>
         </div>
         <div class="car svc-media" data-carousel="fotografia-para-marcas">
           <div class="car-track" tabindex="0" role="region" aria-label="Galeria de Fotografia para marcas">
-            <figure class="slide glass" style="--ar:1105/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-01-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-01-640.webp 442w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-01.webp 1105w" sizes="(max-width: 700px) 70vw, 340px" width="1105" height="1600" loading="lazy" decoding="async" alt="Still de produto: esmalte e embalagem sobre fundo verde"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-02-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-02-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-02.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Still de produto: mãos com luvas rosa derramando creme sobre fundo rosa"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-03-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-03-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-03.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Still de produto: mãos com luvas rosa abrindo potes de creme"></figure>
-            <figure class="slide glass" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-04-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-04-640.webp 640w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-04.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Retrato corporativo: casal de profissionais junto a uma janela"></figure>
-            <figure class="slide glass" style="--ar:1600/1066"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-05-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-05-640.webp 640w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-05.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1066" loading="lazy" decoding="async" alt="Retrato corporativo: equipe reunida em estúdio de fundo branco"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-06-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-06-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-06.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: profissional trabalhando com notebook sobre um banco"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-07-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-07-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-07.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: mão organizando cadernos sobre a mesa"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-08-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-08-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-08.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: profissional escrevendo à mesa"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-09-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-09-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-09.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: profissional sorrindo com papéis rosa no ar"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-10-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-10-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-10.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: brigada de incêndio diante de chamas, à noite"></figure>
-            <figure class="slide glass" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-11-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-11-640.webp 640w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-11.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Fotografia empresarial: operador em uma gráfica industrial"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-12-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-12-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-12.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: detalhe de máquina de impressão"></figure>
-            <figure class="slide glass" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-13-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-13-640.webp 640w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-13.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Fotografia empresarial: treinamento de bombeiros com mangueiras"></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-14-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-14-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/fotografia-para-marcas-14.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: treinamento em estrutura metálica, em contraluz"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/still-01-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/still-01-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/still-01.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Still de produto: mãos com luvas rosa abrindo potes de creme"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/still-02-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/still-02-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/still-02.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Still de produto: mãos com luvas rosa derramando creme sobre fundo rosa"></figure>
+            <figure class="slide" style="--ar:1105/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/still-03-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/still-03-640.webp 442w, assets/img/web/servicos/fotografia-para-marcas/still-03.webp 1105w" sizes="(max-width: 700px) 70vw, 340px" width="1105" height="1600" loading="lazy" decoding="async" alt="Still de produto: esmalte e embalagem sobre fundo verde"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/retrato-artistico-01-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/retrato-artistico-01-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/retrato-artistico-01.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato artístico: homem de terno sob feixes de luz"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/retrato-artistico-03-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/retrato-artistico-03-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/retrato-artistico-03.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato artístico: mulher de óculos com o cabelo sobre o rosto, em tons escuros"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-01-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-01-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-01.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: profissional trabalhando com notebook sobre um banco"></figure>
+            <figure class="slide" style="--ar:1600/1066"><img data-src="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-02-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-02-640.webp 640w, assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-02.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1066" loading="lazy" decoding="async" alt="Retrato corporativo: equipe reunida em estúdio de fundo branco"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-03-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-03-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-03.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: mão organizando cadernos sobre a mesa"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-04-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-04-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/retrato-corporativo-04.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Retrato corporativo: profissional escrevendo à mesa"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-01-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-01-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-01.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: trabalhador com paleteira em um galpão industrial, em contraluz"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-02-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-02-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-02.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: detalhe de máquina de impressão"></figure>
+            <figure class="slide" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-03-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-03-640.webp 640w, assets/img/web/servicos/fotografia-para-marcas/empresarial-03.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Fotografia empresarial: operador em uma gráfica industrial"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-04-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-04-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-04.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: mãos trabalhando com rolo e matriz sobre uma bancada branca"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-05-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-05-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-05.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: treinamento em estrutura metálica, em contraluz"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-06-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-06-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-06.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: brigada de incêndio diante de chamas, à noite"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-07-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-07-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-07.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: profissional de capacete subindo uma escada"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-08-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-08-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-08.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: equipe de capacetes laranja em movimento"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-09-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-09-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-09.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: logotipo da Technical Fire em um círculo de luz"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/fotografia-para-marcas/empresarial-10-640.webp" data-srcset="assets/img/web/servicos/fotografia-para-marcas/empresarial-10-640.webp 427w, assets/img/web/servicos/fotografia-para-marcas/empresarial-10.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Fotografia empresarial: bombeiros em treinamento com fogo e fumaça em um galpão"></figure>
           </div>
           <div class="car-ui">
             <button class="arrow-btn" type="button" data-dir="-1" aria-label="Anterior">←</button>
@@ -595,14 +582,27 @@
         </div>
         <div class="car svc-media" data-carousel="cobertura-de-eventos">
           <div class="car-track" tabindex="0" role="region" aria-label="Galeria de Cobertura de Eventos">
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-01.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cobertura: cerimônia de formatura, abraços e discursos"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-01.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Palco de evento com duas apresentadoras e telão"></figure>
-            <figure class="slide glass" style="--ar:540/676"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03.webp" width="540" height="676" loading="lazy" decoding="async" alt="Vídeo de cobertura: decoração, drinks e apresentação no palco"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03.mp4" width="540" height="676" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Palestrante em palco com fundo vermelho"></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cobertura: entrevista com participante do evento"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Apresentador de camiseta vermelha com microfone no palco"></figure>
-            <figure class="slide glass" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cobertura: visita a uma feira de decoração"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
-            <figure class="slide glass" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Telão com a mensagem &quot;Feliz Formatura&quot; em sala escura"></figure>
+            <figure class="slide" style="--ar:960/540"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-01.webp" width="960" height="540" loading="lazy" decoding="async" alt="Vídeo de cobertura: feira corporativa, entrevistas e apresentações"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-01.mp4" width="960" height="540" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-02.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Palco de evento com duas apresentadoras e telão"></figure>
+            <figure class="slide" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-03.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Apresentador de camiseta vermelha com microfone no palco"></figure>
+            <figure class="slide" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-04.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Palestrante em palco com fundo vermelho"></figure>
+            <figure class="slide" style="--ar:1600/1075"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-05.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1075" loading="lazy" decoding="async" alt="Grupo conversando e sorrindo em evento, em ambiente de madeira"></figure>
+            <figure class="slide" style="--ar:1600/1075"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-06.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1075" loading="lazy" decoding="async" alt="Convidados posando diante de painel de patrocinadores em evento de cinema"></figure>
+            <figure class="slide" style="--ar:1600/1075"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-07.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1075" loading="lazy" decoding="async" alt="Três convidados posando diante do painel de um evento"></figure>
+            <figure class="slide" style="--ar:900/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08-640.webp 360w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-08.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Palestrante sentado com microfone em palco de madeira"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-09-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-09-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-09.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Dois homens posando diante da bandeira da Austrália"></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-10.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cobertura: visita a uma feira de decoração"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-10.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:900/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-11-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-11-640.webp 360w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-11.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Apresentadora em pé no palco diante de telão"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-12-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-12-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-12.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Entrevista em sofás, em ambiente intimista"></figure>
+            <figure class="slide" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-13-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-13-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-13.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Convidada saindo de um carro em evento de lançamento"></figure>
+            <figure class="slide" style="--ar:1600/1067"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-14-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-14-640.webp 640w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-14.webp 1600w" sizes="(max-width: 700px) 70vw, 340px" width="1600" height="1067" loading="lazy" decoding="async" alt="Grupo conversando à mesa durante um evento"></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-15.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cobertura: entrevista com participante do evento"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-15.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:540/960"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-16.webp" width="540" height="960" loading="lazy" decoding="async" alt="Vídeo de cobertura: cerimônia de formatura, abraços e discursos"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-16.mp4" width="540" height="960" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-17-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-17-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-17.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Telão com a mensagem &quot;Feliz Formatura&quot; em sala escura"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-18-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-18-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-18.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Plateia numerosa em auditório com mezanino"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-19-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-19-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-19.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Participante atenta na plateia, de perfil"></figure>
+            <figure class="slide" style="--ar:1067/1600"><img data-src="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-20-640.webp" data-srcset="assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-20-640.webp 427w, assets/img/web/servicos/cobertura-de-eventos/cobertura-de-eventos-20.webp 1067w" sizes="(max-width: 700px) 70vw, 340px" width="1067" height="1600" loading="lazy" decoding="async" alt="Participantes atentos na plateia"></figure>
+            <figure class="slide" style="--ar:540/676"><img class="cover" data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-21.webp" width="540" height="676" loading="lazy" decoding="async" alt="Vídeo de cobertura: decoração, drinks e apresentação no palco"><video data-src="assets/video/web/servicos/cobertura-de-eventos/cobertura-de-eventos-21.mp4" width="540" height="676" muted loop playsinline preload="none" aria-hidden="true"></video><button class="play" type="button" aria-label="Reproduzir ou pausar vídeo"></button></figure>
           </div>
           <div class="car-ui">
             <button class="arrow-btn" type="button" data-dir="-1" aria-label="Anterior">←</button>
@@ -621,12 +621,12 @@
         </div>
         <div class="car svc-media" data-carousel="estrategia-de-comunicacao">
           <div class="car-track" tabindex="0" role="region" aria-label="Galeria de Estratégia de Comunicação e Presença Digital">
-            <figure class="slide flat" style="--ar:900/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01-640.webp 360w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Identidade visual da Technical Fire: logotipo, cores e aplicações"></figure>
-            <figure class="slide flat" style="--ar:900/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02-640.webp 360w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Identidade visual da FLY Print: logotipo, cores e aplicações"></figure>
-            <figure class="slide flat" style="--ar:1066/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03-640.webp 426w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03.webp 1066w" sizes="(max-width: 700px) 70vw, 340px" width="1066" height="1600" loading="lazy" decoding="async" alt="Cartas colecionáveis ilustradas sobre uma mesa"></figure>
-            <figure class="slide flat" style="--ar:1066/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04-640.webp 426w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04.webp 1066w" sizes="(max-width: 700px) 70vw, 340px" width="1066" height="1600" loading="lazy" decoding="async" alt="Reunião de estratégia com cartas de posicionamento sobre a mesa"></figure>
-            <figure class="slide flat" style="--ar:1066/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05-640.webp 426w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05.webp 1066w" sizes="(max-width: 700px) 70vw, 340px" width="1066" height="1600" loading="lazy" decoding="async" alt="Cartas de posicionamento e tela com a pergunta sobre o tom de voz do escritório"></figure>
-            <figure class="slide flat" style="--ar:900/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06-640.webp 360w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Identidade visual da Lizandra Neves, design de interiores"></figure>
+            <figure class="slide" style="--ar:1066/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01-640.webp 426w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-01.webp 1066w" sizes="(max-width: 700px) 70vw, 340px" width="1066" height="1600" loading="lazy" decoding="async" alt="Reunião de estratégia com cartas de posicionamento sobre a mesa"></figure>
+            <figure class="slide" style="--ar:900/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02-640.webp 360w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-02.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Identidade visual da Lizandra Neves, design de interiores"></figure>
+            <figure class="slide" style="--ar:1066/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03-640.webp 426w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-03.webp 1066w" sizes="(max-width: 700px) 70vw, 340px" width="1066" height="1600" loading="lazy" decoding="async" alt="Cartas colecionáveis ilustradas sobre uma mesa"></figure>
+            <figure class="slide" style="--ar:900/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04-640.webp 360w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-04.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Identidade visual da FLY Print: logotipo, cores e aplicações"></figure>
+            <figure class="slide" style="--ar:1066/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05-640.webp 426w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-05.webp 1066w" sizes="(max-width: 700px) 70vw, 340px" width="1066" height="1600" loading="lazy" decoding="async" alt="Cartas de posicionamento e tela com a pergunta sobre o tom de voz do escritório"></figure>
+            <figure class="slide" style="--ar:900/1600"><img data-src="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06-640.webp" data-srcset="assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06-640.webp 360w, assets/img/web/servicos/estrategia-de-comunicacao/estrategia-de-comunicacao-06.webp 900w" sizes="(max-width: 700px) 70vw, 340px" width="900" height="1600" loading="lazy" decoding="async" alt="Identidade visual da Technical Fire: logotipo, cores e aplicações"></figure>
           </div>
           <div class="car-ui">
             <button class="arrow-btn" type="button" data-dir="-1" aria-label="Anterior">←</button>
@@ -692,6 +692,7 @@
         <li><img src="assets/img/web/clientes/okkabio-branco.webp" width="1035" height="120" loading="lazy" decoding="async" alt="Okkabio"></li>
         <li><img src="assets/img/web/clientes/aphelia-engenharia-branco.webp" width="130" height="120" loading="lazy" decoding="async" alt="Aphélia Engenharia"></li>
         <li><img src="assets/img/web/clientes/luxxuoso-branco.webp" width="550" height="120" loading="lazy" decoding="async" alt="Luxxuoso"></li>
+        <li><img src="assets/img/web/clientes/loulle-branco.webp" width="1102" height="120" loading="lazy" decoding="async" alt="Loulle"></li>
       </ul>
       <ul class="logos" aria-hidden="true">
         <li><img src="assets/img/web/clientes/fly-print-branco.webp" width="638" height="120" loading="lazy" decoding="async" alt=""></li>
@@ -715,6 +716,7 @@
         <li><img src="assets/img/web/clientes/okkabio-branco.webp" width="1035" height="120" loading="lazy" decoding="async" alt=""></li>
         <li><img src="assets/img/web/clientes/aphelia-engenharia-branco.webp" width="130" height="120" loading="lazy" decoding="async" alt=""></li>
         <li><img src="assets/img/web/clientes/luxxuoso-branco.webp" width="550" height="120" loading="lazy" decoding="async" alt=""></li>
+        <li><img src="assets/img/web/clientes/loulle-branco.webp" width="1102" height="120" loading="lazy" decoding="async" alt=""></li>
       </ul>
     </div>
   </div>
@@ -735,32 +737,32 @@
     </div>
     <div class="car reveal" data-carousel="siga">
       <div class="car-track" tabindex="0" role="region" aria-label="Carrossel de posts e vídeos da Ukêria">
-            <a class="post c1" href="https://www.instagram.com/p/DZs6TplmZKz/" target="_blank" rel="noopener" aria-label="Ver post no Instagram">
-              <svg class="wm" viewBox="0 0 202.35 136.68" aria-hidden="true"><use href="#sym-a"/></svg>
+            <a class="post c1 has-cover" href="https://www.instagram.com/p/DZs6TplmZKz/" target="_blank" rel="noopener" aria-label="Ver no Instagram: 764 novos seguidores e uma comunidade muito mais valiosa do que esse número">
+              <img class="cover" src="assets/img/web/siga/ukeria-instagram-764-novos-seguidores.webp" width="640" height="800" loading="lazy" decoding="async" alt="">
               <span class="platform">Instagram</span><span class="cta">Ver no Instagram</span>
             </a>
             <a class="post yt" href="https://youtu.be/38ebCS9p1U8" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Buscar referências fora do digital pode mudar o seu jeito de criar | VLOG UKÊRIA">
               <img class="thumb" src="assets/img/web/siga/yt-01.webp" width="640" height="360" loading="lazy" decoding="async" alt="">
               <span class="body"><span class="platform">YouTube</span><span class="ttl">Buscar referências fora do digital pode mudar o seu jeito de criar | VLOG UKÊRIA</span><span class="cta">Assistir no YouTube</span></span>
             </a>
-            <a class="post c2" href="https://www.instagram.com/p/DWmpVcNkriY/" target="_blank" rel="noopener" aria-label="Ver post no Instagram">
-              <svg class="wm" viewBox="0 0 202.35 136.68" aria-hidden="true"><use href="#sym-a"/></svg>
+            <a class="post c2 has-cover" href="https://www.instagram.com/p/DWmpVcNkriY/" target="_blank" rel="noopener" aria-label="Ver no Instagram: Bastidores da Ukêria: integrante da equipe sorrindo com o celular na mão no escritório">
+              <img class="cover" src="assets/img/web/siga/ukeria-instagram-bastidores-time-ukeria.webp" width="640" height="800" loading="lazy" decoding="async" alt="">
               <span class="platform">Instagram</span><span class="cta">Ver no Instagram</span>
             </a>
-            <a class="post c3" href="https://www.instagram.com/p/Dai9RqJhEvQ/" target="_blank" rel="noopener" aria-label="Ver post no Instagram">
-              <svg class="wm" viewBox="0 0 202.35 136.68" aria-hidden="true"><use href="#sym-a"/></svg>
+            <a class="post c3 has-cover" href="https://www.instagram.com/p/Dai9RqJhEvQ/" target="_blank" rel="noopener" aria-label="Ver no Instagram: Bastidores de uma produção de fotografia de calçados para marca, em preto e branco">
+              <img class="cover" src="assets/img/web/siga/ukeria-instagram-bastidores-producao-calcados.webp" width="640" height="800" loading="lazy" decoding="async" alt="">
               <span class="platform">Instagram</span><span class="cta">Ver no Instagram</span>
             </a>
             <a class="post yt" href="https://youtu.be/ZLBTSe56TjM" target="_blank" rel="noopener" aria-label="Assistir no YouTube: O que acontece em 3 DIAS de captação para clientes? | VLOG">
               <img class="thumb" src="assets/img/web/siga/yt-02.webp" width="640" height="360" loading="lazy" decoding="async" alt="">
               <span class="body"><span class="platform">YouTube</span><span class="ttl">O que acontece em 3 DIAS de captação para clientes? | VLOG</span><span class="cta">Assistir no YouTube</span></span>
             </a>
-            <a class="post c4" href="https://www.instagram.com/p/DZ5IvEoxTVt/" target="_blank" rel="noopener" aria-label="Ver post no Instagram">
-              <svg class="wm" viewBox="0 0 202.35 136.68" aria-hidden="true"><use href="#sym-a"/></svg>
+            <a class="post c4 has-cover" href="https://www.instagram.com/p/DZ5IvEoxTVt/" target="_blank" rel="noopener" aria-label="Ver no Instagram: Integrante da Ukêria apresentando uma estratégia de comunicação para uma equipe">
+              <img class="cover" src="assets/img/web/siga/ukeria-instagram-apresentacao-estrategia-cliente.webp" width="640" height="800" loading="lazy" decoding="async" alt="">
               <span class="platform">Instagram</span><span class="cta">Ver no Instagram</span>
             </a>
-            <a class="post c1" href="https://www.instagram.com/p/DcCOos4FFzm/" target="_blank" rel="noopener" aria-label="Ver post no Instagram">
-              <svg class="wm" viewBox="0 0 202.35 136.68" aria-hidden="true"><use href="#sym-a"/></svg>
+            <a class="post c1 has-cover" href="https://www.instagram.com/p/DcCOos4FFzm/" target="_blank" rel="noopener" aria-label="Ver no Instagram: Coisas que a Ukêria acha chique, com bastidores de uma produção de moda">
+              <img class="cover" src="assets/img/web/siga/ukeria-instagram-coisas-que-a-ukeria-acha-chique.webp" width="640" height="800" loading="lazy" decoding="async" alt="">
               <span class="platform">Instagram</span><span class="cta">Ver no Instagram</span>
             </a>
       </div>

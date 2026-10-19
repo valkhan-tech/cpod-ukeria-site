@@ -187,5 +187,14 @@
   "distancia": 0,
   "w": 550,
   "h": 120
+ },
+ {
+  "slug": "loulle",
+  "nome": "Loulle",
+  "branco": "logo-faltante.png",
+  "preto": null,
+  "distancia": null,
+  "w": 1102,
+  "h": 120
  }
 ]

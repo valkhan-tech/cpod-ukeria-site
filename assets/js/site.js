@@ -13,11 +13,49 @@
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     menu.classList.toggle('open', open);
+    var navEl = $('.nav'); if (navEl) navEl.classList.toggle('menu-open', open);
   }
   if (toggle && menu) {
     toggle.addEventListener('click', function () { setMenu(toggle.getAttribute('aria-expanded') !== 'true'); });
     $$('a', menu).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  }
+
+
+  /* ---------- menu flutuante: transparente sobre o hero, sólido depois dele ---------- */
+  var nav = $('.nav');
+  var heroEl = $('#inicio');
+  function navState() {
+    if (!nav) return;
+    var limit = heroEl ? heroEl.offsetHeight - nav.offsetHeight - 8 : 10;
+    nav.classList.toggle('is-solid', window.scrollY > Math.max(limit, 10));
+  }
+  window.addEventListener('scroll', navState, { passive: true });
+  window.addEventListener('resize', navState);
+  navState();
+
+  /* ---------- hero: vídeo de fundo em loop (só com movimento permitido e sem economia de dados) ---------- */
+  var heroVideo = $('.hero-video');
+  if (heroVideo) {
+    var hConn = navigator.connection || {};
+    var lite = reduced || hConn.saveData || /(^|-)2g$/.test(hConn.effectiveType || '');
+    if (lite) {                                   // fica só a capa (poster); o arquivo nem é baixado
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.pause();
+      $$('source', heroVideo).forEach(function (src) { src.remove(); });
+      heroVideo.preload = 'none';
+      heroVideo.load();
+    } else {
+      var playHero = function () { var pr = heroVideo.play(); if (pr && pr.catch) pr.catch(function () {}); };
+      document.addEventListener('visibilitychange', function () { if (document.hidden) heroVideo.pause(); else if (heroInView) playHero(); });
+      var heroInView = true;
+      if ('IntersectionObserver' in window && heroEl) {
+        new IntersectionObserver(function (entries) {
+          heroInView = entries[0].isIntersecting;
+          if (heroInView && !document.hidden) playHero(); else heroVideo.pause();
+        }, { threshold: 0.05 }).observe(heroEl);
+      }
+    }
   }
 
   /* ---------- revelar ao rolar ---------- */
@@ -171,48 +209,74 @@
     });
   }
 
-  /* ---------- serviços: card abre a "janela" com tópicos e carrossel ---------- */
-  var svcBtns = $$('.service[data-svc]');
-  var svcPanels = $$('.svc-panel');
-  function openService(slug, opts) {
-    opts = opts || {};
-    svcBtns.forEach(function (b) { b.setAttribute('aria-expanded', String(b.getAttribute('data-svc') === slug)); });
-    svcPanels.forEach(function (p) { p.hidden = !slug || p.id !== 'svc-panel-' + slug; });
-    var url = new URL(location.href);
-    if (slug) url.searchParams.set('servico', slug); else url.searchParams.delete('servico');
-    history.replaceState(null, '', url.pathname + url.search + (slug ? '#servicos' : url.hash));
-    if (!slug) return;
-    var panel = $('#svc-panel-' + slug);
-    hydrateImages(panel);
-    refreshCarousels(panel);
-    if (opts.scroll !== false) panel.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-  }
-  svcBtns.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var slug = b.getAttribute('data-svc');
-      var willOpen = b.getAttribute('aria-expanded') !== 'true';
-      if (willOpen && window.ukTrack) window.ukTrack('service_open', { service: slug, link_location: 'servicos' });
-      openService(willOpen ? slug : null);
-    });
-  });
-  $$('.svc-close').forEach(function (c) {
-    c.addEventListener('click', function () {
-      var slug = c.closest('.svc-panel').id.replace('svc-panel-', '');
-      openService(null);
-      var b = $('#svc-btn-' + slug); if (b) b.focus();
-    });
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Escape') return;
-    var open = svcPanels.filter(function (p) { return !p.hidden; })[0];
-    if (open && open.contains(document.activeElement)) {
-      var slug = open.id.replace('svc-panel-', '');
-      openService(null);
-      var b = $('#svc-btn-' + slug); if (b) b.focus();
+  /* ---------- abas: o botão abre uma "janela" abaixo (serviços e A Ukêria) ----------
+     cfg: btn (seletor dos botões), attr (atributo com o slug), panel (seletor dos painéis), prefix (id = prefix + slug),
+          param (?param=slug para deep link), hash (âncora ao abrir), event (evento GA4), where (link_location). */
+  function makeTabs(cfg) {
+    var btns = $$(cfg.btn);
+    var panels = $$(cfg.panel);
+    var focusBtn = function (slug) { var b = btns.filter(function (x) { return x.getAttribute(cfg.attr) === slug; })[0]; if (b) b.focus(); };
+    function open(slug, opts) {
+      opts = opts || {};
+      btns.forEach(function (b) { b.setAttribute('aria-expanded', String(b.getAttribute(cfg.attr) === slug)); });
+      panels.forEach(function (p) { p.hidden = !slug || p.id !== cfg.prefix + slug; });
+      if (opts.updateUrl !== false) {
+        var url = new URL(location.href);
+        if (slug) url.searchParams.set(cfg.param, slug); else url.searchParams.delete(cfg.param);
+        history.replaceState(null, '', url.pathname + url.search + (slug ? cfg.hash : url.hash));
+      }
+      if (!slug) return;
+      var panel = $('#' + cfg.prefix + slug);
+      hydrateImages(panel);
+      refreshCarousels(panel);
+      if (cfg.onOpen) cfg.onOpen(panel, slug);
+      if (opts.scroll !== false) panel.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
     }
-  });
-  var wanted = new URLSearchParams(location.search).get('servico');
-  if (wanted && $('#svc-panel-' + wanted)) openService(wanted);
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var slug = b.getAttribute(cfg.attr);
+        var willOpen = b.getAttribute('aria-expanded') !== 'true';
+        if (willOpen && window.ukTrack) { var ev = { link_location: cfg.where }; ev[cfg.eventParam] = slug; window.ukTrack(cfg.event, ev); }
+        open(willOpen ? slug : null);
+      });
+    });
+    panels.forEach(function (p) {
+      var close = $('.svc-close', p);
+      if (close) close.addEventListener('click', function () { var slug = p.id.replace(cfg.prefix, ''); open(null); focusBtn(slug); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var openPanel = panels.filter(function (p) { return !p.hidden; })[0];
+      if (openPanel && openPanel.contains(document.activeElement)) { var slug = openPanel.id.replace(cfg.prefix, ''); open(null); focusBtn(slug); }
+    });
+    var wanted = new URLSearchParams(location.search).get(cfg.param);
+    if (wanted && $('#' + cfg.prefix + wanted)) open(wanted);
+    else if (cfg.defaultOpen) open(cfg.defaultOpen, { scroll: false, updateUrl: false });   // já vem aberto, sem rolar a página nem mexer na URL
+    return { open: open };
+  }
+
+  makeTabs({ btn: '.service[data-svc]', attr: 'data-svc', panel: '.svc-panel', prefix: 'svc-panel-', param: 'servico', hash: '#servicos',
+             event: 'service_open', eventParam: 'service', where: 'servicos', defaultOpen: 'producao-audiovisual' });
+
+  /* foto MAE-USP: o olho abre uma única vez, na primeira vez que ela aparece (depois de carregada e visível) */
+  function startEye(panel) {
+    var eye = $('.mae', panel);
+    if (!eye || eye.classList.contains('is-open') || eye.getAttribute('data-queued')) return;
+    eye.setAttribute('data-queued', '1');
+    var img = $('img', eye);
+    var openEye = function () { eye.classList.add('is-open'); };
+    if (reduced || !('IntersectionObserver' in window)) { openEye(); return; }
+    var whenVisible = function () {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { io.disconnect(); setTimeout(openEye, 250); }
+      }, { threshold: 0.4 });
+      io.observe(eye);
+    };
+    if (img.complete && img.naturalWidth) whenVisible(); else img.addEventListener('load', whenVisible, { once: true });
+  }
+
+  makeTabs({ btn: '.tab-btn[data-about]', attr: 'data-about', panel: '.about-panel', prefix: 'about-panel-', param: 'aba', hash: '#origem',
+             event: 'about_open', eventParam: 'panel', where: 'ukeria', onOpen: startEye });
 
   /* ---------- formulário: monta a mensagem e abre o WhatsApp comercial ---------- */
   var form = $('#form');
