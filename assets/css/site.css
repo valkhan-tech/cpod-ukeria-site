@@ -166,7 +166,7 @@ h3{font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.2;}
   padding:calc(var(--nav-h) + 32px) 0 clamp(40px, 7vh, 80px);
 }
 .hero-text{display:flex; flex-direction:column; align-items:flex-start;}
-.hero h1{max-width:15ch; color:var(--branco); font-size:clamp(2.6rem, 6vw, 5.4rem); text-shadow:0 2px 28px color-mix(in srgb, var(--preto-ukeria) 45%, transparent);}
+.hero h1{max-width:15ch; color:var(--branco); font-size:clamp(2.3rem, 6vw, 4.5rem); text-shadow:0 2px 28px color-mix(in srgb, var(--preto-ukeria) 45%, transparent);}
 .btn-hero{margin-top:clamp(22px, 3vw, 34px); padding:12px 24px; font-size:.9rem; background:var(--amarelo-03); color:var(--preto-ukeria);}
 .btn-hero:hover{background:var(--branco); transform:translateY(-2px);}
 /* olho: símbolo branco, sem brilho nem raios; grande e levemente cortado no canto */
